@@ -2,4 +2,4 @@
 
 This is the documentation for HumMod projects.
 
-Please refer to the `gh-pages` branch to help.  Documentation may be viewed [here](http://hummod.github.com/documentation).
+Please refer to the `gh-pages` branch to help.  Documentation may be viewed [here](http://hummod.org/help).
