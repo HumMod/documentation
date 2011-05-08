@@ -43,11 +43,11 @@ Here's an example of how content should render:
 ``` 
 
 ### Tags and Usage
-#### `section`
+#### Section
 Sections group related content and may be nested.
 `<section>` and `</section>`
 
-#### `header`
+#### Header
 Headers specify the heading of a section.  They should be within every section and contain a first level element.
 `<header>` and `</header>`
 
@@ -58,7 +58,7 @@ Headers specify the heading of a section.  They should be within every section a
 
 These elements should not exist outside of a section or header element.
 
-##### `hgroup`
+##### Groups
 If a section has more than one header within it's header, then use the `hgroup` tag to group the elements.
 ```html
 <header>
