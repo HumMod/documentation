@@ -32,7 +32,9 @@ Here's an example of how content should render:
     <a href="#block">Back to the top.</a>
   </header>
   <p>
-    Sections should be structured like this example.  Please note the section, header, and h1 tags.  Further, the section has an id that corresponds to the sections header.  This unique id is used for linking within the page.
+    Sections should be structured like this example.  Please note the section, header, 
+    and h1 tags.  Further, the section has an id that corresponds to the sections header.
+      This unique id is used for linking within the page.
   </p>
   <p>
     Since we link inside the page, it's necessary to update the main nav group up top.
