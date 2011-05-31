@@ -13,8 +13,10 @@ This is the documentation for HumMod projects.
 5. Get to work.
 6. Push changes into branch: `> git push origin gh-pages`
 7. Submit Pull Request.  Did you fetch and merge from the main repo first?  If not, 
+
 ```
 > git fetch upstream
+
 > git merge upstream/gh-pages
 ```
 If yes, then submit a pull request with a good description.
