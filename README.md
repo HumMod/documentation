@@ -5,10 +5,19 @@ This is the documentation for HumMod projects.
 ## How to contribute?
 1. Fork the repository.
 2. Clone your repository: `> git clone git@github.com:your-username/documentation.git`
-3. Switch to the `gh-pages` branch: `> git checkout gh-pages`
-4. Get to work.
-5. Push changes into branch: `> git push origin gh-pages`
-6. Submit Pull Request.  Please include a good description of what your changes entail.
+3. Add a remote for upstream
+```
+> git remote add upstream git://github.com/HumMod/documentation.git
+```
+4. Switch to the `gh-pages` branch: `> git checkout gh-pages`
+5. Get to work.
+6. Push changes into branch: `> git push origin gh-pages`
+7. Submit Pull Request.  Did you fetch and merge from the main repo first?  If not, 
+```
+> git fetch upstream
+> git merge upstream/gh-pages
+```
+If yes, then submit a pull request with a good description.
 
 ## About Styles
 We try to keep the look of the HumMod sites uniform.  As such, please do not override styles.  If you encounter a problem, [contact us](http://hummod.org/contact) and we'll see what can be done.
