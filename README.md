@@ -16,7 +16,6 @@ This is the documentation for HumMod projects.
 
 ```
 > git fetch upstream
-
 > git merge upstream/gh-pages
 ```
 If yes, then submit a pull request with a good description.
