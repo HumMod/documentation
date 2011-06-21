@@ -11,4 +11,4 @@ title: How to Download HumMod for Windows
 
 3. Extract all the files to the locataion of your choice.
 
-4. Go to the folder, open HumMod and enjoy.
+4. Go to the folder, open HumMod.exe and enjoy.
