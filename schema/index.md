@@ -61,7 +61,7 @@ is to describe all of the XML elements that we have defined for out
 modeling environment.
 
 
-[Volume 1. Model] 
+[Volume 1. Model](1_model/index.md) 
 
 This volume develops three topics. The first introduces
 XML. The second describes some additional grammatical rules to be

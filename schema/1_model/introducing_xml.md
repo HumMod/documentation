@@ -1,0 +1,59 @@
+--------------------
+layout: default
+title: Introducing XML
+--------------------
+
+#Introducing XML
+
+##XML History
+
+XML is an acronym for Extensible Markup Language.
+This document defines the rules for using XML to document structure and
+details of a mathematical model in human readable and computer
+readable format.
+
+Traditionally, a strange set of marks (like a wavy underline and a capital P
+facing backwards) were used by editors to communicate with typesetters,
+to ensure that a printed document was correctly laid out and attractive.
+This is called markup.
+
+With the advent of the digital computer and electronic documents, a
+markup schema was needed that could be read by computers and
+transported across networks. In about 1969, Charles Goldfarb, Ed
+Mosher and Ray Lorie at IBM provided a solution in the form of GML –
+named after their last name initials (maybe). GML was intended to
+markup legal documents to send to the electronic typesetters that were
+rapidly replacing human typesetters. This scheme was renamed
+Generalized Markup Language (or so the story goes).
+
+In the mid 1970?s, Goldfarb and others added features to GML and
+Generalized Markup Language became Standard Generalized Markup
+Language (or SGML). SGML became an ISO (International Organization
+for Standardization) standard in 1986 and is the current standard for
+document markup work. But, looking ahead, it is not a markup language.
+It is a specification for creating markup languages and it is very
+complicated.
+
+In about 1990, Tim Berners-Lee and Anders Bergland at CERN in
+Switzerland used SGML to define Hypertext Markup Language (or HTML)
+and the World Wide Web was born. HTML describes how documents
+should look when displayed on a computer screen. HTML was not
+extensible, but it was corruptible. It was a weapon used in the great
+browser wars (and was a casualty at that).
+
+There remained a need to organize data as it passed not only from
+database to computer screen but also from database to database. And it
+would be nice if the scheme was much simpler than SGML. A number of
+people including John Bosak, Tim Bray, James Clark and C.M. Sperberg-
+McQueen worked in 1996 and 1997 to define a new and better markup
+language using SGML as the overriding standard. Extensible Markup Language (or XML) was born. It received W3C (World Wide Web
+Consortium) endorsement in February 1998.
+
+The extensible in XML?s name identifies one of its major strengths. XML
+can be customized to meet specific needs. In the case of mathematical
+model documentation, we?ve developed an XML schema that is used to
+represent the details of mathematical models, including the structure, the
+control of solutions and the display of results.
+
+
+##XML Basics
