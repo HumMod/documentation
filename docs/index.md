@@ -12,3 +12,7 @@ title: Documents
 [QCP Lab Manual](https://github.com/HumMod/documentation/raw/gh-pages/docs/QCP_Lab_Manual.pdf)
 
 [QCP User's Guide](https://github.com/HumMod/documentation/raw/gh-pages/docs/QCP_UsersGuide.pdf)
+
+[How to Download HumMod for Windows](file:///C:/Users/Kyle/Desktop/documentation/docs/how_to_download_hummod_windows.md)
+
+[How to Get Started Documenting](file:///C:/Users/Kyle/Desktop/documentation/docs/how_to_document.md)
