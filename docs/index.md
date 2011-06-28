@@ -9,6 +9,8 @@ title: Documents
 
 [Model Navigator User Manual (1.0)](https://github.com/HumMod/documentation/raw/gh-pages/docs/Model_Navigator_User_Manual-1.0-2003.pdf)
 
+[Model Navigator Online Manual](https://github.com/bailey-hansen/documentation/raw/gh-pages/docs/model_navigator.md)
+
 [QCP Lab Manual](https://github.com/HumMod/documentation/raw/gh-pages/docs/QCP_Lab_Manual.pdf)
 
 [QCP User's Guide](https://github.com/HumMod/documentation/raw/gh-pages/docs/QCP_UsersGuide.pdf)
