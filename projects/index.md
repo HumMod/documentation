@@ -11,5 +11,5 @@ title: Documentation Projects
 * [Model Editor/DESolver Documentation](/editor-desolver) - This directory contains documentation related to the Model Editor and DESolver executables.
 
 
-* [Model Navigator](/navigator) - This directory contains documentation related to the Model Navigator executable.
+* [Model Navigator](../navigator) - This directory contains documentation related to the Model Navigator executable.
 
