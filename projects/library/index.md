@@ -5,4 +5,4 @@ title: Library
 
 # The Library Documentation
 
-Let's see how it looks.
+[Hummod Quickstart Guide](hummod_quickstart.md)

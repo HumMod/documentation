@@ -2,19 +2,6 @@
 layout: default
 title: Documents
 ---
+#Executable Documentation
 
-[HumMod User Manual](http://github.com/HumMod/documentation/raw/gh-pages/docs/HumMod_User_Manual.pdf)
-
-[Model Editor XML Quickstart Guide](https://github.com/HumMod/documentation/raw/gh-pages/docs/Model_Editor_XML_Quickstart_Guide.pdf)
-
-[Model Navigator User Manual (1.0)](https://github.com/HumMod/documentation/raw/gh-pages/docs/Model_Navigator_User_Manual-1.0-2003.pdf)
-
-[Model Navigator Online Manual](https://github.com/bailey-hansen/documentation/raw/gh-pages/docs/model_navigator.md)
-
-[QCP Lab Manual](https://github.com/HumMod/documentation/raw/gh-pages/docs/QCP_Lab_Manual.pdf)
-
-[QCP User's Guide](https://github.com/HumMod/documentation/raw/gh-pages/docs/QCP_UsersGuide.pdf)
-
-[How to Download HumMod for Windows](file:///C:/Users/Kyle/Desktop/documentation/docs/how_to_download_hummod_windows.md)
-
-[How to Get Started Documenting](file:///C:/Users/Kyle/Desktop/documentation/docs/how_to_document.md)
+This subdir is worthless, don't use it.
