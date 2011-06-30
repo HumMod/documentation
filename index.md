@@ -11,3 +11,5 @@ Feel free to fork the repo and start making contributions.  As we get updates, w
 
 Thanks,
 HumMod
+
+[another page](/docs)
