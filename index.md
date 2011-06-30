@@ -16,6 +16,8 @@ HumMod
 
 ##Current projects:
 
+
 * [Schema Documentation](/schema) - Information regarding HumMod's XML Schema (work in progress, conversion to HTML pending from a larger original file)
+
 
 * [Documenation Projects](/projects) - Documentation on using HumMod and related executable files.
