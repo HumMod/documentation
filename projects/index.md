@@ -10,4 +10,4 @@ title: Documentation Projects
 
 * [Editor/DESolver Documentation](editor-desolver/model_editor_desolver.html)
 
-* [Navigator](navigator/model_navigator.html)
+* [Navigator](navigator/)
