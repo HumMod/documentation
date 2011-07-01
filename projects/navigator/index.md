@@ -3,7 +3,7 @@ layout: default
 title: Model Navigator
 ---
 
-#Model Navigator (V1.0) User’s Manual
+#Model Navigator (V1.0) User's Manual
 
 27-Jun-11
 
