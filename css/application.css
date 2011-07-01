@@ -215,3 +215,7 @@ body #content nav#block {
 body footer {
   margin-top: 0.85714286em;
   text-align: center; }
+  
+body#help {
+  overflow: auto;
+}
