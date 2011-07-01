@@ -5,11 +5,9 @@ title: Documentation Projects
 
 #List of Documentation Projects
 
-* [Main Hummod Documentation](library) - This directory contains all documentation regarding the main HumMod executable and related files.
+* [Main Hummod Documentation](library/hummod_quickstart.md)
 
 
-* [Model Editor/DESolver Documentation](editor-desolver) - This directory contains documentation related to the Model Editor and DESolver executables.
+* [Editor/DESolver Documentation](editor-desolver/model_editor_desolver.md) - 
 
-
-* [Model Navigator](navigator) - This directory contains documentation related to the Model Navigator executable.
-
+* [Navigator](navigator/model_navigator.md)
