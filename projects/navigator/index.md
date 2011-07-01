@@ -1,4 +1,4 @@
----
+﻿---
 layout: default
 title: Model Navigator
 ---
@@ -25,20 +25,20 @@ The Images folder is work in progress. It may not be needed in the next release.
 
 ##General Organization
 
-Most navigating activity takes place in Model Navigator’s main window. Activity typically flows
+Most navigating activity takes place in Model Navigator's main window. Activity typically flows
 from left to right and top to bottom.
 
 The functional areas of the main window are
 
-* Top Area – Shows the name of the variable that is currently being investigated in detail.
+* Top Area - Shows the name of the variable that is currently being investigated in detail.
 
-* Left Area – Provides a list of all the model’s variable names.
+* Left Area - Provides a list of all the model's variable names.
 
-* Tabs – Three tabs control the functionality of the center and right areas.
+* Tabs - Three tabs control the functionality of the center and right areas.
 
-* Center Area – Details related to cause and effect.
+* Center Area - Details related to cause and effect.
 
-* Right Area – File Content
+* Right Area - File Content
 
 ![Navpic1]( https://github.com/HumMod/documentation/raw/gh-pages/images/navigator/navpic1.jpg)
 
@@ -48,7 +48,7 @@ The functional areas of the main window are
 ![Navpic2]( https://github.com/HumMod/documentation/raw/gh-pages/images/navigator/navpic2.jpg)
 
 
-The model title, as defined in the <modeltitle> … </modeltitle> element is displayed in the window title bar after the application name.
+The model title, as defined in the <modeltitle> ... </modeltitle> element is displayed in the window title bar after the application name.
 
 The application main menu has just three choices: File, Settings and Help. File and Settings are described below. Help serves up an About box.
 
@@ -69,7 +69,7 @@ Click a structure name and then a local name to select a variable for further an
 
 ##Tabs
 
-The function in the center and right areas of the main window is determined by three tabs: Model Map, Doc’s and Displays. The right area generally displays the contents of a relevant file (see below). So, the next three topics describe the functions offered in the center area in response to tab clicks.
+The function in the center and right areas of the main window is determined by three tabs: Model Map, Doc's and Displays. The right area generally displays the contents of a relevant file (see below). So, the next three topics describe the functions offered in the center area in response to tab clicks.
 
 ![Navpic4]( https://github.com/HumMod/documentation/raw/gh-pages/images/navigator/navpic4.jpg)
 
@@ -79,13 +79,13 @@ The center area for Model Map displays four items.
 
 At the top is the name of the variable being analyzed. In this case it is ADHPool.[ADH].
 
-Next down is the name of the file or files where the variable is defined. Some variables, such as parameters and constants are defined when they are declared. Other variables are defined in more remote locations. Some variables are defined in more than one location – typically in conditional math. Clicking on the file name takes you directly to the file and location where the definition is taking place. You can then see the math used in the definition.
+Next down is the name of the file or files where the variable is defined. Some variables, such as parameters and constants are defined when they are declared. Other variables are defined in more remote locations. Some variables are defined in more than one location - typically in conditional math. Clicking on the file name takes you directly to the file and location where the definition is taking place. You can then see the math used in the definition.
 
 Next down is a list of all the variables involved in the definition. In this example, ADHPool.[ADH] is defined by ECFV.Vol(L) and ADHPool.Mass. Clicking on a (defined by) name selects that variable for analysis. The entire window is updated after the click.
 
 Finally at the bottom is a list of all the variables that our variable helps to define. As above, clicking on a (defines) name selects that variable for analysis. The entire window is updated after the click.
 
-###Doc’s
+###Doc's
 
 Model documentation in DES V1.0 schema is divided into internal and external components.
 
@@ -93,9 +93,9 @@ Internal documentation is contained in the models variables, equations and other
 
 Internal documentation is extracted and displayed by this Model Navigator.
 
-External documentation is additional information supplied by the model’s authors. It is displayed using the Doc’s tab.
+External documentation is additional information supplied by the model's authors. It is displayed using the Doc's tab.
 
-When the Doc’s tab is clicked, the center area displays external model documentation and documentation choices.
+When the Doc's tab is clicked, the center area displays external model documentation and documentation choices.
 
 The center area displays two items
 
@@ -106,7 +106,7 @@ example).
 * A list of variables that are related to the variable being analyzed. Clicking on a name selects that variable for detailed analysis.
 
 External model documentation in DES V1.0 schema is carried along with the rest of the model but in separate files. These files can have any filename extension, but DOCS is recommended.
-The equation solver’s parser does not parse these files, but the Model Navigator parses these files and displays the information obtained.
+The equation solver's parser does not parse these files, but the Model Navigator parses these files and displays the information obtained.
 
 ![Navpic5]( https://github.com/HumMod/documentation/raw/gh-pages/images/navigator/navpic5.jpg)
 
@@ -144,7 +144,7 @@ Model Navigator can start up in two different ways. One is to start and to wait 
 
 ##File Names
 
-The DES schema allows file paths to be specified using the <?path …?> processing instruction and filenames to be specified in the <?include …?> processing instruction. These paths and filenames can be either relative to the model’s main (root) file (common and preferred, as in DigitalHuman) or absolute (fully qualified), going all the way down to the disk drive letter (rare and not preferred). Use this panel to select either relative or fully qualified file names for the model being parsed.
+The DES schema allows file paths to be specified using the <?path ...?> processing instruction and filenames to be specified in the <?include ...?> processing instruction. These paths and filenames can be either relative to the model's main (root) file (common and preferred, as in DigitalHuman) or absolute (fully qualified), going all the way down to the disk drive letter (rare and not preferred). Use this panel to select either relative or fully qualified file names for the model being parsed.
 
 ![Navpic10]( https://github.com/HumMod/documentation/raw/gh-pages/images/navigator/navpic11.jpg)
 
@@ -156,7 +156,7 @@ The file content box color highlights XML. Use this panel to specify highlightin
 
 ##Conditional Includes
 
-A model that is compliant with DES V1.0 XML schema can be customized as it is parsed. This is implemented by conditional includes. Conditional includes are processing instructions that are specified as <?if Token Filename ?>. This translates to: if Token exists, then include Filename. There is also an <?ifnot … ?> processing instruction. Tokens are created using <?create Token ?>.
+A model that is compliant with DES V1.0 XML schema can be customized as it is parsed. This is implemented by conditional includes. Conditional includes are processing instructions that are specified as <?if Token Filename ?>. This translates to: if Token exists, then include Filename. There is also an <?ifnot ... ?> processing instruction. Tokens are created using <?create Token ?>.
 
 You can use this panel to specify that tokens be evaluated and the only the parts of the model that will be visible are those allowed in by the current state of the token (Dynamically). 
 
@@ -175,7 +175,7 @@ This panel shows the size and location of the main window (in pixels). It probab
 Model Navigator stores a small amount of important information in the registry. To uninstall 
 Model Navigator, simply delete the relevant files.
 
-But wait, do a really clean uninstall this way. Run Model Navigator one last time. Check the box in this panel. On program exit, the Model Navigator’s registry entries will be wiped clean. Now delete the relevant files.
+But wait, do a really clean uninstall this way. Run Model Navigator one last time. Check the box in this panel. On program exit, the Model Navigator's registry entries will be wiped clean. Now delete the relevant files.
 
 You can also check the box if you want to start over with a clean registry and default program values.
 
