@@ -1,21 +1,16 @@
---------------------
+---
 layout: default
 title: Introducing XML
---------------------
+---
 
-#Introducing XML
-
-##XML History
+# XML History
 
 XML is an acronym for Extensible Markup Language.
 This document defines the rules for using XML to document structure and
 details of a mathematical model in human readable and computer
 readable format.
 
-Traditionally, a strange set of marks (like a wavy underline and a capital P
-facing backwards) were used by editors to communicate with typesetters,
-to ensure that a printed document was correctly laid out and attractive.
-This is called markup.
+Traditionally, a strange set of marks (like a wavy underline and a capital P facing backwards) were used by editors to communicate with typesetters, to ensure that a printed document was correctly laid out and attractive. This is called markup.
 
 With the advent of the digital computer and electronic documents, a
 markup schema was needed that could be read by computers and
@@ -26,7 +21,7 @@ markup legal documents to send to the electronic typesetters that were
 rapidly replacing human typesetters. This scheme was renamed
 Generalized Markup Language (or so the story goes).
 
-In the mid 1970?s, Goldfarb and others added features to GML and
+In the mid 1970's, Goldfarb and others added features to GML and
 Generalized Markup Language became Standard Generalized Markup
 Language (or SGML). SGML became an ISO (International Organization
 for Standardization) standard in 1986 and is the current standard for
@@ -51,16 +46,14 @@ Consortium) endorsement in February 1998.
 
 The extensible in XML's name identifies one of its major strengths. XML
 can be customized to meet specific needs. In the case of mathematical
-model documentation, we?ve developed an XML schema that is used to
-represent the details of mathematical models, including the structure, the
-control of solutions and the display of results.
+model documentation, we've developed an XML schema that is used to
+represent the details of mathematical models, including the structure, the control of solutions and the display of results.
 
 
-##XML Basics
+# XML Basics
 
 XML organizes data using information stored in angle brackets (also
-known as the less than and greater than signs). A pair of angle brackets
-and the enclosed information is known as a tag.
+known as the less than and greater than signs). A pair of angle brackets and the enclosed information is known as a tag.
 
 
 A pair of tags and their enclosed data is known as an element. The
@@ -88,20 +81,16 @@ example
     <beep/>
 
 
-An empty element is identified by a forward slash (/) as the last character
-before the closing angle bracket.
+An empty element is identified by a forward slash (/) as the last character before the closing angle bracket.
 
 
-In addition to the element name, additional information may be stored in a
-tag. This information is organized as attributes.
+In addition to the element name, additional information may be stored in a tag. This information is organized as attributes.
 
 
-Attributes are allowed in open tags and empty tags but not in close tags.
-An attribute has a name, an equals sign and a value. Spaces are allowed
-before and after the equals sign.
+Attributes are allowed in open tags and empty tags but not in close tags. An attribute has a name, an equals sign and a value. Spaces are allowed before and after the equals sign.
 
 
-Values are always enclosed in paired double (“) or single („) quotation
+Values are always enclosed in paired double (“) or single (') quotation
 marks.
 
 
@@ -109,11 +98,10 @@ Attribute values are text that can represent anything. Values typically
 represent names of things and numbers.
 
 
-##Processing Instructions
+# Processing Instructions
 
 Processing instructions do not describe the content of an XML document.
-Rather, processing instructions describe how a document?s content should
-be processed.
+Rather, processing instructions describe how a document's content should be processed.
 
 
 Processing instructions are a private contract between the document and
@@ -126,7 +114,7 @@ The form of a processing instruction is:
     <?name content ?>
 
 
-The name should follow XML?s name rules. The content is all text after
+The name should follow XML's name rules. The content is all text after
 the name up to the final '?>'.
 
 
@@ -137,31 +125,25 @@ maximum use of processing instructions.
 Several processing instructions used by HUMMOD are described next.
 
 
-    ###<?include … ?>
+    ## <?include … ?>
 
 
 A document is typically assembled from more than one file. The
 processor must be told the file names and the sequence.
 
-Use this instruction at the appropriate places in the document to tell the
-processor to include a file.
+Use this instruction at the appropriate places in the document to tell the processor to include a file.
 
 
     <?include Filename goes here. ?>
 
 
-The DES XML parser insists that included files end at a logical break in
-the document. Specifically, an included file cannot end inside of a tag or
-in text that is being parsed for content (#PCDATA). An included file can
-end between elements.
+The DES XML parser insists that included files end at a logical break in the document. Specifically, an included file cannot end inside of a tag or in text that is being parsed for content (#PCDATA). An included file can end between elements.
 
 
-    ###<?path … ?>
+    ## <?path … ?>
 
 
-When a document is assembled from files located in more than one folder,
-it is convenient to define a path that is prefixed to all subsequent file
-names.
+When a document is assembled from files located in more than one folder, it is convenient to define a path that is prefixed to all subsequent file names.
 
 Use this instruction to define a path to be prefixed to subsequent file
 names.
@@ -170,20 +152,17 @@ names.
     <?path Path specification goes here. ?>
 
 
-    ###<?create … ?>
+    ## <?create … ?>
 
 
 This instruction and the next two implement conditional includes. A
-conditional include is an include instruction that is executed if a specific
-token has been created. Otherwise, the include instruction is ignored.
+conditional include is an include instruction that is executed if a specific token has been created. Otherwise, the include instruction is ignored.
 
 This multi-step process allows a single token to control multiple file
 includes.
 
 
-Use this instruction at the appropriate place in the document (usually early
-on) to create a token that will control the execution of a conditional
-include.
+Use this instruction at the appropriate place in the document (usually early on) to create a token that will control the execution of a conditional include.
 
 
     <?create Token_name goes here. ?>
@@ -193,7 +172,7 @@ The token name cannot contain internal spaces. White space is used as
 the name delimiter.
 
 
-    ###<?if … ?>
+    ## <?if … ?>
 
 
 If the named token has been created, the named file is included.
@@ -203,7 +182,7 @@ Otherwise, no action is taken.
     <?if Token_name File name. ?>
 
 
-    ###<?ifnot … ?>
+    ## <?ifnot … ?>
 
 
 If the named token has not been created, the named file is included.
@@ -212,36 +191,31 @@ Otherwise, no action is taken.
 
     <?ifnot Token_name File name. ?>
 
-##Special Characters
+# Special Characters
 
-The less than ('<') and greater than ('>') characters are used to identify tags
-in XML. As you might imagine, if you use these characters in ordinary
-text, the XML parser will declare an error. Or, worse yet, it will commit an
-error without declaring it.
+The less than ('<') and greater than ('>') characters are used to identify tags in XML. As you might imagine, if you use these characters in ordinary text, the XML parser will declare an error. Or, worse yet, it will commit an error without declaring it.
 
 
-To work around this, XML defines several special characters and provides
-a way to represent them unambiguously and without error. Technically,
-the representations for special characters are called character entities.
+To work around this, XML defines several special characters and provides a way to represent them unambiguously and without error. Technically, the representations for special characters are called character entities.
 
 
 Character entities begin with an ampersand (&) and end with a semicolon
 (;).
 
 
-* Ampersand       &    &amp;
+* Ampersand       	&    ('&amp');
 
-* Apostrophe      '    &apos;
+* Apostrophe      	'    ('&apos');
 
-* Greater Than    >    &gt;
+* Greater Than    	>    ('&gt');
 
-* Less Than       <    &lt;
+* Less Than       	<    ('&lt');
 
-* Quotation Mark  “    &quot;
+* Quotation Mark  	“    ('&quot');
 
 
 
-The table above shows the character entities for five special characters. For example, the greater than character can be represented in text by the character sequence '&gt;'.
+The table above shows the character entities for five special characters. For example, the greater than character can be represented in text by the character sequence ('&gt;').
 
 
 As the text is being parsed, the character entity is removed and replaced by the special character that has been specified.
@@ -253,9 +227,9 @@ An alternative representation of these two characters can come in handy.
 
 
 HTML supports these character entities also and many, many more
-(except that the apostrophe &apos; is not supported).
+(except that the apostrophe ('&apos;') is not supported).
 
-##Comments
+# Comments
 
 Comments can be placed in XML documents as communication to human
 readers. But comments might also be processed by the document parser,
@@ -272,7 +246,7 @@ The form of a comment is:
     <!-- comment -->
 
 
-To document a file?s history, put the following two comments near the
+To document a file's history, put the following two comments near the
 beginning of the file:
 
 

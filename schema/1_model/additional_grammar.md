@@ -3,9 +3,7 @@ layout:default
 title: Additional Grammar
 ---
 
-#Additional Grammar
-
-##Mathematical Expressions
+# Mathematical Expressions
 
 A mathematical expression is a set of instructions that
 is used to calculate a single numerical value. This value is then used in def, if and other elements.
@@ -24,12 +22,12 @@ All tokens in a mathematical expression must be separated by
 whitespace. N.B. This is an important rule. It allows us to implement a fast and efficient expression parser.
 
 
-Variable And Curve Names:
+## Variable And Curve Names:
 
 Rules for variable and curve names are described in the Names chapter.
 
 
-The Order Of Calculation:
+## The Order Of Calculation:
 
 Calculations inside of parentheses are completed before calculations
 outside of parentheses. Parentheses may be nested; calculations inside
@@ -40,19 +38,17 @@ parentheses.
 Otherwise, calculations proceed from left to right.
 
 
-There is no operator precedence. That is, the order of calculation is not
-affected by the presence or absence of a particular mathematical
+There is no operator precedence. That is, the order of calculation is not affected by the presence or absence of a particular mathematical
 operator.
 
 
-The expression 2 * 5 + 4 * 5 will evaluate to 70 while the expression ( 2 * 5
-) + ( 4 * 5 ) will evaluate to 30.
+The expression 2 * 5 + 4 * 5 will evaluate to 70 while the expression ( 2 * 5 ) + ( 4 * 5 ) will evaluate to 30.
 
 
 When in doubt, use parentheses.
 
 
-Operators:
+##Operators:
 
 Unary operators operate on a single following value. Binary operators
 operate on 2 values, one preceding and one following.
@@ -71,70 +67,70 @@ Unary Operators:
 Unary mathematical operators are:
 
 
-- 			-1.0 Multiplied By
+* ->>-1.0 Multiplied By
 
 
-INVERT 		1.0 Divided By
+* INVERT>>1.0 Divided By
 
 
-EXP 			Exponential Function
+* EXP>>Exponential Function
 
 
-LOG 			Natural Logarithm
+* LOG>>Natural Logarithm
 
 
-LOG10 		Logarithm Base 10
+* LOG10>>Logarithm Base 10
 
 
-SQRT 			Square Root
+* SQRT>>Square Root
 
 
-SIN 			Sine
+* SIN>>Sine
 
 
-COS 			Cosine
+* COS>>Cosine
 
 
-TAN 			Tangent
+* TAN>>Tangent
 
 
-ABS 			Absolute Value
+* ABS>>Absolute Value
 
 
-ARCSIN 		Arc Sine
+* ARCSIN>>Arc Sine
 
 
-ARCCOS 		Arc Cosine
+* ARCCOS>>Arc Cosine
 
 
-ARCTAN 		Arc Tangent
+* ARCTAN>>Arc Tangent
 
 
-SINDEG 		Sine Degrees
+* SINDEG>>Sine Degrees
 
 
-COSDEG 		Cosine Degrees
+* COSDEG>>Cosine Degrees
 
 
-TANDEG 		Tangent Degrees
+* TANDEG>>Tangent Degrees
 
 
-RADTODEG 		Radians To Degrees
+* RADTODEG>>Radians To Degrees
 
 
-DEGTORAD 		Degrees To Radians
+* DEGTORAD>>Degrees To Radians
 
 
-ROUND 		Round Off
+* ROUND>>Round Off
 
 
-ROUNDUP 		Round Up
+* ROUNDUP>>Round Up
 
 
-ROUNDDOWN 		Round Down
+* ROUNDDOWN>>Round Down
 
 
-FRACTPART 		Fractional Part
+* FRACTPART>>Fractional Part
 
 
 The argument for traditional trig operators is radians.
@@ -143,69 +139,69 @@ The argument for traditional trig operators is radians.
 Unary logical operators are:
 
 
-NOT	 		Logical Not
+NOT>>Logical Not
 
 
-Binary Operators:
+##Binary Operators:
 
 Binary mathematical operators are:
 
 
-+ 			Addition
+* +>>Addition
 
 
-- 			Subtraction
+* ->>Subtraction
 
 
-* 			Multiplication
+* *>>Multiplication
 
 
-/ 			Division
+* />>Division
 
 
-^ 			Raise To The Power
+* ^>>Raise To The Power
 
 
-MIN 			Return Minimum Of
+* MIN>>Return Minimum Of
 
 
-MAX 			Return Maximum Of
+* MAX>>Return Maximum Of
 
 
-ATAN2 		Arc Tangent (X, Y) With Horz
+* ATAN2>>Arc Tangent (X, Y) With Horz
 
 
-REM 			Remainder
+* REM>>Remainder
 
 
-ROUNDAT 		Round At < Or > Than 1
+* ROUNDAT>>Round At < Or > Than 1
 
 
 Binary logical operators are:
 
 
-AND 			Logical And
+* AND>>Logical And
 
 
-OR 			Logical Or
+* OR>>Logical Or
 
 
-EQ 			Equal To
+* EQ>>Equal To
 
 
-NE 			Not Equal To
+* NE>>Not Equal To
 
 
-GT 			Greater Than
+* GT>>Greater Than
 
 
-GE 			Greater Than Or Equal To
+* GE>>Greater Than Or Equal To
 
 
-LT 			Less Than
+* LT>>Less Than
 
 
-LE 			Less Than Or Equal To
+* LE>>Less Than Or Equal To
 
 
 Pi:
@@ -213,7 +209,7 @@ Pi:
 And we have one literal : PI (3.14159 …).
 
 
-Functions:
+##Functions:
 
 Functions are defined in the functions element. The only function just now is "curve".
 
@@ -222,13 +218,13 @@ Functions are invoked by name followed by an argument name, with the
 name enclosed in square brackets. For example:
 
 
-Frank-Starling [ RAP ]:
+    Frank-Starling [ RAP ]:
 
 describes a function named Frank-Starling operating on a variable named
 RAP. Note the requisite spaces separating all four tokens.
 
 
-##Internal Variables
+#Internal Variables
 
 
 The equation solver will recognize and provide the correct values for the following variables. The names are treated as if they were created in the structure "System".
@@ -236,18 +232,18 @@ The equation solver will recognize and provide the correct values for the follow
 
 System.X:
 
-The model?s independent variable, usually thought of as time.
+The model's independent variable, usually thought of as time.
 
 
 System.Dx: 
 
-Numerical integration?s integration interval. Actually used in
+Numerical integration's integration interval. Actually used in
 the calculations.
 
 
 System.DefaultDx: 
 
-Numerical integration?s integration interval. Used in
+Numerical integration's integration interval. Used in
 calculation if there is no truncation.
 
 
@@ -264,8 +260,7 @@ A random number from a normal distribution having a mean of 0 and a standard dev
 System.Pi: 
 
 This variable holds the value of pi – 3.14 …
-For more on system random numbers, see Volume 4. Control < scramble
->.
+For more on system random numbers, see Volume 4. Control < scramble >.
 
 
 System.Starting: 
@@ -277,56 +272,56 @@ solver is starting. Otherwise, it is FALSE.
 The following intervals are for display only. Do not mess with them:
 
 
-System.SolutionInterval
+* System.SolutionInterval
 
 
-System.DisplayInterval
+* System.DisplayInterval
 
 
-System.StorageInterval: Currently not implemented.
+* System.StorageInterval: Currently not implemented.
 
 
-##Special Numbers
+#Special Numbers
 
 The equation solver can recognize the following special numbers, in
 addition to recognizing integer and decimal numbers and scientific
 notation:
 
 
-TRUE: 
+##TRUE: 
 
 This is a synonym for 1. It is the value that is returned when an
 expression evaluates to true. This number should be displayed as TRUE.
 
 
-FALSE: 
+##FALSE: 
 
 This is a synonym for 0. It is the value that is returned when an
 expression evaluates to false. This number should be displayed as
 FALSE.
 
 
-INFINITE: 
+##INFINITE: 
 
 OK for use in logical expressions, but avoid using in
 mathematical expressions. This number is the result of a divide by 0. This number should be displayed as INFINITE.
 
 
-UNDEFINED: 
+##UNDEFINED: 
 
 OK for use in logical expressions, but avoid using in
 mathematical expressions. This number should be displayed as
 UNDEFINED.
 
 
-UNKNOWN: 
+##UNKNOWN: 
 
 OK for use in logical expressions, but avoid using in
 mathematical expressions. This number should be displayed as
 UNKNOWN.
 
 
-BLANK: 
+##BLANK: 
 
 OK for use in logical expressions, but avoid using in mathematical
 expressions. This number should be displayed as _____ (5 underline
@@ -337,10 +332,10 @@ The advice to not use some of these numbers in mathematical
 expressions follows from the fact that they are very big numbers that may just trigger math processor exceptions.
 
 
-##Names
+#Names
 
 
-In this model description schema, many of the model?s parts are named.
+In this model description schema, many of the model's parts are named.
 This makes the specification and manipulation of names an important
 undertaking.
 

@@ -5,7 +5,7 @@ title: Hummod Quickstart Guide
 
 #HumMod User's Manual, Version 1.2.1
 
-##Contents:
+#Contents:
 
 
 [Installation]
@@ -21,13 +21,13 @@ title: Hummod Quickstart Guide
 [Sample Execution]
 
 
-##Installation
+#Installation
 
 HumMod is available for download from our website, which can be found at
 http://www.hummod.org. The model and related files are available as a zip folder. To install HumMod, simply download the folder and unzip it to the directory of your choice. HumMod can then be opened by running the executable file HumMod.exe.
 
 
-##Introduction
+#Introduction
 
 
 HumMod is an integrated computer model of human physiology which allows the accurate simulation of the effects a person’s changing environment can have on their physiology. It is developed and maintained by the University of Mississippi Medical Center, and is the successor to the QCP (Quantitative Circulatory Physiology) program.
@@ -41,7 +41,7 @@ HumMod also allows you to control the person’s daily schedule, such as when they
 This quickstart guide will address the basic premise of the program,describe the various commands the program has available, and contains several sample executions. This guide is most useful to users that are unfamiliar with concepts of computer simulation or have not operated HumMod or its predecessor, QCP, before (though QCP users may benefit from reading the information regarding the user interface, as it has changed significantly).
 
 
-##Commands
+#Commands
 
 When HumMod is first open, it will be set to display the “Chart” results under the “Clinic” dropdown menu by default. The patient will also have the default characteristics of a 5’10”, 159 lb, 37-year-old man, existing in an uninteresting room temperature environment and following a fairly normal daily schedule.
 
@@ -63,13 +63,13 @@ The third command is “Restart”—this command immediately erases all data and
 sends the program back to its default parameters. The Restart command should be viewed with absolutely no less awe and respect than the act of physically shaking an Etch-a-Sketch. If you hit it, and you did not mean to, tough cookies, your work is gone. So be careful.
 
 
-###Saving and Loading
+##Saving and Loading
 
 There are two types of files that can be saved and loaded. The first is initial
 conditions, and the second is results. The initial condition refers to the physiological and environmental constraints that have been placed on a person before any time is actually advanced. Initial conditions files can be loaded or saved using the .ics file extension. Likewise, you can save the data that contains the solutions to the situations you create, as a .sol file. 
 
 
-###Options Window
+##Options Window
 
 ![Reset/Restart](https://github.com/HumMod/documentation/raw/gh-pages/images/hummod_quickstart/options_reset_restart.jpg)
 
@@ -97,18 +97,18 @@ The fourth set of options allows you to set how many display panels the forward 
 The final operation in the options window allows you to create a real-time log of the information recorded by the program. You can either append an old log file or make a new one at the destination which you specify. The bottom box allows you to toggle the log on or off, and also allows you to set the log to end after a certain number of steps.
 
 
-###Help
+##Help
 
 The help tab is used to access the program’s version information and developer
 contact information.
 
 
-###Forward/Back Arrows
+##Forward/Back Arrows
 
 The forward and back arrows act much in the same manner as they would in a web browser. They control movement through HumMod's myriad display panels. For example, if you switch from the "Chart" display to the "Daily Planner" display, and then once more to the "Air Supply" panel, pressing the back arrow twice would return the display to "Chart." Pressing the forward arrow twice would then return you to the "Air Supply" display.
 
 
-##Panel Display Overview
+#Panel Display Overview
 
 The dropdown lists on the second row control what screen is currently being displayed by HumMod. The default is “Chart,” a basic physiological overlay accessed through the “Clinic” menu.
 
@@ -131,7 +131,7 @@ The fifth tab is “Context.” Context shows basic information about the patient su
 
 The sixth tab is “Startup.” Startup displays the original values of physiological variables used by HumMod, and also displays the current values held by those variables.
 
-##Basic Operation
+#Basic Operation
 
 Creating a basic solution in HumMod is quite simple. Any advancement of time will yield results in five-thousand-odd variables that run the program.
 
@@ -156,7 +156,7 @@ Another important feature of HumMod’s user interface are the information boxes c
 holding information about the box, usually being either the normal values in a human being for the variables in the box, the units they are measured in, conversion factors for several units, or combinations of these three possibilities. The gray box with an exclamation point in the above image is an information box.
 
 
-##Sample Execution
+#Sample Execution
 
 
 The following is a walkthrough of a demonstration in which several of the virtual

@@ -3,31 +3,23 @@ layout: default
 title: Variables
 ---
 
-#Variables
-
-
-##Overview
+# __Overview__
 
 
 The variables element is used to declare and sometimes define the
-model?s variables.
+model's variables.
 
 
-There are currently eight variable types: var, parm, constant, fixedparm,
-fixedvar, timervar, normaldist, whitenoise.
+There are currently eight variable types: var, parm, constant, fixedparm, fixedvar, timervar, normaldist, whitenoise.
 
 
-A variable is declared when it is given a name. It is defined when it is
-given a value or instructions for calculating a value. Instructions usually
-come in the form of a mathematical expression.
+A variable is declared when it is given a name. It is defined when it is given a value or instructions for calculating a value. Instructions usually come in the form of a mathematical expression.
 
 
 All but two of the variable types are declared and defined in a single
 element. The exceptions are the var and fixedvar variable types. These
 variables can be declared and defined in a single element, but the var
-variable type is usually declared but not initially defined. Defining takes
-place in a math block as part of the calculation of a derivative value or an
-intermediate value.
+variable type is usually declared but not initially defined. Defining takes place in a math block as part of the calculation of a derivative value or an intermediate value.
 
 
 Variable Attributes:
@@ -41,9 +33,10 @@ The table below shows the attributes of each variable type.
 System variables are defined, read-only, and restarted.
 
 
-## < variables >
+# __< variables >__
 
-Use this element to declare and sometimes define the model?s variables.
+
+Use this element to declare and sometimes define the model's variables.
 
 
 There are a variety of variable types, but the two most common are an
@@ -73,12 +66,10 @@ These variable types are detailed next:
 * whitenoise
 
 
-## < var >
+# __< var >__
 
 
-Use this element to declare an ordinary variable. The variable can also be
-defined here (by assigning it an initial value), but defining is typically
-deferred to a math block.
+Use this element to declare an ordinary variable. The variable can also be defined here (by assigning it an initial value), but defining is typically deferred to a math block.
 
 
     <var>
@@ -96,7 +87,7 @@ deferred to a math block.
 Initial value is floating point.
 
 
-## < parm >
+# __< parm >__
 
 
 Use this element to declare and define a parameter, giving it a unique
@@ -118,12 +109,10 @@ variable name and an initial value.
 Initial value is floating point.
 
 
-A parameter is a defined variable having the additional privilege of being
-able to receive a new value in an interactive panel via a slide bar, radio
-button, check box, edit box, and maybe some other visual device.
+A parameter is a defined variable having the additional privilege of being able to receive a new value in an interactive panel via a slide bar, radio button, check box, edit box, and maybe some other visual device.
 
 
-## < constant >
+# __< constant >__
 
 
 Use this element to declare and define a constant, giving it a unique
@@ -145,15 +134,13 @@ variable name and a value.
 Value is floating point.
 
 
-A constant is a defined variable having the restriction that if can?t be
-assigned a new value. This restriction applies to <def> and <conditional>
-elements.
+A constant is a defined variable having the restriction that if can?t be assigned a new value. This restriction applies to `<def>` and `<conditional>` elements.
 
 
 Internally, a constant has the ReadOnly variable attribute.
 
 
-## < fixedparm >
+# __< fixedparm >__
 
 
 Use this element to declare and define a fixed parameter, giving it a
@@ -172,19 +159,18 @@ unique variable name and an initial value.
     </fixedparm>
 
 
+
 Initial value is floating point.
 
 
 A fixed parameter is a parameter having the additional attribute of not
-being reset to its initial conditions at solution restart. Thus, a particular
-value will remain in place over multiple solutions.
+being reset to its initial conditions at solution restart. Thus, a particular value will remain in place over multiple solutions.
 
 
-## < fixedvar >
+# __< fixedvar >__
 
 
-Use this element to declare and define a fixed variable, giving it a unique
-variable name and an (optional) initial value.
+Use this element to declare and define a fixed variable, giving it a unique variable name and an (optional) initial value.
 
 
     <fixedvar>
@@ -211,16 +197,14 @@ The primary use of this variable type is to implement scaling in context
 math.
 
 
-## < timervar >
+# __< timervar >__
 
 
 A timer variable is synchronized with the independent variable. It can
-count up from an initial value, count down from an initial value, or be in an
-OFF state. One use is to track elapsed time.
+count up from an initial value, count down from an initial value, or be in an OFF state. One use is to track elapsed time.
 
 
-Use this element to declare and define a timer variable, giving it a unique
-variable name, an (optional) initial value and an (optional) initial state.
+Use this element to declare and define a timer variable, giving it a unique variable name, an (optional) initial value and an (optional) initial state.
 
 
     <timervar>
@@ -248,12 +232,10 @@ There is a timer element in defininitions that can be used to change
 (usually conditionally) the value and state of a timer variable.
 
 
-## < normaldist >
+# __< normaldist >__
 
 
-Use this element to declare and define a variable that gets its value from a
-normal distribution. The mean and standard deviation of the distribution
-are specified here.
+Use this element to declare and define a variable that gets its value from a normal distribution. The mean and standard deviation of the distribution are specified here.
 
 
     <normaldist>
@@ -271,13 +253,11 @@ are specified here.
     </normaldist>
 
 
-Default values for mean and standard deviation are floating point 0 and 1.
-There is a scramble element in control that controls randomness for this
-variable and the whitenoise variable.
+Default values for mean and standard deviation are floating point 0 and 1. There is a scramble element in control that controls randomness for this variable and the whitenoise variable.
 
 
 
-## < whitenoise >
+# __< whitenoise >__
 
 
 Use this element to declare and define a variable that gets its value from a
@@ -300,9 +280,7 @@ specified here.
     </whitenoise>
 
 
-Default values for the lower and upper limits of the distribution are floating
-point 0 and 1.
+Default values for the lower and upper limits of the distribution are floating point 0 and 1.
 
 
-There is a scramble element in control that controls randomness for this
-variable and the normaldist variable.
+There is a scramble element in control that controls randomness for this variable and the normaldist variable.

@@ -1,4 +1,4 @@
-﻿---
+---
 layout: default
 title: Model Navigator
 ---
@@ -9,13 +9,13 @@ title: Model Navigator
 
 Model Navigator can parse a mathematical model and display information that will be useful to the model user and model builder.
 
-##Specifications
+#Specifications
 
 Model Navigator (V1.0) can parse any model that is compliant with the DES V1.0 XML schema.
 
 Compliant models include all of the models in the model library and DigitalHuman (V0.4).
 
-##Required Files
+#Required Files
 
 * Model Navigator.EXE
 
@@ -23,7 +23,7 @@ Compliant models include all of the models in the model library and DigitalHuman
 
 The Images folder is work in progress. It may not be needed in the next release.
 
-##General Organization
+#General Organization
 
 Most navigating activity takes place in Model Navigator's main window. Activity typically flows
 from left to right and top to bottom.
@@ -43,7 +43,7 @@ The functional areas of the main window are
 ![Navpic1]( https://github.com/HumMod/documentation/raw/gh-pages/images/navigator/navpic1.jpg)
 
 
-##Top Area
+#Top Area
 
 ![Navpic2]( https://github.com/HumMod/documentation/raw/gh-pages/images/navigator/navpic2.jpg)
 
@@ -55,7 +55,7 @@ The application main menu has just three choices: File, Settings and Help. File 
 Model Navigator displays model information as a function of variable name. The name of the variable currently being analyzed is displayed here. It is a global variable name (see below).
 At the top-left are forward-backward buttons that allow you to re-trace and re-re-trace previous variable picks. The figure above shows a history of 3 previous picks.
 
-##Left Area
+#Left Area
 
 The left area of the main window lists the names of all of the variables in the model. Variable names in DES V1.0 schema have two parts separated by a dot (.). The prefix is the name of the structure in which the variable is declared. The suffix is the local name, which can be used without qualification in its own structure. The global variable name is prefix-dotsuffix.
 
@@ -67,13 +67,13 @@ Click a structure name and then a local name to select a variable for further an
 
 ![Navpic3]( https://github.com/HumMod/documentation/raw/gh-pages/images/navigator/navpic3.jpg)
 
-##Tabs
+#Tabs
 
 The function in the center and right areas of the main window is determined by three tabs: Model Map, Doc's and Displays. The right area generally displays the contents of a relevant file (see below). So, the next three topics describe the functions offered in the center area in response to tab clicks.
 
 ![Navpic4]( https://github.com/HumMod/documentation/raw/gh-pages/images/navigator/navpic4.jpg)
 
-###Model Map
+##Model Map
 
 The center area for Model Map displays four items.
 
@@ -85,7 +85,7 @@ Next down is a list of all the variables involved in the definition. In this exa
 
 Finally at the bottom is a list of all the variables that our variable helps to define. As above, clicking on a (defines) name selects that variable for analysis. The entire window is updated after the click.
 
-###Doc's
+##Doc's
 
 Model documentation in DES V1.0 schema is divided into internal and external components.
 
@@ -110,7 +110,7 @@ The equation solver's parser does not parse these files, but the Model Navigator
 
 ![Navpic5]( https://github.com/HumMod/documentation/raw/gh-pages/images/navigator/navpic5.jpg)
 
-###Displays
+##Displays
 
 When the Displays tab is clicked, the center area describes where the variable being analyzed is displayed.
 
@@ -120,41 +120,41 @@ One occasion is when you want to view the values of a variable during a simulati
 
 ![Navpic6]( https://github.com/HumMod/documentation/raw/gh-pages/images/navigator/navpic6.jpg)
 
-##Right Area
+#Right Area
 The right area generally displays the contents of a relevant file for the variable name being analyzed. Alternatively, it displays documentation topics. XML is color highlighted. Colors can be selected using the Settings main menu selection (below). Specific content is identified by the selection color. In this example, selection highlighting shows the exact place in the document where the variable named [ADH] is declared. File information for the current file is displayed at the top of the right area.
 
 ![Navpic7]( https://github.com/HumMod/documentation/raw/gh-pages/images/navigator/navpic7.jpg)
 
-##File Main Menu Selection
+#File Main Menu Selection
 
 The File main menu selection offers Open which in turn offers a standard Windows Open File dialog box. Go here to select the next model to be analyzed by Model Navigator.
 
 ![Navpic8]( https://github.com/HumMod/documentation/raw/gh-pages/images/navigator/navpic8.jpg)
 
-##Settings Main Menu Selection 
+#Settings Main Menu Selection 
 
 The Settings main menu selection offers you several useful options, as described below.
 Clicking the Settings menu item invokes a tabbed dialog box (as shown in the following topics).
 
-##Parsing
+#Parsing
 
 Model Navigator can start up in two different ways. One is to start and to wait for you to select a file using the File main menu selection. This is the procedure at first use. The other way is to start up and automatically parse a predetermined file. This is useful if you are always browsing the same file, such as DigitalHuman. Click None for no action at startup. Click File to have the specified file parsed at startup.
 
 ![Navpic9]( https://github.com/HumMod/documentation/raw/gh-pages/images/navigator/navpic9.jpg)
 
-##File Names
+#File Names
 
 The DES schema allows file paths to be specified using the <?path ...?> processing instruction and filenames to be specified in the <?include ...?> processing instruction. These paths and filenames can be either relative to the model's main (root) file (common and preferred, as in DigitalHuman) or absolute (fully qualified), going all the way down to the disk drive letter (rare and not preferred). Use this panel to select either relative or fully qualified file names for the model being parsed.
 
 ![Navpic10]( https://github.com/HumMod/documentation/raw/gh-pages/images/navigator/navpic11.jpg)
 
-##Colors
+#Colors
 
 The file content box color highlights XML. Use this panel to specify highlighting colors. The first four colors identify XML tags, element content, processing instructions and comments. The last color is used when the file content box wants to highlight some content that is directly relevant to the variable being analyzed.
 
 ![Navpic11]( https://github.com/HumMod/documentation/raw/gh-pages/images/navigator/navpic12.jpg)
 
-##Conditional Includes
+#Conditional Includes
 
 A model that is compliant with DES V1.0 XML schema can be customized as it is parsed. This is implemented by conditional includes. Conditional includes are processing instructions that are specified as <?if Token Filename ?>. This translates to: if Token exists, then include Filename. There is also an <?ifnot ... ?> processing instruction. Tokens are created using <?create Token ?>.
 
@@ -166,11 +166,11 @@ Alternatively, all parts of the model are parsed and are visible in the browser 
 
 ![Navpic13]( https://github.com/HumMod/documentation/raw/gh-pages/images/navigator/navpic14.jpg)
 
-##Main Window
+#Main Window
 
 This panel shows the size and location of the main window (in pixels). It probably has no value.
 
-##Registry
+#Registry
 
 Model Navigator stores a small amount of important information in the registry. To uninstall 
 Model Navigator, simply delete the relevant files.
