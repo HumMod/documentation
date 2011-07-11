@@ -203,19 +203,19 @@ Character entities begin with an ampersand (&) and end with a semicolon
 (;).
 
 
-* Ampersand       	&    ('&amp');
+* Ampersand       	&    `&amp;`
 
-* Apostrophe      	'    ('&apos');
+* Apostrophe      	'    `&apos;`
 
-* Greater Than    	>    ('&gt');
+* Greater Than    	>    `&gt;`
 
-* Less Than       	<    ('&lt');
+* Less Than       	<    `&lt;`
 
-* Quotation Mark  	“    ('&quot');
+* Quotation Mark  	“    `&quot;`
 
 
 
-The table above shows the character entities for five special characters. For example, the greater than character can be represented in text by the character sequence ('&gt;').
+The table above shows the character entities for five special characters. For example, the greater than character can be represented in text by the character sequence `&gt;`.
 
 
 As the text is being parsed, the character entity is removed and replaced by the special character that has been specified.
@@ -227,7 +227,7 @@ An alternative representation of these two characters can come in handy.
 
 
 HTML supports these character entities also and many, many more
-(except that the apostrophe ('&apos;') is not supported).
+(except that the apostrophe `&apos;` is not supported).
 
 # Comments
 
