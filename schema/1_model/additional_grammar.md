@@ -218,7 +218,7 @@ Functions are invoked by name followed by an argument name, with the
 name enclosed in square brackets. For example:
 
 
-    Frank-Starling [ RAP ]:
+`Frank-Starling [ RAP ]`:
 
 describes a function named Frank-Starling operating on a variable named
 RAP. Note the requisite spaces separating all four tokens.
