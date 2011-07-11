@@ -5,7 +5,7 @@ title: Model Editor Manual
 
 #Using the HumMod Model Editor
 
-##Introduction to the Model Editor
+#Introduction to the Model Editor
 
 The HumMod Model Editor is a program allowing the user to view, edit, and run specific XML files using the DESolver, a controller and solver program designed to run the XML schema used by HumMod XML files.
 
@@ -41,16 +41,16 @@ As you can see, the DESolver has opened up and is running the root .DES file. Ti
 ![Advancing Time](https://github.com/HumMod/documentation/raw/gh-pages/images/editor/editor_bouncing.jpg)
 
 
-##Introduction To the DESolver
+#Introduction To the DESolver
 
 The DESolver is a combined controller and solver designed to work with HumMod-styled XML files. It is more simplistic than HumMod, and the commands available to it are very similar. The usage of the DESolver will depend heavily on the XML file being run by it, as displays and options for advancing time will be unique to the DES file being run as the model root. For any specific questions regarding the operation of the DESolver, please refer to the HumMod documentation. 
 
 The primary purpose of the DESolver is to run it with the model editor, which would allow you to run "mini's". which are models pre-coded to perform certain actions such as modeling a ball bouncing. There are other mini's as well to do things like measure glucose or model circulation. All of these mini's are availiable on the HumMod Github page.
 
-##Using the DESolver with the Model Editor
+#Using the DESolver with the Model Editor
 
 Once you get the Editor, DESolver, and the mini's from Github you will need to do some rearranging for the DESolver to work with the Editor. Open your Mini's folder and then drag the DESolver executable and .DES files into the Models folder (Both should be inside the Mini's folder). Then open your editor folder and drag the Model Editor to the same folder as your DESolver (so in the Models folder through the Mini's folder).If you have correctly set your controller and solver as described above you should now be able to run a mini on the DESolver.
 
-##Navigating the DESolver
+#Navigating the DESolver
 
 Any questions abput navigating through the DESolver can be answered in the HumMod User's Manual. The main differance between what you'll see in HumMod and what you'll see running Mini's in the DESolver is that the DESolver doesn't give you the all the options to change physiology that HumMod does. It only gives you the option to change preset variables for that particular model. On top of that the "go" option is also set to only be able to run certain time I.E. in the Bouncing Ball model you can only advance time by 1 second or to the next 10 second mark.

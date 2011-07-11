@@ -1,7 +1,7 @@
-------------------
+---
 layout: default
 title: Schema Index
--------------------
+---
 
 #2010 HumMod Schema
 
@@ -12,23 +12,20 @@ HumMod Schema
 ©1997 - 2011
 
 
-Tom Coleman
 
-mailto:support@biosim.com
+Tom Coleman
+[support@biosim.com]
 
 
 Robert Hester
-
-mailto:rhester@physiology.umc.edu
+[rhester@physiology.umc.edu]
 
 
 Richard Summers
-
-mailto:rsummers@emergmed.umsmed.edu
+[rsummers@emergmed.umsmed.edu]
 
 
 Department of Emergency Medicine
-
 Department of Physiology and Biophysics
 
 
@@ -39,7 +36,6 @@ University of Mississippi Medical Center
 Jackson, MS 39216 USA
 
 [Modeling Workshop Workshop](http://physiology.umc.edu/themodelingworkshop/)
-
 [Modeling Workshop Google Group](http://groups.google.com/group/modelingworkshop)
 
 ##Preface
@@ -59,6 +55,9 @@ Briefly, XML uses names in angle brackets (< and >) to identify data. The bracke
 There are five volumes in this document. The main task of these volumes
 is to describe all of the XML elements that we have defined for out
 modeling environment.
+
+
+## Contents
 
 
 [Volume 1. Model](1_model) 
