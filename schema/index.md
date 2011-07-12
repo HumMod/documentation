@@ -3,42 +3,7 @@ layout: default
 title: Schema Index
 ---
 
-#2010 HumMod Schema
-
-##About
-HumMod Schema
-
-
-©1997 - 2011
-
-
-
-Tom Coleman
-[support@biosim.com]
-
-
-Robert Hester
-[rhester@physiology.umc.edu]
-
-
-Richard Summers
-[rsummers@emergmed.umsmed.edu]
-
-
-Department of Emergency Medicine
-Department of Physiology and Biophysics
-
-
-University of Mississippi Medical Center
-
-2500 N. State St.
-
-Jackson, MS 39216 USA
-
-[Modeling Workshop Workshop](http://physiology.umc.edu/themodelingworkshop/)
-[Modeling Workshop Google Group](http://groups.google.com/group/modelingworkshop)
-
-##Preface
+# 2010 HumMod Schema
 
 These documents describe the rules used by HumMod, and possibly other
 equation solvers, to define a mathematical model.
@@ -49,7 +14,7 @@ with proprietary hardware, software and formatting. Extensible Markup
 Language (XML) was selected as the grammar.
 
 
-Briefly, XML uses names in angle brackets (< and >) to identify data. The brackets and names are called tags. Data lies between two tags. The tag – data – tag sequence is called an element and the data is called the element content.
+Briefly, XML uses names in angle brackets (`< and >`) to identify data. The brackets and names are called tags. Data lies between two tags. The tag – data – tag sequence is called an element and the data is called the element content.
 
 
 There are five volumes in this document. The main task of these volumes
@@ -57,7 +22,7 @@ is to describe all of the XML elements that we have defined for out
 modeling environment.
 
 
-## Contents
+# Contents
 
 
 [Volume 1. Model](1_model) 
@@ -70,7 +35,7 @@ used in model definition. The third describes the highest-level elements of the 
 [Volume 2. Structure] (2_structure)
 
 This volume describes the elements used in
-defining a model?s mathematical structure. Sections include variables,
+defining a model's mathematical structure. Sections include variables,
 equations, functions and math.
 
 
