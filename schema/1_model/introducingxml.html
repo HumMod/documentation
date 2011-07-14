@@ -1,17 +1,61 @@
----
-layout: default
-title: Introducing XML
----
+<!DOCTYPE html> 
+<html> 
+<head> 
+  <title>HumMod | Documentation</title> 
+  <link href="http://help.hummod.com/css/application.css" media="screen" rel="stylesheet" type="text/css" /> 
+</head> 
+<body id="help"> 
+  <!-- Fork Me Badge -->
+  <a href="http://github.com/hummod"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://d3nwyuy0nl342s.cloudfront.net/img/30f550e0d38ceb6ef5b81500c64d970b7fb0f028/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6f72616e67655f6666373630302e706e67" alt="Fork me on GitHub"></a>
+  <!-- End of Badge -->
+  <header id="main"> 
+    <h1><a href="http://hummod.org">HumMod</a></h1> 
+      <h2>Help</h2> 
+      <nav class="main"> 
+        <a href="http://hummod.org/about">About</a> / 
+        <a href="http://hummod.org/projects">Projects</a> / 
+      <a href="http://help.hummod.com">Help</a> / 
+        <a href="http://hummod.org/contact">Contact</a> 
+      </nav> 
+  </header> 
+    <hr /> 
+    
+    <nav id="block">
+  <section>
+    <header>
+<h1 align="left">HumMod User's Manual, Version 1.2.1</h1>
+</header>
+<u1>
+	<li><a href="#xmlh">XML History</a></li> 
 
-# XML History
+	<li><a href="#xmlb">XML Basics</a></li>
 
-XML is an acronym for Extensible Markup Language.
+	<li><a href="#pi">Processing Instructions</a></li>
+
+	<li><a href="#sc">Special Characters</a></li>
+
+	<li><a href="#comments">Comments</a></li>
+
+</u1>
+</section>
+</nav>
+    <section id = "xmlh">
+<header>
+<h1>XML History</h1>
+   <a href="#block">Back to the top.</a>
+</header>
+<p>
+    XML is an acronym for Extensible Markup Language.
 This document defines the rules for using XML to document structure and
 details of a mathematical model in human readable and computer
 readable format.
+</p>
 
+<p>
 Traditionally, a strange set of marks (like a wavy underline and a capital P facing backwards) were used by editors to communicate with typesetters, to ensure that a printed document was correctly laid out and attractive. This is called markup.
+</p>
 
+<p>
 With the advent of the digital computer and electronic documents, a
 markup schema was needed that could be read by computers and
 transported across networks. In about 1969, Charles Goldfarb, Ed
@@ -20,7 +64,9 @@ named after their last name initials (maybe). GML was intended to
 markup legal documents to send to the electronic typesetters that were
 rapidly replacing human typesetters. This scheme was renamed
 Generalized Markup Language (or so the story goes).
+</p>
 
+<p>
 In the mid 1970's, Goldfarb and others added features to GML and
 Generalized Markup Language became Standard Generalized Markup
 Language (or SGML). SGML became an ISO (International Organization
@@ -28,14 +74,18 @@ for Standardization) standard in 1986 and is the current standard for
 document markup work. But, looking ahead, it is not a markup language.
 It is a specification for creating markup languages and it is very
 complicated.
+</p>
 
+<p>
 In about 1990, Tim Berners-Lee and Anders Bergland at CERN in
 Switzerland used SGML to define Hypertext Markup Language (or HTML)
 and the World Wide Web was born. HTML describes how documents
 should look when displayed on a computer screen. HTML was not
 extensible, but it was corruptible. It was a weapon used in the great
 browser wars (and was a casualty at that).
+</p>
 
+<p>
 There remained a need to organize data as it passed not only from
 database to computer screen but also from database to database. And it
 would be nice if the scheme was much simpler than SGML. A number of
@@ -43,219 +93,314 @@ people including John Bosak, Tim Bray, James Clark and C.M. Sperberg-
 McQueen worked in 1996 and 1997 to define a new and better markup
 language using SGML as the overriding standard. Extensible Markup Language (or XML) was born. It received W3C (World Wide Web
 Consortium) endorsement in February 1998.
+</p>
 
+<p>
 The extensible in XML's name identifies one of its major strengths. XML
 can be customized to meet specific needs. In the case of mathematical
 model documentation, we've developed an XML schema that is used to
 represent the details of mathematical models, including the structure, the control of solutions and the display of results.
-
-
-# XML Basics
-
+   </p>
+   
+    <section id = "xmlb">
+<header>
+<h1>XML Basics</h1>
+   <a href="#block">Back to the top.</a>
+</header>
+<p>
 XML organizes data using information stored in angle brackets (also
 known as the less than and greater than signs). A pair of angle brackets and the enclosed information is known as a tag.
+</p>
 
-
+<p>
 A pair of tags and their enclosed data is known as an element. The
 leading tag is called the open tag. The enclosed data is called the
 content. The trailing tag is called the close tag. An example
+</p>
 
+    <p>
+    < name> Text representing a name. </ name>
+</p>
 
-    <name> Text representing a name. </name>
-
-
+<p>
 The first text in an open tag is the name of the element. Note that no
 spaces are allowed between the opening angle bracket and the start of
 the element name.
+</p>
 
-
+<p>
 The element name is repeated in the close tag with a forward slash (/)
 prefixed.
+</p>
 
-
+<p>
 Some elements do not enclose content. All of their information is
 represented by a single tag. These are called empty elements. An
 example
+</p>
 
+<p>
+    < beep/>
+</p>
 
-    <beep/>
-
-
+<p>
 An empty element is identified by a forward slash (/) as the last character before the closing angle bracket.
+</p>
 
-
+<p>
 In addition to the element name, additional information may be stored in a tag. This information is organized as attributes.
+</p>
 
-
+<p>
 Attributes are allowed in open tags and empty tags but not in close tags. An attribute has a name, an equals sign and a value. Spaces are allowed before and after the equals sign.
+</p>
 
-
+<p>
 Values are always enclosed in paired double (“) or single (') quotation
 marks.
+</p>
 
-
+<p>
 Attribute values are text that can represent anything. Values typically
 represent names of things and numbers.
+</p>   
 
-
-# Processing Instructions
+    <section id = "pi">
+<header>
+<h1>Processing Instructions</h1>
+   <a href="#block">Back to the top.</a>
+</header>
+<p>
 
 Processing instructions do not describe the content of an XML document.
 Rather, processing instructions describe how a document's content should be processed.
+</p>
 
-
+<p>
 Processing instructions are a private contract between the document and
 the parser.
+</p>
 
-
+<p>
 The form of a processing instruction is:
+</p>
 
+<p>
+    < ?name content ?>
+</p>
 
-    <?name content ?>
-
-
+<p>
 The name should follow XML's name rules. The content is all text after
 the name up to the final '?>'.
+</p>
 
-
+<p>
 HUMMOD has its own parsing algorithms. This allows us to make
 maximum use of processing instructions.
+</p>
 
-
+<p>
 Several processing instructions used by HUMMOD are described next.
+</p>
 
+<p>
+    ## < ?include … ?>
+</p>
 
-    ## <?include … ?>
-
-
+<p>
 A document is typically assembled from more than one file. The
 processor must be told the file names and the sequence.
+</p>
 
+<p>
 Use this instruction at the appropriate places in the document to tell the processor to include a file.
+</p>
 
+<p>
+    < ?include Filename goes here. ?>
+    </p>
 
-    <?include Filename goes here. ?>
-
-
+<p>
 The DES XML parser insists that included files end at a logical break in the document. Specifically, an included file cannot end inside of a tag or in text that is being parsed for content (#PCDATA). An included file can end between elements.
+</p>
 
+<p>
+    ## < ?path … ?>
+</p>
 
-    ## <?path … ?>
-
-
+<p>
 When a document is assembled from files located in more than one folder, it is convenient to define a path that is prefixed to all subsequent file names.
 
+<p>
 Use this instruction to define a path to be prefixed to subsequent file
 names.
+</p>
 
+<p>
+    < ?path Path specification goes here. ?>
+</p>
 
-    <?path Path specification goes here. ?>
+<p>
+    ## < ?create … ?>
+</p>
 
-
-    ## <?create … ?>
-
-
+<p>
 This instruction and the next two implement conditional includes. A
 conditional include is an include instruction that is executed if a specific token has been created. Otherwise, the include instruction is ignored.
+</p>
 
+<p>
 This multi-step process allows a single token to control multiple file
 includes.
+</p>
 
-
+<p>
 Use this instruction at the appropriate place in the document (usually early on) to create a token that will control the execution of a conditional include.
+</p>
 
+<p>
+    < ?create Token_name goes here. ?>
+</p>
 
-    <?create Token_name goes here. ?>
-
-
+<p>
 The token name cannot contain internal spaces. White space is used as
 the name delimiter.
+</p>
 
+<p>
+    ## < ?if … ?>
+</p>
 
-    ## <?if … ?>
-
-
+<p>
 If the named token has been created, the named file is included.
 Otherwise, no action is taken.
+</p>
 
+<p>
+    < ?if Token_name File name. ?>
+</p>
 
-    <?if Token_name File name. ?>
+    <p>
+    ## < ?ifnot … ?>
+</p>
 
-
-    ## <?ifnot … ?>
-
-
+<p>
 If the named token has not been created, the named file is included.
 Otherwise, no action is taken.
+</p>
+
+<p>
+    < ?ifnot Token_name File name. ?>
+</p>
 
 
-    <?ifnot Token_name File name. ?>
+    <section id = "sc">
+<header>
+<h1>Special Characters</h1>
+   <a href="#block">Back to the top.</a>
+</header>
+<p>
+The less than ('< ') and greater than ('>') characters are used to identify tags in XML. As you might imagine, if you use these characters in ordinary text, the XML parser will declare an error. Or, worse yet, it will commit an error without declaring it.
+</p>
 
-# Special Characters
-
-The less than ('<') and greater than ('>') characters are used to identify tags in XML. As you might imagine, if you use these characters in ordinary text, the XML parser will declare an error. Or, worse yet, it will commit an error without declaring it.
-
-
+<p>
 To work around this, XML defines several special characters and provides a way to represent them unambiguously and without error. Technically, the representations for special characters are called character entities.
+</p>
 
-
+<p>
 Character entities begin with an ampersand (&) and end with a semicolon
 (;).
+</p>
 
-
+<p>
 * Ampersand       	&    `&amp;`
+</p>
 
+<p>
 * Apostrophe      	'    `&apos;`
+</p>
 
+<p>
 * Greater Than    	>    `&gt;`
+</p>
 
+<p>
 * Less Than       	<    `&lt;`
+</p>
 
+<p>
 * Quotation Mark  	“    `&quot;`
+</p>
 
-
-
+<p>
 The table above shows the character entities for five special characters. For example, the greater than character can be represented in text by the character sequence `&gt;`.
+</p>
 
-
+<p>
 As the text is being parsed, the character entity is removed and replaced by the special character that has been specified.
+</p>
 
-
+<p>
 The single quote (apostrophe above) and double quote (quotation mark
 above) are allowed in XML documents, but some restrictions can occur.
 An alternative representation of these two characters can come in handy.
+</p>
 
-
+<p>
 HTML supports these character entities also and many, many more
 (except that the apostrophe `&apos;` is not supported).
+</p>
 
-# Comments
-
-Comments can be placed in XML documents as communication to human
+<section id = "comments">
+<header>
+<h1>Comments</h1>
+   <a href="#block">Back to the top.</a>
+</header>
+  <p>
+  Comments can be placed in XML documents as communication to human
 readers. But comments might also be processed by the document parser,
 although this was not the original intention.
+</p>
 
-
+<p>
 Comments may appear anywhere in a document, even before and after
 the document element.
+</p>
 
-
+<p>
 The form of a comment is:
+</p>
 
+<p>
+    < !-- comment -->
+</p>
 
-    <!-- comment -->
-
-
+<p>
 To document a file's history, put the following two comments near the
 beginning of the file:
+</p>
 
+<p>
+    < !-- datecreated dd-mmm-yy -->
+    </p>
+    
+    <p>
+    < !-- datelastchanged dd-mmm-yy -->
+</p>
 
-    <!-- datecreated dd-mmm-yy -->
-    <!-- datelastchanged dd-mmm-yy -->
-
-
+<p>
 Forbidden characters, such as angle brackets, may appear in comments.
 The only character sequence that is not allowed in a comment is two
 dashes in a row (--) that do not immediately precede the closing angle
 bracket. XML parsers scan for the character sequence dash-dash to
 locate the end of a comment, ignoring all other characters.
+  </p>
+  
+    </section>
+  </div> 
+  
+  <footer class="main"> 
+    &copy;2010 &ndash; University of Mississippi Medical Center
+  </footer> 
+</body> 
+</html>
