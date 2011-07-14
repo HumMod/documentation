@@ -5,8 +5,8 @@ title: Documentation Projects
 
 #List of Documentation Projects
 
-* [Main Hummod Documentation](projects/library)
+* [Main Hummod Documentation](library)
 
-* [Editor/DESolver Documentation](projects/editor-desolver)
+* [Editor/DESolver Documentation](editor-desolver)
 
-* [Navigator](projects/navigator)
+* [Navigator](navigator)
