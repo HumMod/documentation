@@ -219,3 +219,12 @@ body footer {
 body#help {
   overflow: auto;
 }
+
+section, section header {
+  margin-bottom: 1em;
+}
+
+img {
+  margin: 0 auto;
+  padding: 1em 0em;
+}
