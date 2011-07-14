@@ -1,195 +1,500 @@
----
-layout: default
-title: Hummod Quickstart Guide
----
-
-#HumMod User's Manual, Version 1.2.1
-
-#Contents:
-
-
-[Installation]
-
-[Introduction]
-
-[Commands]
-
-[Panel Display Overview]
-
-[Basic Operation]
-
-[Sample Execution]
+<!DOCTYPE HTML>
+<html lang = "en">
+<head>
+	<title>HumMod User's Manual</title>
+	<meta charset = "UTF-8" />
+    <style type="text/css"> 
+	/*
+ * FIXME: Introduce SCSS & Sprockets
+*/
 
 
-#Installation
-
-HumMod is available for download from our website, which can be found at
-http://www.hummod.org. The model and related files are available as a zip folder. To install HumMod, simply download the folder and unzip it to the directory of your choice. HumMod can then be opened by running the executable file HumMod.exe.
-
-
-#Introduction
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
 
 
-HumMod is an integrated computer model of human physiology which allows the accurate simulation of the effects a person’s changing environment can have on their physiology. It is developed and maintained by the University of Mississippi Medical Center, and is the successor to the QCP (Quantitative Circulatory Physiology) program.
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
 
+/* ================ */
+/* = The 1Kb Grid = */
+/* 12 columns, 60 pixels each, with 20 pixel gutter */
+/* ================ */
+.grid_1 {
+  width: 60px; }
+
+.grid_2 {
+  width: 140px; }
+
+.grid_3 {
+  width: 220px; }
+
+.grid_4 {
+  width: 300px; }
+
+.grid_5 {
+  width: 380px; }
+
+.grid_6, body #main h1, body #main h2, #home #content section, #projects #library, #projects #qcp {
+  width: 460px; }
+
+.grid_7 {
+  width: 540px; }
+
+.grid_8 {
+  width: 620px; }
+
+.grid_9 {
+  width: 700px; }
+
+.grid_10 {
+  width: 780px; }
+
+.grid_11 {
+  width: 860px; }
+
+.grid_12, body #main nav.main, body footer {
+  width: 940px; }
+
+.column, body #main h1, body #main h2, body #main nav.main, body hr, body #content nav#block, body #content nav#block div, body footer, #projects #library, #projects #qcp {
+  margin: 0 10px;
+  overflow: hidden;
+  float: left;
+  display: inline; }
+
+.row, body, body #main, body #content {
+  width: 960px;
+  margin: 0 auto;
+  overflow: hidden; }
+  .row .row, body .row, body #main .row, body #content .row, .row body, body body, body #main body, body #content body, .row body #main, body .row #main, body #main, body #main #main, body #content #main, .row body #content, body .row #content, body #content, body #main #content, body #content #content {
+    margin: 0 -10px;
+    width: auto;
+    display: inline-block; }
+
+/* Typography */
+.red {
+  background: red; }
+
+.color_red {
+  color: #961227; }
+
+.hidden {
+  display: none; }
+
+body {
+  color: #666666;
+  font-family: "Helvetica", "Arial", "sans-serif";
+  font-size: 14px; }
+
+a {
+  color: #61677a;
+  text-decoration: none; }
+
+a:hover, header#main h2 {
+  color: #961227; }
+
+a.download {
+  background-image: -webkit-linear-gradient(top, white, #e5e5e5);
+  border: 1px solid #e5e5e5;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  display: block;
+  font-size: 1.71428571em;
+  text-align: center;
+  padding: 0.21428571em;
+  width: 150px; }
+
+a.download, a.download:hover, a.download:active {
+  color: #61677a !important;
+  text-decoration: none !important; }
+
+a.download:hover {
+  background-image: -webkit-linear-gradient(bottom, white, #e5e5e5); }
+
+a.download:active {
+  background: #e5e5e5; }
+
+header#main h1 {
+  color: #24262D;
+  font-size: 7.71428571em;
+  font-weight: bold; }
+  header#main h1 a {
+    color: #24262D; }
+header#main h1 a:hover {
+  color: #961227; }
+header#main h2 {
+  font-size: 5.14285714em; }
+header#main nav {
+  font-size: 1.07142857em; }
+
+nav.main a {
+  text-decoration: underline; }
+
+nav#block section {
+  font-size: 1.07142857em;
+  text-decoration: underline; }
+
+#content {
+  line-height: 14px; }
+  #content p {
+    margin-bottom: 10px;
+    text-indent: 25px; }
+  #content section h1 {
+    font-size: 1.28571429em;
+    line-height: 0.94285714em; }
+
+footer {
+  color: #8a92ad; }
+
+/* General Pages */
+body #main h1, body #main h2 {
+  padding: 0; }
+body #main h2 {
+  margin-top: 0.43em;
+  padding-bottom: 10px; }
+body #main nav.main {
+  margin-left: 18px; }
+body hr {
+  background: #8a92ad;
+  border: 0;
+  height: 1px;
+  margin-top: 10px;
+  margin-left: 0px;
+  margin-bottom: 1.71428571em;
+  width: 944px; }
+body #content nav#block {
+  background: #e0e6f9;
+  border: 2px solid #8a92ad;
+  padding: 10px;
+  padding-top: 0px;
+  width: 920px; }
+  body #content nav#block div {
+    width: 210px; }
+    body #content nav#block div section {
+      margin-top: 10px; }
+      body #content nav#block div section li {
+        margin: 2px 0px; }
+body footer {
+  margin-top: 0.85714286em;
+  text-align: center; }
+  
+body#help {
+  overflow: auto;
+}
+
+	.thrColElsHdr #Installation {
+		}
+	.thrColElsHdr #Introduction {
+	}
+	.thrColElsHdr #Commands {
+	}
+	.thrColElsHdr #PDO {
+	}
+	.thrColElsHdr #BO {
+	}
+	.thrColElsHdr #SE {
+	}
+	.thrColElsHdr #block {
+	}
+	</style>
+</head>
+
+<body>
+
+<h2>HumMod User's Manual, Version 1.2.1</h2>
+
+<div id="block">
+<h3 align="left">Contents:</h3>
+
+<u1>
+	<li><a href="#Installation">Installation</a></li> 
+
+	<li><a href="#Introduction">Introduction</a></li>
+
+	<li><a href="#Commands">Commands</a></li>
+
+	<li><a href="#PDO">Panel Display Overview</a></li>
+
+	<li><a href="#BO">Basic Operation</a></li>
+
+	<li><a href="#SE">Sample Execution</a></li>
+</u1>
+
+<div id="Installation">
+  <header>
+    <h3>Installation</h3>
+    <a href="#block">Back to the top.</a>
+  </header>
+  <p>
+  HumMod is available for download from our website, which can be found at
+<a href="http://www.hummod.org">http://www.hummod.org</a>. The model and related files are available as a zip folder. To install HumMod, simply download the folder and unzip it to the directory of your choice. HumMod can then be opened by running the executable file HumMod.exe.
+  </p>
+</div>
+
+<div id="Introduction">
+	<header>
+    <h3>Introduction</h3>
+    <a href="#block">Back to the top.</a>
+    </header>
+    <p>
+    HumMod is an integrated computer model of human physiology which allows the accurate simulation of the effects a person’s changing environment can have on their physiology. It is developed and maintained by the University of Mississippi Medical Center, and is the successor to the QCP (Quantitative Circulatory Physiology) program.</p>
+<p>
 HumMod allows you to create disturbances in the environment and physiology of a virtual person and to track the effects these changes have over time, and to track the effects of these disturbances. Disturbances can be environmental (i.e. the atmospheric pressure surrounding them), related to normal physiology (i.e. the amount and intensity of physical exercise the patient is undergoing),
 or related to pathophysiology (i.e. the patient has diabetes mellitus).
-
+</p>
+<p>
 HumMod also allows you to control the person’s daily schedule, such as when they eat, when they exercise, when they work, and when they sleep.
-
-
+</p>
+<p>
 This quickstart guide will address the basic premise of the program,describe the various commands the program has available, and contains several sample executions. This guide is most useful to users that are unfamiliar with concepts of computer simulation or have not operated HumMod or its predecessor, QCP, before (though QCP users may benefit from reading the information regarding the user interface, as it has changed significantly).
+</p> 
+</div>
 
-
-#Commands
-
-When HumMod is first open, it will be set to display the “Chart” results under the “Clinic” dropdown menu by default. The patient will also have the default characteristics of a 5’10”, 159 lb, 37-year-old man, existing in an uninteresting room temperature environment and following a fairly normal daily schedule.
-
-
+<div id="Commands">
+	<header>
+	<h3>Commands</h3>
+	<a href="#block">Back to the top.</a>
+	</header>
+<p>
+    When HumMod is first open, it will be set to display the “Chart” results under the “Clinic” dropdown menu by default. The patient will also have the default characteristics of a 5’10”, 159 lb, 37-year-old man, existing in an uninteresting room temperature environment and following a fairly normal daily schedule.
+</p>
+<p>
 The most basic command in HumMod is the “Go” dropdown menu. Since
 solutions in HumMod are calculated as a function of time, time must be advanced in order to achieve results.
+</p>
 
-![Advancing Time](https://github.com/HumMod/documentation/raw/gh-pages/images/hummod_quickstart/advancing_time.jpg)
+<img src="https://github.com/HumMod/documentation/raw/gh-pages/images/hummod_quickstart/advancing_time.jpg" alt="Advancing Time" width="544" height="185">
 
-
+<p>
 Advancing a patient under the default conditions for any period of time will yield
 predictable benchmark results.
-
-
+</p>
+<p>
 The “Stop” command can be used to pause the advancement of the simulation at any time if the user desires to examine a specific point or to change something before the simulation reaches its originally scheduled duration.
-
-
+</p>
+<p>
 The third command is “Restart”—this command immediately erases all data and
 sends the program back to its default parameters. The Restart command should be viewed with absolutely no less awe and respect than the act of physically shaking an Etch-a-Sketch. If you hit it, and you did not mean to, tough cookies, your work is gone. So be careful.
+</p>
 
-
-##Saving and Loading
-
+<h4>Saving and Loading</h4>
+<p>
 There are two types of files that can be saved and loaded. The first is initial
 conditions, and the second is results. The initial condition refers to the physiological and environmental constraints that have been placed on a person before any time is actually advanced. Initial conditions files can be loaded or saved using the .ics file extension. Likewise, you can save the data that contains the solutions to the situations you create, as a .sol file. 
+</p>
 
+<h4>Options Window</h4>
 
-##Options Window
+<img src="https://github.com/HumMod/documentation/raw/gh-pages/images/hummod_quickstart/options_reset_restart.jpg" alt="Options Reset Restart" width="383" height="354"> 
 
-![Reset/Restart](https://github.com/HumMod/documentation/raw/gh-pages/images/hummod_quickstart/options_reset_restart.jpg)
-
+<p>
 The options window contains a couple of different subsets. The first tab is
 “Reset/Restart.” There are two buttons under this category. Picking the first option will duplicate the action of the “Restart” button and clear all data while returning values to their default settings. Clicking the second button will reset the solution to time zero and initial conditions but keep environmental and physiological factors at the values they have been changed to.
+</p>
 
+<img src="https://github.com/HumMod/documentation/raw/gh-pages/images/hummod_quickstart/options_notes.jpg" alt="Notes" width="386" height="352">
 
-![Notes](https://github.com/HumMod/documentation/raw/gh-pages/images/hummod_quickstart/options_notes.jpg)
+<p>
+ The second tab under options allows for the notes section that occupies part of the “Chart” display (the default display) to be edited. Additional notes can be added or erased as desired.
+</p>
 
-The second tab under options allows for the notes section that occupies part of the “Chart” display (the default display) to be edited. Additional notes can be added or erased as desired.
+<img src="https://github.com/HumMod/documentation/raw/gh-pages/images/hummod_quickstart/options_ics.jpg" alt="Saving IC's" width="385" height="351">
 
+<p>
+ The third set of options allows you to decide whether saving initial conditions will record the IC file's starting time as the current time or whether the initial conditions file will be started from time zero.
+</p>
 
-![Saving IC's](https://github.com/HumMod/documentation/raw/gh-pages/images/hummod_quickstart/options_ics.jpg)
+<img src="https://github.com/HumMod/documentation/raw/gh-pages/images/hummod_quickstart/options_arrows.jpg" alt="Arrows" width="386" height="352">
 
-The third set of options allows you to decide whether saving initial conditions will record the IC file's starting time as the current time or whether the initial conditions file will be started from time zero.
+<p>
+ The fourth set of options allows you to set how many display panels the forward and back arrows will remember, up to a possible maximum of 10 choices.
+</p>
 
+<img src="https://github.com/HumMod/documentation/raw/gh-pages/images/hummod_quickstart/options_log.jpg" alt="Log" width="385" height="353"> 
 
-![Arrows](https://github.com/HumMod/documentation/raw/gh-pages/images/hummod_quickstart/options_arrows.jpg)
-
-The fourth set of options allows you to set how many display panels the forward and back arrows will remember, up to a possible maximum of 10 choices.
-
-
-![Log](https://github.com/HumMod/documentation/raw/gh-pages/images/hummod_quickstart/options_log.jpg)
-
+<p>
 The final operation in the options window allows you to create a real-time log of the information recorded by the program. You can either append an old log file or make a new one at the destination which you specify. The bottom box allows you to toggle the log on or off, and also allows you to set the log to end after a certain number of steps.
+</p>
 
+<h4>Help</h4>
 
-##Help
-
+<p>
 The help tab is used to access the program’s version information and developer
 contact information.
+</p>
 
+<h4>Forward/Back Arrows</h4>
 
-##Forward/Back Arrows
-
+<p>
 The forward and back arrows act much in the same manner as they would in a web browser. They control movement through HumMod's myriad display panels. For example, if you switch from the "Chart" display to the "Daily Planner" display, and then once more to the "Air Supply" panel, pressing the back arrow twice would return the display to "Chart." Pressing the forward arrow twice would then return you to the "Air Supply" display.
+</p>
+</div>
 
-
-#Panel Display Overview
-
+<div id="PDO">
+	<header>
+	<h3>Panel Display Overview</h3>
+	<a href="#block">Back to the top.</a>
+	</header>
+	<p>
 The dropdown lists on the second row control what screen is currently being displayed by HumMod. The default is “Chart,” a basic physiological overlay accessed through the “Clinic” menu.
+</p>
 
-
+<p>
 The first tab is “Physiology.” Physiology focuses on physiological values and conditions like the concentration of electrolytes in the body, hormone levels, and the overall activity level of several organ systems such as the circulatory system.
+</p>
 
-
+<p>
 The second tab is “Organs.” Organs contains in-depth information regarding the
 structural values of specific organs, including size, tissue damage, and fuel consumption, among other things.
+</p>
 
-
+<p>
 The third tab is “Lifestyle.” Lifestyle controls the environment of the model, from clothing to exercise to the actual environment surrounding the person.
+</p>
 
-
+<p>
 The fourth tab is “Clinic.” Clinic contains displays that are medical in nature, allowing for the patient to be treated with different drugs and anesthesia, as well as allowing for the activation of certain afflictions such as hemorrhage.
+</p>
 
-
+<p>
 The fifth tab is “Context.” Context shows basic information about the patient such as their gender, body size, and age.
+</p>
 
-
+<p>
 The sixth tab is “Startup.” Startup displays the original values of physiological variables used by HumMod, and also displays the current values held by those variables.
+</p>
 
-#Basic Operation
+<div id="BO">
+	<header>
+	<h3>Basic Operations</h3>
+	<a href="#block">Back to the top.</a>
+	</header>
+    <p>
+    Creating a basic solution in HumMod is quite simple. Any advancement of time will yield results in five-thousand-odd variables that run the program.
+</p>
 
-Creating a basic solution in HumMod is quite simple. Any advancement of time will yield results in five-thousand-odd variables that run the program.
-
+<p>
 For example, just opening the program and immediately advancing it some period of time will give you basic results: A blood pressure of about
 120/79, an internal temperature of around 98.5°F, a respiratory rate of roughly 12.0 breaths/minute, and a heart rate of approximately 72 BPM. This is the default "Chart" display which is opened up every time HumMod launches. 
+</p>
 
-!["Chart" display](https://github.com/HumMod/documentation/raw/gh-pages/images/hummod_quickstart/initial.jpg)
+<img src="https://github.com/HumMod/documentation/raw/gh-pages/images/hummod_quickstart/initial.jpg" alt="&quot;Chart&quot; Display" width="546" height="722"> 
 
-
+<p>
 However, using the dropdown menu, you can navigate to any number of displays, such as our ersatz human’s blood volume statistics.
+</p>
 
-![Blood Volume Statistics](https://github.com/HumMod/documentation/raw/gh-pages/images/hummod_quickstart/blood_volume.jpg)
+<img src="https://github.com/HumMod/documentation/raw/gh-pages/images/hummod_quickstart/blood_volume.jpg" alt="Blood Volume Statistics" width="548" height="724"> 
 
-
+<p>
 Any number of conditions or parameters can also be changed in order to create certain scenarios and results in the simulation. Conditions
 are changed either through the use of radiobuttons (used for options that are toggled on/off) or sliders (used to set variables which have many possible quantitative settings). Oftentimes, both types of controls are used to influence a variable, using a radiobutton to turn the functionality of the slidebar below it, as is the case in the example below:
+</p>
 
-![Radiobutton, Slider, and Information Box](https://github.com/HumMod/documentation/raw/gh-pages/images/hummod_quickstart/sample_box.jpg)
+<img src="https://github.com/HumMod/documentation/raw/gh-pages/images/hummod_quickstart/sample_box.jpg" alt="Radio button, Slider, and Information Box" width="254" height="103"> 
 
-
+<p>
 Another important feature of HumMod’s user interface are the information boxes contained in many of the displays. Clicking on these boxes will yield a dialog box
 holding information about the box, usually being either the normal values in a human being for the variables in the box, the units they are measured in, conversion factors for several units, or combinations of these three possibilities. The gray box with an exclamation point in the above image is an information box.
+</p>
 
-
-#Sample Execution
-
-
+<div id="SE">
+	<header>
+	<h3>Sample Execution</h3>
+	<a href="#block">Back to the top.</a>
+	</header>
+    <p>
+    
 The following is a walkthrough of a demonstration in which several of the virtual
 person’s environmental variables are changed and the effects of these changes are modified over time. 
-
+	</p>
+    
+    <p>
 First, open HumMod. It should be set, as always to the “Chart” of a
 patient with default statistics. Use “Go” to advance the patient 10 minutes. His
 uninteresting vitals should be just as uninteresting as they were when you started. Now we’re going to create a severe environmental change. 
+</p>
 
+<p>
 So, our subject is now a mountain climber that has become stranded, so
 we’ll need to change his environmental factors to match the circumstances that match this crisis.
+</p>
 
+<p>
 The bottom row of dropdown menus controls the navigation to all of the variables that the program can monitor and all of the factors that can be changed. The “Environment” options and display can be found under the “Lifestyle” dropdown menu. Select this “Environment” option so that it can be changed in order to simulate our marooned mountaineer. 
+</p>
 
-![Lifestyle Dropdown Menu](https://github.com/HumMod/documentation/raw/gh-pages/images/hummod_quickstart/lifestyle_highlight.jpg)
+<img src="https://github.com/HumMod/documentation/raw/gh-pages/images/hummod_quickstart/lifestyle_highlight.jpg" alt="Lifestyle Dropdown Menu" width="123" height="143"> 
 
-
+<p>
 The Environment page allows you to control temperature, altitude (which changes atmospheric pressure), wind speed, relative humidity, and the level of clothing worn by the patient (a choice between “no clothing”, “summer”, “normal”, “winter” and “arctic”).
+</p>
 
-![Environment](https://github.com/HumMod/documentation/raw/gh-pages/images/hummod_quickstart/environment.jpg)
+<img src="https://github.com/HumMod/documentation/raw/gh-pages/images/hummod_quickstart/environment.jpg" alt="Environment" width="541" height="495"> 
 
-
+<p>
 Let’s have our subject stranded at 7000 feet (2134 meters for the
 metrically inclined), suffering through 20 mph winds at 9°F, thankfully protected by warm winter clothing. If you advance the solution using "Go" for 30 minutes, you will see changes in the subject's physiology. If you go to "Chart", his vitals will appear to be fairly normal, except for his respiratory rate, which spikes due to the thinness of the air at 7000 feet. This lack of oxygen is having profound effects elsewhere, even though the subject's chart appers normal. Use to the "Physiology" dropdown menu, and go to "Acid/Base."
+</p>
 
-![Acid-Base](https://github.com/HumMod/documentation/raw/gh-pages/images/hummod_quickstart/acid_base.jpg)
+<img src="https://github.com/HumMod/documentation/raw/gh-pages/images/hummod_quickstart/acid_base.jpg" alt="Acid-Base" width="543" height="492"> 
 
-
+<p>
 The subject's blood pH is currently rising due to the effects of the thin mountain air, as can be easily seen by the graph tracking it over time.
+</p>
 
-
+<p>
 The subject is surviving these conditions, but a more severe set of conditions could be creating by lowering the temperature even further, of moving him to a higher altitude. Such disturbances could easily cause major physiological aberrations, such as the body temperature dropping to 80°F or something fairly unconcerning like that. 
+</p>
 
+<p>
 If these major changes affect the patient's physiology in a visible manner, often  a dialog box will interrupt the simultation, automatically pausing it and giving a description of the subject's condition, such as "I'm like.....confused."
+</p>
 
+<p>
 At this point, the dialog box gives the option either to interrupt the simulation and attempt to change conditions or observe the patient's physiology at current, or to continue the simulation for the planned time interval under the same conditions.
+</p>
