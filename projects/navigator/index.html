@@ -1,182 +1,433 @@
----
-layout: default
-title: Model Navigator
----
+<!DOCTYPE html> 
+<html> 
+<head> 
+  <title>HumMod | Documentation</title> 
+  <link href="/css/application.css" media="screen" rel="stylesheet" type="text/css" /> 
+</head> 
+<body id="help"> 
+  <!-- Fork Me Badge -->
+  <a href="http://github.com/hummod"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://d3nwyuy0nl342s.cloudfront.net/img/30f550e0d38ceb6ef5b81500c64d970b7fb0f028/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6f72616e67655f6666373630302e706e67" alt="Fork me on GitHub"></a>
+  <!-- End of Badge -->
+  <header id="main"> 
+    <h1><a href="http://hummod.org">HumMod</a></h1> 
+      <h2>Help</h2> 
+      <nav class="main"> 
+        <a href="http://hummod.org/about">About</a> / 
+        <a href="http://hummod.org/projects">Projects</a> / 
+        Help / 
+        <a href="http://hummod.org/contact">Contact</a> 
+      </nav> 
+  </header> 
+    <hr /> 
+  <div id="content">
 
-#Model Navigator (V1.0) User's Manual
+<section id = "navigator-main">
+<header>
+<h1>Model Navigator (V1.0) User's Manual</h1>
+</header>
 
+<p>
 27-Jun-11
+</p>
 
+<p>
 Model Navigator can parse a mathematical model and display information that will be useful to the model user and model builder.
+</p>
 
-#Specifications
+</section>
 
+<section id = "specs">
+<header>
+<h1>Specifications</h1>
+</header>
+
+<p>
 Model Navigator (V1.0) can parse any model that is compliant with the DES V1.0 XML schema.
+</p>
 
+<p>
 Compliant models include all of the models in the model library and DigitalHuman (V0.4).
+</p>
 
-#Required Files
+</section>
 
-* Model Navigator.EXE
+<section id = "required-files">
+<header>
+<h1>Required Files</h1>
+</header>
 
-* Images folder containing ModelNavigator.ICO
+<ul>
+<li>Model Navigator.EXE</li>
+<li>Images folder containing ModelNavigator.ICO</li>
+</ul>
 
+<p>
 The Images folder is work in progress. It may not be needed in the next release.
+</p>
 
-#General Organization
+</section>
 
-Most navigating activity takes place in Model Navigator's main window. Activity typically flows
-from left to right and top to bottom.
+<section id = "organization">
+<header>
+<h1>General Organization</h1>
+</header>
 
-The functional areas of the main window are
+<p>
+Most navigating activity takes place in Model Navigator's main window. Activity typically flows from left to right and top to bottom.
+</p>
 
-* Top Area - Shows the name of the variable that is currently being investigated in detail.
-
-* Left Area - Provides a list of all the model's variable names.
-
-* Tabs - Three tabs control the functionality of the center and right areas.
-
-* Center Area - Details related to cause and effect.
-
-* Right Area - File Content
-
-![Navpic1]( https://github.com/HumMod/documentation/raw/gh-pages/images/navigator/navpic1.jpg)
+<p>
+The functional areas of the main window are:
+</p>
 
 
-#Top Area
+<ul>
+<li>Top Area - Shows the name of the variable that is currently being investigated in detail.</li>
 
-![Navpic2]( https://github.com/HumMod/documentation/raw/gh-pages/images/navigator/navpic2.jpg)
+<li>Left Area - Provides a list of all the model's variable names.</li>
+
+<li>Tabs - Three tabs control the functionality of the center and right areas.</li>
+
+<li>Center Area - Details related to cause and effect.</li>
+
+<li>Right Area - File Content</li>
+</ul>
+
+<p>
+<img src = "https://github.com/HumMod/documentation/raw/gh-pages/images/navigator/navpic1.jpg"
+alt = "Navpic1" />
+</p>
+
+</section>
 
 
+<section id = "top"
+<header>
+<h1>Top Area</h1>
+</header>
+
+<p>
+<img src = "https://github.com/HumMod/documentation/raw/gh-pages/images/navigator/navpic2.jpg"
+alt = "Navpic2" />
+</p>
+
+<p>
 The model title, as defined in the <modeltitle> ... </modeltitle> element is displayed in the window title bar after the application name.
+</p>
 
+<p>
 The application main menu has just three choices: File, Settings and Help. File and Settings are described below. Help serves up an About box.
+</p>
 
+<p>
 Model Navigator displays model information as a function of variable name. The name of the variable currently being analyzed is displayed here. It is a global variable name (see below).
 At the top-left are forward-backward buttons that allow you to re-trace and re-re-trace previous variable picks. The figure above shows a history of 3 previous picks.
+</p>
 
-#Left Area
+</section>
 
+<section id = "left>
+<header>
+<h1>Left Area</h1>
+</header>
+
+<p>
 The left area of the main window lists the names of all of the variables in the model. Variable names in DES V1.0 schema have two parts separated by a dot (.). The prefix is the name of the structure in which the variable is declared. The suffix is the local name, which can be used without qualification in its own structure. The global variable name is prefix-dotsuffix.
+</p>
 
+<p>
 GlobalName = StructureName.LocalName
+</p>
 
+<p>
 The left area breaks global variable names down into structure names and local names for display and selection.
+</p>
 
+<p>
 Click a structure name and then a local name to select a variable for further analysis. In the figure at the right, the variable that was selected is ADHPool.[ADH]. Some information generated by the parser is shown at the bottom of the left area.
+</p>
 
-![Navpic3]( https://github.com/HumMod/documentation/raw/gh-pages/images/navigator/navpic3.jpg)
+<p>
+<img src = "https://github.com/HumMod/documentation/raw/gh-pages/images/navigator/navpic3.jpg"
+alt = "Navpic3" />
+</p>
 
-#Tabs
+</section>
 
+<section id = "tabs">
+<header>
+<h1>Tabs</h1>
+</header>
+
+<p>
 The function in the center and right areas of the main window is determined by three tabs: Model Map, Doc's and Displays. The right area generally displays the contents of a relevant file (see below). So, the next three topics describe the functions offered in the center area in response to tab clicks.
+</p>
 
-![Navpic4]( https://github.com/HumMod/documentation/raw/gh-pages/images/navigator/navpic4.jpg)
+<p>
+<img src = "https://github.com/HumMod/documentation/raw/gh-pages/images/navigator/navpic4.jpg"
+alt = "Navpic4" />
+</p>
 
-##Model Map
+</section>
 
+<section id = "model-map">
+<header>
+<h2>Model Map</h2>
+</header>
+
+<p>
 The center area for Model Map displays four items.
+</p>
 
+<p>
 At the top is the name of the variable being analyzed. In this case it is ADHPool.[ADH].
+</p>
 
+<p>
 Next down is the name of the file or files where the variable is defined. Some variables, such as parameters and constants are defined when they are declared. Other variables are defined in more remote locations. Some variables are defined in more than one location - typically in conditional math. Clicking on the file name takes you directly to the file and location where the definition is taking place. You can then see the math used in the definition.
+</p>
 
+<p>
 Next down is a list of all the variables involved in the definition. In this example, ADHPool.[ADH] is defined by ECFV.Vol(L) and ADHPool.Mass. Clicking on a (defined by) name selects that variable for analysis. The entire window is updated after the click.
+</p>
 
+<p>
 Finally at the bottom is a list of all the variables that our variable helps to define. As above, clicking on a (defines) name selects that variable for analysis. The entire window is updated after the click.
+</p>
 
-##Doc's
+</section>
 
+<section id = "docs">
+<header>
+<h2>Doc's</h2>
+</header>
+
+<p>
 Model documentation in DES V1.0 schema is divided into internal and external components.
+</p>
 
+<p>
 Internal documentation is contained in the models variables, equations and other definitions.
+</p>
 
+<p>
 Internal documentation is extracted and displayed by this Model Navigator.
+</p>
 
+<p>
 External documentation is additional information supplied by the model's authors. It is displayed using the Doc's tab.
+</p>
 
+<p>
 When the Doc's tab is clicked, the center area displays external model documentation and documentation choices.
+</p>
 
-The center area displays two items
+<p>
+The center area displays two items:
+</p>
 
-* A list of documentation topics that have been assigned to the variable being analyzed.
-Click on a topic and it is displayed in the content area to the right (as illustrated in the
-example).
+<ul>
+<li>
+A list of documentation topics that have been assigned to the variable being analyzed. Click on a topic and it is displayed in the content area to the right (as illustrated in the example).
+</li>
 
-* A list of variables that are related to the variable being analyzed. Clicking on a name selects that variable for detailed analysis.
+<li>
+A list of variables that are related to the variable being analyzed. Clicking on a name selects that variable for detailed analysis.
+</li>
+</ul>
 
-External model documentation in DES V1.0 schema is carried along with the rest of the model but in separate files. These files can have any filename extension, but DOCS is recommended.
-The equation solver's parser does not parse these files, but the Model Navigator parses these files and displays the information obtained.
+<p>
+External model documentation in DES V1.0 schema is carried along with the rest of the model but in separate files. These files can have any filename extension, but DOCS is recommended. The equation solver's parser does not parse these files, but the Model Navigator parses these files and displays the information obtained.
+</p>
 
-![Navpic5]( https://github.com/HumMod/documentation/raw/gh-pages/images/navigator/navpic5.jpg)
+<p>
+<img src = "https://github.com/HumMod/documentation/raw/gh-pages/images/navigator/navpic5.jpg"
+alt = "Navpic5" />
+</p>
 
-##Displays
+</section>
 
+<section id = "displays">
+<header>
+<h2>Displays</h2>
+</header>
+
+<p>
 When the Displays tab is clicked, the center area describes where the variable being analyzed is displayed.
+</p>
 
+<p>
 This is usually of little interest, but there are two occasions when it is of great interest.
+</p>
 
+<p>
 One occasion is when you want to view the values of a variable during a simulation and just cannot find where it is displayed. This service will show you where or will tell you it is not displayed and please stop looking. The other occasion is when you are considering deleting or renaming a variable. Reference to that variable in the displays must also be deleted or edited. This service provides the display filenames and intra-file locations.
+</p>
 
-![Navpic6]( https://github.com/HumMod/documentation/raw/gh-pages/images/navigator/navpic6.jpg)
+<p>
+<img src = "https://github.com/HumMod/documentation/raw/gh-pages/images/navigator/navpic6.jpg"
+alt = "Navpic6" />
+</p>
 
-#Right Area
+</section>
+
+<section id = "right">
+<header>
+<h1>Right Area</h1>
+</header>
+
+<p>
 The right area generally displays the contents of a relevant file for the variable name being analyzed. Alternatively, it displays documentation topics. XML is color highlighted. Colors can be selected using the Settings main menu selection (below). Specific content is identified by the selection color. In this example, selection highlighting shows the exact place in the document where the variable named [ADH] is declared. File information for the current file is displayed at the top of the right area.
+</p>
 
-![Navpic7]( https://github.com/HumMod/documentation/raw/gh-pages/images/navigator/navpic7.jpg)
+<p>
+<img src = "https://github.com/HumMod/documentation/raw/gh-pages/images/navigator/navpic7.jpg"
+alt = "Navpic7" />
+</p>
 
-#File Main Menu Selection
+</section>
 
+<section id = "file-menu">
+<header>
+<h1>File Main Menu Selection</h1>
+</header>
+
+<p>
 The File main menu selection offers Open which in turn offers a standard Windows Open File dialog box. Go here to select the next model to be analyzed by Model Navigator.
+</p>
 
-![Navpic8]( https://github.com/HumMod/documentation/raw/gh-pages/images/navigator/navpic8.jpg)
+<p>
+<img src = "https://github.com/HumMod/documentation/raw/gh-pages/images/navigator/navpic8.jpg"
+alt = "Navpic8" />
+</p>
 
-#Settings Main Menu Selection 
+</section>
 
-The Settings main menu selection offers you several useful options, as described below.
-Clicking the Settings menu item invokes a tabbed dialog box (as shown in the following topics).
+<section id = "settings-menu">
+<header>
+<h1>Settings Main Menu Selection</h1>
+</header> 
 
-#Parsing
+<p>
+The Settings main menu selection offers you several useful options, as described below. Clicking the Settings menu item invokes a tabbed dialog box (as shown in the following topics).
+</p>
 
+</section>
+
+<section id = "parsing">
+<header>
+<h1>Parsing</h1>
+</header>
+
+<p>
 Model Navigator can start up in two different ways. One is to start and to wait for you to select a file using the File main menu selection. This is the procedure at first use. The other way is to start up and automatically parse a predetermined file. This is useful if you are always browsing the same file, such as DigitalHuman. Click None for no action at startup. Click File to have the specified file parsed at startup.
+</p>
 
-![Navpic9]( https://github.com/HumMod/documentation/raw/gh-pages/images/navigator/navpic9.jpg)
+<p>
+<img src = "https://github.com/HumMod/documentation/raw/gh-pages/images/navigator/navpic9.jpg"
+alt = "Navpic9" />
+</p>
 
-#File Names
+</section>
 
+<section id = "names">
+<header>
+<h1>File Names</h1>
+</header>
+
+<p>
 The DES schema allows file paths to be specified using the <?path ...?> processing instruction and filenames to be specified in the <?include ...?> processing instruction. These paths and filenames can be either relative to the model's main (root) file (common and preferred, as in DigitalHuman) or absolute (fully qualified), going all the way down to the disk drive letter (rare and not preferred). Use this panel to select either relative or fully qualified file names for the model being parsed.
+</p>
 
-![Navpic10]( https://github.com/HumMod/documentation/raw/gh-pages/images/navigator/navpic11.jpg)
+<p>
+<img src = "https://github.com/HumMod/documentation/raw/gh-pages/images/navigator/navpic11.jpg"
+alt = "Navpic10" />
+</p>
 
-#Colors
+</section>
 
+<section id = "colors">
+<header>
+<h1>Colors</h1>
+</header>
+
+<p>
 The file content box color highlights XML. Use this panel to specify highlighting colors. The first four colors identify XML tags, element content, processing instructions and comments. The last color is used when the file content box wants to highlight some content that is directly relevant to the variable being analyzed.
+</p>
 
-![Navpic11]( https://github.com/HumMod/documentation/raw/gh-pages/images/navigator/navpic12.jpg)
+<p>
+<img src = "https://github.com/HumMod/documentation/raw/gh-pages/images/navigator/navpic12.jpg"
+alt = "Navpic11" />
+</p>
 
-#Conditional Includes
+</section>
 
-A model that is compliant with DES V1.0 XML schema can be customized as it is parsed. This is implemented by conditional includes. Conditional includes are processing instructions that are specified as <?if Token Filename ?>. This translates to: if Token exists, then include Filename. There is also an <?ifnot ... ?> processing instruction. Tokens are created using <?create Token ?>.
+<section id = "conditional">
+<header>
+<h1>Conditional Includes</h1>
+</header>
 
+<p>
+A model that is compliant with DES V1.0 XML schema can be customized as it is parsed. This is implemented by conditional includes. Conditional includes are processing instructions that are specified as \<?if Token Filename ?\>. This translates to: if Token exists, then include Filename. There is also an \<?ifnot ... ?\> processing instruction. Tokens are created using \<?create Token ?\>.
+</p>
+
+<p>
 You can use this panel to specify that tokens be evaluated and the only the parts of the model that will be visible are those allowed in by the current state of the token (Dynamically). 
+</p>
 
+<p>
 Alternatively, all parts of the model are parsed and are visible in the browser (Always).
+</p>
 
-![Navpic12]( https://github.com/HumMod/documentation/raw/gh-pages/images/navigator/navpic13.jpg)
+<p>
+<img src = "https://github.com/HumMod/documentation/raw/gh-pages/images/navigator/navpic13.jpg"
+alt = "Navpic12" />
+</p>
 
-![Navpic13]( https://github.com/HumMod/documentation/raw/gh-pages/images/navigator/navpic14.jpg)
+<p>
+<img src = "https://github.com/HumMod/documentation/raw/gh-pages/images/navigator/navpic14.jpg"
+alt = "Navpic13" />
+</p>
 
-#Main Window
+</section>
 
+<section id = "window">
+<header>
+<h1>Main Window</h1>
+</header>
+
+<p>
 This panel shows the size and location of the main window (in pixels). It probably has no value.
+</p>
 
-#Registry
+</section>
 
-Model Navigator stores a small amount of important information in the registry. To uninstall 
-Model Navigator, simply delete the relevant files.
+<section id = "registry">
+<header>
+<h1>Registry</h1>
+</header>
 
+<p>
+Model Navigator stores a small amount of important information in the registry. To uninstall Model Navigator, simply delete the relevant files.
+</p>
+
+<p>
 But wait, do a really clean uninstall this way. Run Model Navigator one last time. Check the box in this panel. On program exit, the Model Navigator's registry entries will be wiped clean. Now delete the relevant files.
+</p>
 
+<p>
 You can also check the box if you want to start over with a clean registry and default program values.
+</p>
 
-![Navpic14]( https://github.com/HumMod/documentation/raw/gh-pages/images/navigator/navpic15.jpg)
+<p>
+<img src = "https://github.com/HumMod/documentation/raw/gh-pages/images/navigator/navpic13.jpg"
+alt = "Navpic14" />
+</p>
+
+ </div> 
+
+  <footer class="main"> 
+    &copy;2010 &ndash; University of Mississippi Medical Center
+  </footer> 
+</body> 
+</html>
