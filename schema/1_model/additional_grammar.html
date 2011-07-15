@@ -1,0 +1,654 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+  <title>HumMod | Documentation</title> 
+  <link href="http://help.hummod.com/css/application.css" media="screen" rel="stylesheet" type="text/css" /> 
+</head> 
+<body id="help"> 
+  <!-- Fork Me Badge -->
+  <a href="http://github.com/hummod"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://d3nwyuy0nl342s.cloudfront.net/img/30f550e0d38ceb6ef5b81500c64d970b7fb0f028/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6f72616e67655f6666373630302e706e67" alt="Fork me on GitHub"></a>
+  <!-- End of Badge -->
+  <header id="main"> 
+    <h1><a href="http://hummod.org">HumMod</a></h1> 
+      <h2>Help</h2> 
+      <nav class="main"> 
+        <a href="http://hummod.org/about">About</a> / 
+        <a href="http://hummod.org/projects">Projects</a> / 
+      <a href="http://help.hummod.com">Help</a> / 
+        <a href="http://hummod.org/contact">Contact</a> 
+      </nav> 
+  </header> 
+    <hr /> 
+    <div id="content">
+    
+    <nav id="block">
+  <section>
+    <header>
+<h1 align="left">Additional Grammar</h1>
+</header>
+<u1>
+	<li><a href="#me">Mathematical Expressions</a></li> 
+
+	<li><a href="#iv">Internal Variables</a></li>
+
+	<li><a href="#sn">Special Numbers</a></li>
+
+	<li><a href="#names">Names</a></li>
+
+</u1>
+</section>
+</nav>
+
+<section id = "me">
+    <nav id="block2">
+  <section>
+    <header>
+<h1 align="left">Mathematical Expressions</h1>
+   <a href="#block">Back to the top.</a>
+</header>
+<u1>
+	<li><a href="#vcn">Variable and Curve Names</a></li> 
+
+	<li><a href="#oc">The Order of Calculation</a></li>
+
+	<li><a href="#sn">Special Numbers</a></li>
+
+	<li><a href="#operators">Operators</a></li>
+    
+    <li><a href="#bio">Binary Operators</a></li>
+    
+    <li><a href="#functions">Functions</a></li>
+</u1>
+</section>
+</nav>
+<p>
+A mathematical expression is a set of instructions that
+is used to calculate a single numerical value. This value is then used in def, if and other elements.
+</p>
+
+<p>
+The goal is to have documents that can be directly parsed into an
+equation solver, HTML, a database or document translation tools.
+Whitespace characters are space, tab and the character created by
+pressing the Enter key.
+</p>
+
+<p>
+Tokens are sequences of visible characters that represent single entities within a mathematical expression. These entities can be variable names, curve names, numbers (literal numbers), mathematical operators, and punctuation.
+</p>
+
+<p>
+All tokens in a mathematical expression must be separated by
+whitespace. N.B. This is an important rule. It allows us to implement a fast and efficient expression parser.
+</p>
+</section>
+<section id = "vcn">
+  <section>
+    <header>
+<h2 align="left">Variable and Curve Names</h2>
+   <a href="#block2">Back to the section top.</a>
+</header>
+<p>
+Rules for variable and curve names are described in the Names chapter <a href="#names">(Link Here)</a>.
+</p>
+</section>
+
+<section id = "oc">
+  <section>
+    <header>
+<h2 align="left">The Order of Calculation</h2>
+   <a href="#block2">Back to the section top.</a>
+</header>
+<p>
+Calculations inside of parentheses are completed before calculations
+outside of parentheses. Parentheses may be nested; calculations inside
+inner parentheses are completed before calculations inside outer
+parentheses.
+</p>
+
+<p>
+Otherwise, calculations proceed from left to right.
+</p>
+
+<p>
+There is no operator precedence. That is, the order of calculation is not affected by the presence or absence of a particular mathematical
+operator.
+</p>
+
+<p>
+The expression 2 * 5 + 4 * 5 will evaluate to 70 while the expression ( 2 * 5 ) + ( 4 * 5 ) will evaluate to 30.
+</p>
+
+<p>
+When in doubt, use parentheses.
+ </p>
+ </section> 
+  
+  <section id = "operators">
+  <section>
+    <header>
+<h2 align="left">Operators</h2>
+   <a href="#block2">Back to the section top.</a>
+</header>
+<p>
+  Unary operators operate on a single following value. Binary operators
+operate on 2 values, one preceding and one following.
+</p>
+
+<p>
+Mathematical operators return a decimal number. Logical operators return
+TRUE (1) or FALSE (0).
+</p>
+
+<p>
+The names of operators are case sensitive. All operators are named
+using all uppercase letters.
+</p>
+
+<p>
+Unary Operators:
+</p>
+
+<p>
+Unary mathematical operators are:
+</p>
+
+<p>
+* ->>-1.0 Multiplied By
+</p>
+
+<p>
+* INVERT>>1.0 Divided By
+</p>
+
+<p>
+* EXP>>Exponential Function
+</p>
+
+<p>
+* LOG>>Natural Logarithm
+</p>
+
+<p>
+* LOG10>>Logarithm Base 10
+</p>
+
+<p>
+* SQRT>>Square Root
+</p>
+
+<p>
+* SIN>>Sine
+</p>
+
+<p>
+* COS>>Cosine
+</p>
+
+<p>
+* TAN>>Tangent
+</p>
+
+<p>
+* ABS>>Absolute Value
+</p>
+
+<p>
+* ARCSIN>>Arc Sine
+</p>
+
+<p>
+* ARCCOS>>Arc Cosine
+</p>
+
+<p>
+* ARCTAN>>Arc Tangent
+</p>
+
+<p>
+* SINDEG>>Sine Degrees
+</p>
+
+<p>
+* COSDEG>>Cosine Degrees
+</p>
+
+<p>
+* TANDEG>>Tangent Degrees
+</p>
+
+<p>
+* RADTODEG>>Radians To Degrees
+</p>
+
+<p>
+* DEGTORAD>>Degrees To Radians
+</p>
+
+<p>
+* ROUND>>Round Off
+</p>
+
+<p>
+* ROUNDUP>>Round Up
+</p>
+
+<p>
+* ROUNDDOWN>>Round Down
+</p>
+
+<p>
+* FRACTPART>>Fractional Part
+</p>
+
+<p>
+The argument for traditional trig operators is radians.
+</p>
+
+<p>
+Unary logical operators are:
+</p>
+
+<p>
+NOT>>Logical Not
+</p>
+</section>
+ 
+
+  <section id = "bio">
+  <section>
+    <header>
+<h2 align="left">Binary Operators</h2>
+   <a href="#block2">Back to the section top.</a>
+</header>
+<p>
+Binary mathematical operators are:
+</p>
+
+<p>
+* +>>Addition
+</p>
+
+<p>
+* ->>Subtraction
+</p>
+
+<p>
+* *>>Multiplication
+</p>
+
+<p>
+* />>Division
+</p>
+
+<p>
+* ^>>Raise To The Power
+</p>
+
+<p>
+* MIN>>Return Minimum Of
+</p>
+
+<p>
+* MAX>>Return Maximum Of
+</p>
+
+<p>
+* ATAN2>>Arc Tangent (X, Y) With Horz
+</p>
+
+<p>
+* REM>>Remainder
+</p>
+
+<p>
+* ROUNDAT>>Round At < Or > Than 1
+</p>
+
+<p>
+Binary logical operators are:
+</p>
+
+<p>
+* AND>>Logical And
+</p>
+
+<p>
+* OR>>Logical Or
+</p>
+
+<p>
+* EQ>>Equal To
+</p>
+
+<p>
+* NE>>Not Equal To
+</p>
+
+<p>
+* GT>>Greater Than
+</p>
+
+<p>
+* GE>>Greater Than Or Equal To
+</p>
+
+<p>
+* LT>>Less Than
+</p>
+
+<p>
+* LE>>Less Than Or Equal To
+</p>
+
+<p>
+Pi:
+</p>
+
+<p>
+And we have one literal : PI (3.14159 …).
+  </p>
+  </section>
+  
+  
+    <section id = "functions">
+  <section>
+    <header>
+<h2 align="left">Functions</h2>
+   <a href="#block2">Back to the section top.</a>
+</header>
+<p>
+Functions are defined in the functions element. The only function just now is "curve".
+</p>
+
+<p>
+Functions are invoked by name followed by an argument name, with the
+name enclosed in square brackets. For example:
+</p>
+
+<p>
+'Frank-Starling [ RAP ]':
+</p>
+
+<p>
+describes a function named Frank-Starling operating on a variable named
+RAP. Note the requisite spaces separating all four tokens.
+</p>
+</section>
+
+<section id = "iv">
+  <section>
+    <header>
+<h1 align="left">Internal Variables</h1>
+   <a href="#block">Back to the top.</a>
+</header>
+<p>
+
+The equation solver will recognize and provide the correct values for the following variables. The names are treated as if they were created in the structure "System".
+</p>
+
+<p>
+System.X:
+</p>
+
+<p>
+The model's independent variable, usually thought of as time.
+</p>
+
+<p>
+System.Dx: 
+</p>
+
+<p>
+Numerical integration's integration interval. Actually used in
+the calculations.
+</p>
+
+<p>
+System.DefaultDx: 
+</p>
+
+<p>
+Numerical integration's integration interval. Used in
+calculation if there is no truncation.
+</p>
+
+<p>
+System.Random:
+</p>
+
+<p>
+A random number between -1 and 1. The equation solver should generate a new random value at the beginning of each integration interval.
+</p>
+
+<p>
+System.Normal: 
+</p>
+
+<p>
+A random number from a normal distribution having a mean of 0 and a standard deviation of 1. The equation solver should generate a new random, normally distributed value at the beginning of each integration interval.
+</p>
+
+<p>
+System.Pi: 
+</p>
+
+<p>
+This variable holds the value of pi – 3.14 …
+For more on system random numbers, see Volume 4. Control < scramble >.
+</p>
+
+<p>
+System.Starting: 
+</p>
+
+<p>
+This variable is TRUE only once – when the equation
+solver is starting. Otherwise, it is FALSE. 
+</p>
+
+<p>
+The following intervals are for display only. Do not mess with them:
+</p>
+
+<p>
+* System.SolutionInterval
+</p>
+
+<p>
+* System.DisplayInterval
+</p>
+
+<p>
+* System.StorageInterval: Currently not implemented.
+</p>
+</section>
+
+
+
+<section id = "sn">
+	<nav id="block3">
+  <section>
+    <header>
+<h1 align="left">Special Numbers</h1>
+   <a href="#block">Back to the top.</a>
+</header>
+<u1>
+	<li><a href="#true">True</a></li> 
+
+	<li><a href="#false">False</a></li>
+
+	<li><a href="#infinite">Infinite</a></li>
+
+	<li><a href="#undefined">Undefined</a></li>
+    
+    <li><a href="#unknown">Unknown</a></li>
+    
+    <li><a href="#blank">Blank</a></li>
+</u1>
+</section>
+</nav>
+<p>
+The equation solver can recognize the following special numbers, in
+addition to recognizing integer and decimal numbers and scientific
+notation:
+</p>
+
+    <section id = "true">
+  <section>
+    <header>
+<h2 align="left">True</h2>
+   <a href="#block3">Back to the section top.</a>
+</header>
+<p>
+This is a synonym for 1. It is the value that is returned when an
+expression evaluates to true. This number should be displayed as TRUE.
+</p>
+</section>
+
+<section id = "false">
+  <section>
+    <header>
+<h2 align="left">False</h2>
+   <a href="#block3">Back to the section top.</a>
+</header>
+<p>
+This is a synonym for 0. It is the value that is returned when an
+expression evaluates to false. This number should be displayed as
+FALSE.
+</p>
+</section>
+
+<section id = "infinite">
+  <section>
+    <header>
+<h2 align="left">Inifnite</h2>
+   <a href="#block3">Back to the section top.</a>
+</header>
+<p>
+OK for use in logical expressions, but avoid using in
+mathematical expressions. This number is the result of a divide by 0. This number should be displayed as INFINITE.
+</p>
+</section>
+
+<section id = "undefined">
+  <section>
+    <header>
+<h2 align="left">Undefined</h2>
+   <a href="#block3">Back to the section top.</a>
+</header>
+<p>
+OK for use in logical expressions, but avoid using in
+mathematical expressions. This number should be displayed as
+UNDEFINED.
+</p>
+</section>
+
+<section id = "unknown">
+  <section>
+    <header>
+<h2 align="left">Unknown</h2>
+   <a href="#block3">Back to the section top.</a>
+</header>
+<p>
+OK for use in logical expressions, but avoid using in
+mathematical expressions. This number should be displayed as
+UNKNOWN.
+</p>
+</section>
+
+<section id = "blank">
+  <section>
+    <header>
+<h2 align="left">Blank</h2>
+   <a href="#block3">Back to the section top.</a>
+</header>
+<p>
+OK for use in logical expressions, but avoid using in mathematical
+expressions. This number should be displayed as _____ (5 underline
+characters).
+</p>
+
+<p>
+The advice to not use some of these numbers in mathematical
+expressions follows from the fact that they are very big numbers that may just trigger math processor exceptions.
+</p>
+</section>
+</section>
+
+<section id = "names">
+	<nav id="block3">
+  <section>
+    <header>
+<h1 align="left">Names</h1>
+   <a href="#block">Back to the top.</a>
+</header>
+<p>
+In this model description schema, many of the model's parts are named.
+This makes the specification and manipulation of names an important
+undertaking.
+</p>
+
+<p>
+Model parts with names include variables, equations, curves, blocks of
+math, symbols, lists and panels.
+</p>
+
+<p>
+The names involved in model structure (variables, equations, curves and
+blocks of math) are created within the structure element, and each
+structure element has a name. This fact is used to advantage.
+</p>
+
+<p>
+Each name has two forms: local and global.
+</p>
+
+<p>
+The local name is used to refer to a model part from within the structure where the name was created. As an example, in the structure "Exercise", we have a variable named "ElapsedTime".
+</p>
+
+<p>
+The global name is used to refer to a model part from outside the structure where the name was created. A global name is formed by prefixing a structure name to a local name. A dot or period (.) is used as a separator between the structure and local names.
+</p>
+
+<p>
+Thus exercise elapsed time is referred to as "ElapsedTime" within the
+structure named Exercise and is referred to as "Exercise.ElapsedTime"
+everywhere else in the XML document.
+</p>
+
+<p>
+Leading and trailing spaces in names are not significant and should be
+stripped by the XML parser.
+</p>
+
+<p>
+Interior whitespace is not allowed in names that can appear in
+mathematical expressions. Currently, these are the names of structures
+(as part of global names), variables and curves. Notice that the example developed above does not contain interior whitespace.
+</p>
+
+<p>
+Some characters are not allowed in names:
+</p>
+
+<p>
+* XML special characters (see Special Characters, Introducing XML).
+</p>
+
+<p>
+* Any dots or periods in addition to the global name separator dot.
+</p>
+
+<p>
+* Additional characters may be restricted in the future.
+</p>
+</section>
+    </div> 
+  
+  <footer class="main"> 
+    &copy;2010 &ndash; University of Mississippi Medical Center
+  </footer> 
+</body> 
+</html>
