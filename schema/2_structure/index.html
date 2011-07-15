@@ -1,0 +1,91 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+  <title>HumMod | Documentation</title> 
+  <link href="http://help.hummod.com/css/application.css" media="screen" rel="stylesheet" type="text/css" /> 
+</head> 
+<body id="help"> 
+  <!-- Fork Me Badge -->
+  <a href="http://github.com/hummod"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://d3nwyuy0nl342s.cloudfront.net/img/30f550e0d38ceb6ef5b81500c64d970b7fb0f028/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6f72616e67655f6666373630302e706e67" alt="Fork me on GitHub"></a>
+  <!-- End of Badge -->
+  <header id="main"> 
+    <h1><a href="http://hummod.org">HumMod</a></h1> 
+      <h2>Help</h2> 
+      <nav class="main"> 
+        <a href="http://hummod.org/about">About</a> / 
+        <a href="http://hummod.org/projects">Projects</a> / 
+      <a href="http://help.hummod.com">Help</a> / 
+        <a href="http://hummod.org/contact">Contact</a> 
+      </nav> 
+  </header> 
+    <hr /> 
+    <div id="content">
+
+    <section id = "overview">
+<header>
+<h1>Overview</h1>
+</header>
+<p>
+
+Volume 2. Structure describes elements that are used to describe a
+model's structure.
+</p>
+
+<p>
+The top-level element is named structure. It is a container element for
+elements that declare the variables (variables), declare the differential and algebraic equations (equations), define the functions (functions), and specify the math used to calculate derivatives and intermediate values(definitions). Each of these elements has a section in this volume.
+</p>
+
+<p>
+The element math is also defined in this volume but it is used as a top-level element in model. This is not meant to be trickery. Instead, math specifications are a top-level function but block names (introduced in this volume) are an inherent part of the specifications.
+
+    </p>
+    </section>
+    
+    <section id = "structure">
+<header>
+<h1>< structure ></h1>
+</header>
+<p>
+
+    < structure>
+</p>
+
+<p>
+        < name> Unique structure name here. < /name>
+</p>
+
+<p>
+        Structure detail elements go here.
+</p>
+
+<p>
+    < /structure>
+</p>
+
+<p>
+Variables, equations, functions, math blocks and other model components
+created in a structure have a local name (valid within the structure) and a global name (valid everywhere). You can review naming in Volume 1. Model, Additional Grammar, Names.
+
+    </p>
+    </section>
+    
+    <nav id="block">
+  <section>
+    <header>
+<h1 align="left">Contents</h1>
+</header>
+<u1>
+	<li><a href="http://help.hummod.com/schema/2_structure/variables.html">Variables</a></li> 
+
+	<li><a href="http://help.hummod.com/schema/2_structure/equations.html">Equations</a></li>
+
+	<li><a href="http://help.hummod.com/schema/2_structure/functions.html">Functions</a></li>
+
+	<li><a href="http://help.hummod.com/schema/2_structure/definitions.html">Definitions</a></li>
+
+	<li><a href="http://help.hummod.com/schema/2_structure/math.html">Math</a></li>
+
+</u1>
+</section>
+</nav>
