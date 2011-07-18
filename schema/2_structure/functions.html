@@ -1,0 +1,242 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+  <title>HumMod | Documentation</title> 
+  <link href="http://help.hummod.com/css/application.css" media="screen" rel="stylesheet" type="text/css" /> 
+</head> 
+<body id="help"> 
+  <p>
+    <!-- Fork Me Badge -->
+    <a href="http://github.com/hummod"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://d3nwyuy0nl342s.cloudfront.net/img/30f550e0d38ceb6ef5b81500c64d970b7fb0f028/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6f72616e67655f6666373630302e706e67" alt="Fork me on GitHub"></a></p>
+  <!-- End of Badge -->
+  <header id="main"> 
+    <h1><a href="http://hummod.org">HumMod</a></h1> 
+      <h2>Help</h2> 
+      <nav class="main"> 
+        <a href="http://hummod.org/about">About</a> / 
+        <a href="http://hummod.org/projects">Projects</a> / 
+      <a href="http://help.hummod.com">Help</a> / 
+        <a href="http://hummod.org/contact">Contact</a> 
+      </nav> 
+  </header> 
+    <hr /> 
+    <div id="content">
+        <nav id="block">
+  <section>
+    <header>
+<h1 align="left">Functions</h1>
+</header>
+<u1>
+	<li><a href="#overview">Overview</a></li> 
+
+	<li><a href="#functions">< functions ></a></li>
+
+	<li><a href="#curve">< curve ></a></li>
+
+</u1>
+</section>
+</nav>
+
+  <section id = "overview">
+<header>
+<h1>Overview</h1>
+</header>
+<a href="#block">Back to the top.</a>
+<p>
+The functions element is used to define the model's functions. Currently
+the only function that is supported is the curve.
+</p>
+
+<p>
+A curve is a function that takes a single input and returns a single output.
+The curve is used in mathematical expressions. The curve's functional
+relationship is represented by modified cubic splines.
+</p>
+
+<p>
+There is an alternative way to implement the functionality of a function.
+The alternative is to use a sequence of copy, call and copy elements. This
+approach is useful, powerful and verbose. I'll try to provide details in
+definitions.
+</p>
+</section>
+   
+   <section id = "functions">
+<header>
+<h1>< functions ></h1>
+</header>
+<a href="#block">Back to the top.</a>
+<p>
+Use this element to define a model's functions. The one available function
+type is curve.
+</p>
+
+<p>
+    < functions> Function definitions here. < /functions>
+</p>
+
+<p>
+The functions element is not needed in structures with no function
+definitions.
+</p>
+
+</section>
+   
+   <section id = "functions">
+<header>
+<h1>< functions ></h1>
+</header>
+<a href="#block">Back to the top.</a>
+<p>
+   A curve is a function that takes a single input and returns a single output in
+a mathematical expression.
+</p>
+
+<p>
+The curve element contains child elements that name the curve and list
+the data points that define the curve.
+</p>
+
+<p>
+Each data point contains an x value, y value and slope.
+</p>
+
+<p>
+    < curve>
+</p>
+
+<p>
+        < name> Curve name. < /name>
+</p>
+
+<p>
+        < point>
+</p>
+
+<p>
+            < x> X < /x> < y> Y < /y> < slope> S < /slope>
+</p>
+    
+    <p>
+        < /point>
+</p>
+
+<p>
+        More points go here.
+</p>
+
+<p>
+    < /curve>
+</p>
+
+<p>
+X, Y and S are floating point.
+</p>
+
+<p>
+* A valid curve definition has two or more data points. There is no upper
+limit to the number of data points.
+</p>
+
+<p>
+* Curve X values must be defined in ascending order.
+</p>
+
+<p>
+As an example, here is a curve named VolOnPressure taken from
+HUMMOD 2008, BVSeqArtys.DES.
+</p>
+
+<p>
+The curve is shown below as it appeared in the Tech tabbed dialog box.
+</p>
+
+<p>
+<img src="https://github.com/HumMod/documentation/raw/gh-pages/images/schema/curve_cap_p65.jpg" alt="Curve" width="446" height="412">
+</p>
+
+<p>
+ The curve definition is:
+</p>
+
+<p>
+< curve>
+</p>
+
+<p>
+        < name> VolOnPressure < /name>
+</p>
+
+<p>
+        < point>
+</p>
+
+<p>
+            < x> 0 < /x>< y> 0 < /y>< slope> 0 < /slope>
+</p>
+
+<p>
+        < /point>
+</p>
+
+<p>
+        < point>
+</p>
+
+    <p>
+            < x> 50 < /x>< y> 97 < /y>< slope> 1.0 < /slope>
+</p>
+
+<p>
+        < /point>
+</p>
+
+<p>
+        < point>
+</p>
+
+<p>
+            < x> 200 < /x>< y> 150 < /y>< slope> 0.5 < /slope>
+</p>
+
+<p>
+       < /point>
+</p>
+
+    <p>
+    < /curve>
+</p>
+
+<p>
+The curve was used in the following def element.
+</p>
+
+<p>
+    < def>
+</p>
+
+<p>
+        < name> TMP < /name>
+</p>
+
+<p>
+        < val> VolOnPressure [ Vol ] < /val>
+</p>
+
+<p>
+    < /def>
+</p>
+
+<p>
+In the val element, the name of the curve is followed by square brackets
+enclosing the name of the input variable. The output value is TMP (for
+transmural pressure). The input value is Vol (for blood volume).
+   </p>
+   </section>
+      </div> 
+  
+  <footer class="main"> 
+    &copy;2010 &ndash; University of Mississippi Medical Center
+  </footer> 
+</body> 
+</html>
