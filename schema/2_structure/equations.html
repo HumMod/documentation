@@ -1,0 +1,821 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+  <title>HumMod | Documentation</title> 
+  <link href="http://help.hummod.com/css/application.css" media="screen" rel="stylesheet" type="text/css" /> 
+</head> 
+<body id="help"> 
+  <p>
+    <!-- Fork Me Badge -->
+    <a href="http://github.com/hummod"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://d3nwyuy0nl342s.cloudfront.net/img/30f550e0d38ceb6ef5b81500c64d970b7fb0f028/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6f72616e67655f6666373630302e706e67" alt="Fork me on GitHub"></a></p>
+  <!-- End of Badge -->
+  <header id="main"> 
+    <h1><a href="http://hummod.org">HumMod</a></h1> 
+      <h2>Help</h2> 
+      <nav class="main"> 
+        <a href="http://hummod.org/about">About</a> / 
+        <a href="http://hummod.org/projects">Projects</a> / 
+      <a href="http://help.hummod.com">Help</a> / 
+        <a href="http://hummod.org/contact">Contact</a> 
+      </nav> 
+  </header> 
+    <hr /> 
+    <div id="content">
+        <nav id="block">
+  <section>
+    <header>
+<h1 align="left">Equations</h1>
+</header>
+<u1>
+	<li><a href="#overview">Overview</a></li> 
+
+	<li><a href="#equations">< equations ></a></li>
+
+	<li><a href="#diffeq">< diffeq ></a></li>
+
+	<li><a href="#backwardeuler">< backwardeuler ></a></li>
+
+	<li><a href="#stabledelay">< stabledelay ></a></li>
+    
+    <li><a href="#stablediffeq">< stablediffeq ></a></li>
+    
+    <li><a href="#delay">< delay ></a></li>
+    
+    <li><a href="#lag">< lag ></a></li>
+    <li><a href="#impliciteq">< impliciteq ></a></li>
+    
+   
+
+</u1>
+</section>
+</nav>
+
+  <section id = "overview">
+<header>
+<h1>Overview</h1>
+</header>
+<a href="#block">Back to the top.</a>
+<p>
+The equations element is used to declare the model's differential and
+implicit algebraic equations.
+</p>
+
+<p>
+Equations are used to develop a relationship around several variables.
+For instance, in differential equations (diffeq, backwardeuler and
+stablediffeq) the declaration names the integral and its derivative. The
+integral knows how to determine its own value by tracking values of its
+derivative.
+</p>
+
+<p>
+In implicit algebraic equations (impliciteq) the declaration names the
+starting variable and ending variable. The implicit equation knows to
+declare a solution when the starting and ending values are nearly the
+same.
+</p>
+
+<p>
+Automatic Declaration:
+</p>
+
+<p>
+When a variable is named in an equation's declaration, it is automatically
+declared as a var variable. The variable does not require additional
+declaration in a variables element.
+</p>
+
+<p>
+In addition, some variables are automatically both declared and defined.
+I'll try to provide details in the individual equation descriptions that follow.
+</p>
+
+<p>
+Calculation Sequence:
+</p>
+
+<p>
+Defined variables have an important role in defining other variables, since
+a variable cannot participate in a definition until it is itself defined.
+See Math, Overview later in this volume for additional discussion of
+calculation sequence
+</p>
+</section> 
+
+  <section id = "equations">
+<header>
+<h1>< equations ></h1>
+</header>
+<a href="#block">Back to the top.</a>
+<p>
+Use this element to declare the model's differential and implicit algebraic
+equations.
+</p>
+
+<p>
+    < equations> Equation declarations. < /equations>
+</p>
+
+<p>
+Declaration and partial definition takes place here. Definition is completed
+in definitions elements where derivatives and implicit equation values are
+calculated.
+</p>
+
+<p>
+Several different equation types are currently supported.
+</p>
+
+<p>
+Differential Equations:
+</p>
+    
+    <p>
+    < diffeq>
+</p>
+
+<p>
+    < stablediffeq>
+</p>
+
+<p>
+    <  backwardeuler>
+</p>
+
+<p>
+Time Delays:
+</p>
+    
+    <p>
+    < delay>
+</p>
+    
+   <p> 
+    < stabledelay>
+</p>
+
+<p>
+    < lag>
+</p>
+
+<p>
+Implicit Algebraic Equations:
+</p>
+
+<p>
+    < impliciteq>
+</p>
+</section> 
+  <section id = "diffeq">
+<header>
+<h1>< diffeq ></h1>
+</header>
+<a href="#block">Back to the top.</a>
+<p>
+The general form of a differential equation needing solution is:
+</p>
+
+<p>
+dY/dX = f(Y) 			(1)
+</p>
+
+<p>
+where Y is the dependent variable, X is the independent variable, and f()
+is a functional relationship that is known. The initial value of Y is also
+known.
+</p>
+
+<p>
+Differential equation (1) implies integral equation (2), which is the equation
+that is actually solved.
+</p>
+
+<p>
+Y = int((dY/dX)) dX 		(2)
+</p>
+
+<p>
+Use the diffeq element to declare and define Y and the integral in
+Equation (2).
+</p>
+
+<p>
+    < diffeq>
+</p>
+
+<p>
+        < name> Equation name. < /name>
+</p>
+
+<p>
+        < integralname> Integral name. < /integralname>
+</p>
+
+<p>
+        < initialval> Integral?s initial value. < /initialval>
+</p>
+
+<p>
+        < dervname> Derivative name. < /dervname>
+</p>
+
+<p>
+        < errorlim> Integration error limit. < /errorlim>
+</p>
+
+<p>
+    < /diffeq>
+</p>
+
+<p>
+The equation name must be a unique name. Currently this name is used
+for absolutely nothing, but it may be put to use in the future.
+</p>
+
+<p>
+The integral and its derivative are model variables. Thus, they must have
+a unique name in the variable space.
+</p>
+
+<p>
+The integral?s initial value and integration error limit are floating point.
+The integration error limit specification determines the accuracy of the
+numerical integration. I typically use an integration error limit of 1% of the
+integral?s initial value. This is arbitrary.
+</p>
+
+<p>
+If the integration error limit is not specified, integration error is not controlled for this differential equation.
+</p>
+
+<p>
+Two additional steps are needed to solve a differential equation:
+</p>
+
+<p>
+* The derivative must be defined in a math block. This is essentially
+an implementation of Equation (1).
+</p>
+
+<p>
+* The derivative?s math block must be called at the correct point in
+the calculation sequence.
+</p>
+
+<p>
+These steps create a complete solution to Equations (1) and (2).
+</p>
+</section> 
+  <section id = "backwardeuler">
+<header>
+<h1>< backwardeuler ></h1>
+</header>
+<a href="#block">Back to the top.</a>
+<p>
+A backward Euler integral is more stable than the standard 1st-order Euler integral.
+</p>
+
+<p>
+Normally, the diffeq element is used to declare a differential equation. A useful alternative is available, however, that is fast and stable (but generally doesn't conserve mass). It can be used when the derivative has the form:
+</p>
+
+<p>
+dY/dt = f1 - f2 * Y 		(1)
+</p>
+
+<p>
+and
+</p>
+
+<p>
+Y = int((dY/dX)) dX 		(2)
+</p>
+
+<p>
+Use the backwardeuler element to declare a differential equation. The
+underlying numerical method is a partially implicit 1st order Euler algorithm,
+commonly known as a backward Euler algorithm.
+</p>
+
+<p>
+Basically, what we are doing here is replacing the derivative variable with variables representing f1 and f2 in Equation (1) above.
+</p>
+
+<p>
+    < backwardeuler>
+</p>
+
+<p>
+        < name> Equation name. < /name>
+</p>
+
+<p>
+        < integralname> Integral name. < /integralname>
+</p>
+
+<p>
+        < initialval> Integral?s initial value. < /initialval>
+</p>
+
+<p>
+        < f1name> f1 name. < /f1name>
+</p>
+
+<p>
+        < f2name> f2 name. < /f2name>
+</p>
+
+<p>
+        < dervname> Derivative name. < /dervname>
+</p>
+
+<p>
+        < errorlim> Integration error limit. < /errorlim>
+</p>
+
+<p>
+    < /backwardeuler>
+</p>
+
+<p>
+Again, the equation name must be a unique name.
+</p>
+
+<p>
+The integral, f1, f2 and the derivative are model variables. Thus, they all
+must have unique names in the variable space.
+</p>
+
+<p>
+The dervname element is optional. It is used for display only. The f1 and
+f2 elements do the work.
+</p>
+
+<p>
+If the integration error limit is not specified, integration error is not
+controlled for this differential equation.
+</p>
+</section> 
+  <section id = "stabledelay">
+<header>
+<h1>< stabledelay ></h1>
+</header>
+<a href="#block">Back to the top.</a>
+<p>
+A stable delay is a combination of a stable differential equation and a
+delay.
+</p>
+
+<p>
+I won't repeat the details here. See stablediffeq and delay.
+</p>
+
+<p>
+The stabledelay element is a delay element with maximum step size also
+specified.
+</p>
+
+<p>
+    < stabledelay>
+</p>
+
+<p>
+        < name> Equation name. < /name>
+</p>
+
+<p>
+        < outputname> Output name. < /outputname>
+</p>
+
+<p>
+        < initialval> Output's initial value. < /initialval>
+</p>
+
+<p>
+        < inputname> Input name. < /inputname>
+</p>
+
+<p>
+        < rateconstname> K. < /rateconstname>
+</p>
+
+<p>
+        < dervname> Derivative name. < /dervname>
+</p>
+
+<p>
+        < errorlim> Integration error limit. < /errorlim>
+</p>
+
+<p>
+        < dxmaxname> Max step size. < /dxmaxname>
+</p>
+
+<p>
+    < /stabledelay>
+</p>
+
+<p>
+Again, the equation name must be a unique name.
+</p>
+
+<p>
+The output, input, rate constant, derivative and maximum step size are
+model variables. Thus, they all must have unique names in the variable
+space.
+</p>
+
+<p>
+Rate constants of 0 (Tau = ) and INFINITY (Tau = 0) are supported.
+The dervname element is optional. It is used for display only.
+</p>
+</section> 
+  <section id = "stablediffeq">
+<header>
+<h1>< stablediffeq ></h1>
+</header>
+<a href="#block">Back to the top.</a>
+<p>
+A stable differential equation is basically a differential equation with one
+added feature.
+</p>
+
+<p>
+The stable differential equation is used with stiff systems.
+</p>
+
+<p>
+If we have physical or observational evidence that an equation will
+become unstable at larger step sizes, we pass this information to the
+stable differential equation; it will then attempt to take care of stability.
+</p>
+
+<p>
+    < stablediffeq>
+</p>
+
+<p>
+        < name> Equation name. < /name>
+</p>
+
+<p>
+        < integralname> Integral name. < /integralname>
+
+</p>
+
+<p>
+        < initialval> Integral?s initial value. < /initialval>
+</p>
+
+<p>
+        < dervname> Derivative name. < /dervname>
+</p>
+
+<p>
+        < errorlim> Integration error limit. < /errorlim>
+</p>
+
+<p>
+        < dxmaxname> Max step size. < /dxmaxname>
+</p>
+
+<p>
+    < /stablediffeq>
+</p>
+
+<p>
+The equation name must be a unique name. Currently this name is used
+for absolutely nothing, but it may be put to use in the future.
+</p>
+
+<p>
+The integral, its derivative and maximum step size are model variables.
+Thus, they must have a unique name in the variable space.
+</p>
+
+<p>
+The integral's initial value and integration error limit are floating point.
+The integration error limit specification determines the accuracy of the
+numerical integration. I typically use an integration error limit of 1% of the
+integrals initial value. This is arbitrary.
+</p>
+
+<p>
+If the integration error limit is not specified, integration error is not
+controlled for this differential equation.
+
+</p>
+</section> 
+  <section id = "delay">
+<header>
+<h1>< delay ></h1>
+</header>
+<a href="#block">Back to the top.</a>
+<p>
+The output of a delay slowly follows its input as illustrated in the figure
+below.
+</p>
+
+<p>
+  <img src="https://github.com/HumMod/documentation/raw/gh-pages/images/schema/input_output_p55.jpg" alt="I/O Curve" width="187" height="89"> 
+  </p>
+  
+  <p>
+  The most common delay is called 1st-order. It is implemented with a
+differential equation as shown in Equations (1) and (2) and the block
+diagram below.
+</p>
+
+<p>
+Output = (dOutput/dX) * dX 			(1)
+</p>
+
+<p>
+dOutput/dX = K * (Input – Output) 		(2)
+</p>
+
+<p>
+<img src="https://github.com/HumMod/documentation/raw/gh-pages/images/schema/io_block_p55.jpg" alt="I/O Diagram" width="302" height="153">
+</p>
+
+<p>
+ The rapidity of the output?s response is determined by the rate constant,
+which is denoted above by K.
+</p>
+
+<p>
+If time is the independent variable, a delay is called a time delay.
+Use the delay element to create a delay.
+</p>
+
+<p>
+< delay>
+</p>
+
+<p>
+        < name> Equation name. < /name>
+</p>
+
+ <p>   
+        < outputname> Output name. < /outputname>
+</p>
+
+<p>
+        < initialval> Output?s initial value. < /initialval>
+</p>
+
+<p>
+        < inputname> Input name. < /inputname>
+</p>
+
+<p>
+        < rateconstname> K. < /rateconstname>
+</p>
+
+<p>
+        < dervname> Derivative name. < /dervname>
+</p>
+
+<p>
+        < errorlim> Integration error limit. < /errorlim>
+</p>
+
+<p>
+    < /delay>
+</p>
+
+<p>
+Again, the equation name must be a unique name.
+</p>
+
+<p>
+The output, input, rate constant and derivative are model variables. Thus,
+they all must have unique names in the variable space.
+</p>
+
+<p>
+Rate constants of 0 (Tau = ) and INFINITY (Tau = 0) are supported.
+The dervname element is optional. It is used for display only.
+</p>
+
+<p>
+If the integration error limit is not specified, integration error is not
+controlled for this differential equation.
+</p>
+</section> 
+  <section id = "lag">
+<header>
+<h1>< lag ></h1>
+</header>
+<a href="#block">Back to the top.</a>
+<p>
+Use this element to create a lag. Like a delay, the output variable follows
+the input variable by a 1st-order delay that is determined by the rate
+constant.
+</p>
+
+<p>
+But there is a difference here. A lag output variable must be referred to in
+a math block to define it. The reference must be at a place where the
+input variable is defined and the output variable is needed. The calclag
+element in definitions is used to create the proper reference.
+</p>
+
+<p>
+    < lag>
+</p>
+
+<p>
+        < name> Equation name. < /name>
+</p>
+
+<p>
+        < outputname> Output name. < /outputname>
+</p>
+
+<p>
+        < initialval> Output?s initial value. < /initialval>
+</p>
+
+<p>
+        < inputname> Input name. < /inputname>
+</p>
+
+<p>
+       < rateconstname> K. < /rateconstname>
+</p>
+
+<p>
+       < dervname> Derivative name. < /dervname>
+</p>
+
+<p>
+    < /lag>
+</p>
+
+<p>
+Again, the equation name must be a unique name.
+</p>
+
+<p>
+The output, input, rate constant and derivative are model variables. Thus,
+they all must have unique names in the variable space.
+</p>
+
+<p>
+Rate constants of 0 (Tau = inf) and INFINITY (Tau = 0) are supported.
+</p>
+
+<p>
+The dervname element is optional. It is used for display only.
+</p>
+
+<p>
+There is no integration error limit.
+</p>
+
+<p>
+This is a rather weird numerical method, but it can be very useful in
+introducing a little delay into a response. I think that it can be shown that a
+lag becomes more stable as step size increases – but this is a topic for
+elsewhere.
+</p>
+</section> 
+   
+   </section> 
+  <section id = "impliciteq">
+<header>
+<h1>< impliciteq ></h1>
+</header>
+ <p>
+ An implicit algebraic equation has the form of:
+</p>
+
+<p>
+Y = f(Y) 				(1)
+</p>
+
+<p>
+This equation is solved using two estimates of Y: the beginning Y (referred
+to as YStart here) and the ending Y (referred to as YEnd). Equation (1)
+becomes:
+</p>
+
+<p>
+YEnd = f(YStart) 			(2)
+</p>
+
+<p>
+A solution has been obtained when:
+</p>
+
+<p>
+| YEnd - YStart | <= Error Limit 	(3)
+</p>
+
+<p>
+where the vertical bars denote absolute value and the error limit is the
+largest difference that is acceptable.
+</p>
+
+<p>
+Use this element to declare an implicit algebraic relationship. The lead
+variable is YStart in Equation (2).
+</p>
+
+<p>
+    < impliciteq>
+</p>
+
+<p>
+        < name> Equation name. < /name>
+</p>
+
+<p>
+        < startname> Start name. < /startname>
+</p>
+
+<p>
+        < initialval> Start?s initial value. < /initialval>
+</p>
+
+<p>
+        < endname> End name. < /endname>
+</p>
+
+    <p>
+        < errorlim> Solution error limit. < /errorlim>
+</p>
+
+<p>
+        < searchminname> Min name. < /searchminname>
+</p>
+
+<p>
+        < searchmin> Min value. < /searchmin>
+</p>
+
+<p>
+        < searchmaxname> Max name. < /searchmaxname>
+</p>
+
+<p>
+        < searchmax> Max value. < /searchmax>
+</p>
+
+<p>
+    < /impliciteq>
+</p>
+
+<p>
+We can improve search efficiency by constraining the search. Constraint
+also allows us to get the correct root when more that one root exists. If the
+minimum and/or maximum limits are not specified, the search is not
+constrained in the respective direction.
+</p>
+
+<p>
+We can limit the minimum value of the search space in any of three ways:
+</p>
+
+<p>
+* Name a variable whose value limits the search space.
+</p>
+
+<p>
+* Specify a floating point value that limits the search space.
+</p>
+
+<p>
+* Specify nothing and get no constraint.
+</p>
+
+<p>
+The maximum value of the search space can be limited in the same way.
+</p>
+
+<p>
+Two additional steps are needed to fully solve an implicit algebraic
+equation:
+</p>
+
+<p>
+* The relationship between the start variable (YStart) and end
+variable (YEnd) must be fleshed out in an implicit math block. The
+start variable is assumed to be defined at the start of the block and
+the end variable must be defined by the end of the block. This is an
+implementation of Equation (2) above.
+</p>
+
+<p>
+* The implicit math block must be called at the correct point in the
+calculation sequence.
+</p>
+</section>
+      </div> 
+  
+  <footer class="main"> 
+    &copy;2010 &ndash; University of Mississippi Medical Center
+  </footer> 
+</body> 
+</html>
