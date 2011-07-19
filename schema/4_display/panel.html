@@ -1,0 +1,414 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+  <title>HumMod | Documentation</title> 
+  <link href="http://help.hummod.com/css/application.css" media="screen" rel="stylesheet" type="text/css" /> 
+</head> 
+<body id="help"> 
+  <p>
+    <!-- Fork Me Badge -->
+    <a href="http://github.com/hummod"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://d3nwyuy0nl342s.cloudfront.net/img/30f550e0d38ceb6ef5b81500c64d970b7fb0f028/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6f72616e67655f6666373630302e706e67" alt="Fork me on GitHub"></a></p>
+  <!-- End of Badge -->
+  <header id="main"> 
+    <h1><a href="http://hummod.org">HumMod</a></h1> 
+      <h2>Help</h2> 
+      <nav class="main"> 
+        <a href="http://hummod.org/about">About</a> / 
+        <a href="http://hummod.org/projects">Projects</a> / 
+      <a href="http://help.hummod.com">Help</a> / 
+        <a href="http://hummod.org/contact">Contact</a> 
+      </nav> 
+  </header> 
+    <hr /> 
+    <div id="content">
+        <nav id="block">
+  <section>
+    <header>
+<h1 align="left">Panel
+</h1>
+</header>
+<u1>
+	<li><a href="#overview">Overview</a></li> 
+
+	<li><a href="#actionbutton">< actionbutton ></a></li>
+
+	<li><a href="#checkbox">< checkbox ></a></li>
+
+	<li><a href="#checkmark">< checkmark ></a></li>	
+    
+    <li><a href="#editbox">< editbox ></a></li>	
+    
+    <li><a href="#format">< format ></a></li>	
+    
+    <li><a href="#groupbox">< groupbox ></a></li>	
+    
+    <li><a href="#infobutton">< infobutton ></a></li>	
+    
+    <li><a href="#label">< label ></a></li>	
+    
+    <li><a href="#maplist">< maplist ></a></li>	
+    
+    <li><a href="#panel">< panel ></a></li>	
+    
+    <li><a href="#radiobuttons">< radiobuttons ></a></li>	
+    
+    <li><a href="#repeatlist">< repeatlist ></a></li>	
+    
+    <li><a href="#scale">< scale ></a></li>	
+    
+    <li><a href="#showbargraph">< showbargraph ></a></li>	
+    
+    <li><a href="#showbitmap">< showbitmap ></a></li>	
+    
+    <li><a href="#showbitmapfile">< showbitmapfile ></a></li>	
+    
+    <li><a href="#showclock">< showclock ></a></li>	
+    
+    <li><a href="#showcurve">< showcurve ></a></li>	
+    
+    <li><a href="#showfile">< showfile ></a></li>	
+    
+    <li><a href="#showgraph">< showgraph ></a></li>	
+    
+    <li><a href="#showmap">< showmap ></a></li>	
+    
+    <li><a href="#showpanelname">< showpanelname ></a></li>	
+    
+    <li><a href="#showtable">< showtable ></a></li>	
+    
+    <li><a href="#showvalue">< showvalue ></a></li>	
+    
+    <li><a href="#symbol">< symbol ></a></li>	
+
+<li><a href="#valuebar">< valuebar ></a></li>	
+
+</u1>
+</section>
+</nav>
+
+  <section id = "overview">
+<header>
+<h1>Overview</h1>
+</header>
+<a href="#block">Back to the top.</a>
+<p>
+A panel is the solver?s basic display element for simulation results. A panel
+contains numerical values, graphs, labels and other visual objects.
+</p>
+
+<p>
+The panel element is used to specify all of this including panel layout.
+</p>
+
+<p>
+The model builder has many different visual objects available to contribute
+to pleasing screen design. Thus, the following section is a bit on the bulky
+side.
+   </p>
+   </section>
+     
+     <section id = "actionbutton">
+<header>
+<h1>< actionbutton ></h1>
+</header>
+<a href="#block">Back to the top.</a>
+<p>
+An action button is a button containing an exclamation point (!). An
+optional label appears to the left or right of the button.
+</p>
+
+<p>
+  <img src="https://github.com/HumMod/documentation/raw/gh-pages/images/schema/action_button_p200.jpg" alt="Action Button" width="22" height="23"> 
+  </p>
+  
+  <p>
+  Click the button and the specified math block is executed.
+  </p>
+  
+  <p>
+Action buttons have been used to take blood samples, inject insulin and
+reset odometers.
+</p>
+
+<p>
+Use the actionbutton element to create an action button in a panel.
+</p>
+
+<p>
+< actionbutton>
+</p>
+
+<p>
+< row> Top. < /row>
+</p>
+
+<p>
+< col> Left side. < /col>
+</p>
+
+<p>
+< blockname> Execute on click. < /blockname>
+</p>
+
+<p>
+< label> Label next to button. < /label> or
+</p>
+
+<p>
+< nolabel/>
+</p>
+
+<p>
+< layout> LABELLEFT or LABELRIGHT. < /layout>
+</p>
+
+<p>
+< /actionbutton>
+</p>
+
+<p>
+The default label is none. The default layout is LABELRIGHT.
+  </p>
+   </section>  
+   
+   <section id = "checkbox">
+<header>
+<h1>< checkbox ></h1>
+</header>
+<a href="#block">Back to the top.</a>
+<p>
+
+   </p>
+   </section>  
+   
+   <section id = "checkmark">
+<header>
+<h1>< checkmark ></h1>
+</header>
+<a href="#block">Back to the top.</a>
+<p>
+   </p>
+   </section>  
+   
+   <section id = "editbox">
+<header>
+<h1>< editbox ></h1>
+</header>
+<a href="#block">Back to the top.</a>
+<p>
+   </p>
+   </section>  
+   
+   <section id = "format">
+<header>
+<h1>< format ></h1>
+</header>
+<a href="#block">Back to the top.</a>
+<p>
+   </p>
+   </section>  
+   
+   <section id = "groupbox">
+<header>
+<h1>< groupbox ></h1>
+</header>
+<a href="#block">Back to the top.</a>
+<p>
+   </p>
+   </section>  
+   
+   <section id = "infobutton">
+<header>
+<h1>< infobutton ></h1>
+</header>
+<a href="#block">Back to the top.</a>
+<p>
+   </p>
+   </section>  
+   
+   <section id = "label">
+<header>
+<h1>< label ></h1>
+</header>
+<a href="#block">Back to the top.</a>
+<p>
+   </p>
+   </section>  
+   
+   <section id = "maplist">
+<header>
+<h1>< maplist ></h1>
+</header>
+<a href="#block">Back to the top.</a>
+<p>
+   </p>
+   </section>  
+   
+   <section id = "panel">
+<header>
+<h1>< panel ></h1>
+</header>
+<a href="#block">Back to the top.</a>
+<p>
+   </p>
+   </section>  
+   
+   <section id = "radiobuttons">
+<header>
+<h1>< radiobuttons ></h1>
+</header>
+<a href="#block">Back to the top.</a>
+<p>
+   </p>
+   </section>  
+   
+   <section id = "repeatlist">
+<header>
+<h1>< repeatlist ></h1>
+</header>
+<a href="#block">Back to the top.</a>
+<p>
+   </p>
+   </section>  
+   
+   <section id = "scale">
+<header>
+<h1>< scale ></h1>
+</header>
+<a href="#block">Back to the top.</a>
+<p>
+   </p>
+   </section>  
+   
+   <section id = "showbargraph">
+<header>
+<h1>< showbargraph ></h1>
+</header>
+<a href="#block">Back to the top.</a>
+<p>
+   </p>
+   </section>  
+   
+   <section id = "showbitmap">
+<header>
+<h1>< showbitmap ></h1>
+</header>
+<a href="#block">Back to the top.</a>
+<p>
+   </p>
+   </section>  
+   
+   <section id = "showbitmapfile">
+<header>
+<h1>< showbitmapfile ></h1>
+</header>
+<a href="#block">Back to the top.</a>
+<p>
+   </p>
+   </section>  
+   
+   <section id = "showclock">
+<header>
+<h1>< showclock ></h1>
+</header>
+<a href="#block">Back to the top.</a>
+<p>
+   </p>
+   </section>  
+   
+   <section id = "showcurve">
+<header>
+<h1>< showcurve ></h1>
+</header>
+<a href="#block">Back to the top.</a>
+<p>
+   </p>
+   </section>  
+   
+   <section id = "showfile">
+<header>
+<h1>< showfile ></h1>
+</header>
+<a href="#block">Back to the top.</a>
+<p>
+   </p>
+   </section>  
+   
+   <section id = "showgraph">
+<header>
+<h1>< showgraph ></h1>
+</header>
+<a href="#block">Back to the top.</a>
+<p>
+   </p>
+   </section>  
+   
+   <section id = "showmap">
+<header>
+<h1>< showmap ></h1>
+</header>
+<a href="#block">Back to the top.</a>
+<p>
+   </p>
+   </section>  
+   
+   <section id = "showpanelname">
+<header>
+<h1>< showpanelname ></h1>
+</header>
+<a href="#block">Back to the top.</a>
+<p>
+   </p>
+   </section>  
+   
+   <section id = "showtable">
+<header>
+<h1>showtable</h1>
+</header>
+<a href="#block">Back to the top.</a>
+<p>
+   </p>
+   </section>  
+   
+   <section id = "showvalue">
+<header>
+<h1>< showvalue ></h1>
+</header>
+<a href="#block">Back to the top.</a>
+<p>
+   </p>
+   </section>  
+   
+   <section id = "slidebar">
+<header>
+<h1>< slidebar ></h1>
+</header>
+<a href="#block">Back to the top.</a>
+<p>
+   </p>
+   </section>
+      
+      <section id = "symbol">
+<header>
+<h1>< symbol ></h1>
+</header>
+<a href="#block">Back to the top.</a>
+<p>
+   </p>
+   </section>
+      
+      <section id = "valuebar">
+<header>
+<h1>< valuebar ></h1>
+</header>
+<a href="#block">Back to the top.</a>
+<p>
+   </p>
+   </section>
+      </div> 
+  
+  <footer class="main"> 
+    &copy;2010 &ndash; University of Mississippi Medical Center
+  </footer> 
+</body> 
+</html>
