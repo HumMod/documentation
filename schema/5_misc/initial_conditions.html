@@ -1,0 +1,171 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+  <title>HumMod | Documentation</title> 
+  <link href="http://help.hummod.com/css/application.css" media="screen" rel="stylesheet" type="text/css" /> 
+</head> 
+<body id="help"> 
+  <p>
+    <!-- Fork Me Badge -->
+    <a href="http://github.com/hummod"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://d3nwyuy0nl342s.cloudfront.net/img/30f550e0d38ceb6ef5b81500c64d970b7fb0f028/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6f72616e67655f6666373630302e706e67" alt="Fork me on GitHub"></a></p>
+  <!-- End of Badge -->
+  <header id="main"> 
+    <h1><a href="http://hummod.org">HumMod</a></h1> 
+      <h2>Help</h2> 
+      <nav class="main"> 
+        <a href="http://hummod.org/about">About</a> / 
+        <a href="http://hummod.org/projects">Projects</a> / 
+      <a href="http://help.hummod.com">Help</a> / 
+        <a href="http://hummod.org/contact">Contact</a> 
+      </nav> 
+  </header> 
+    <hr /> 
+    <div id="content">
+
+  <section id = "initialconditions">
+<header>
+<h1>Model Initial Conditions</h1>
+</header>
+<p>
+The values of all model variables may be saved to a file and later reloaded
+as solution initial conditions.
+</p>
+
+<p>
+Save and load are File menu selections.
+</p>
+
+<p>
+The usual file extension is ICS.
+</p>
+
+<p>
+The document element is ics.
+</p>
+
+<p>
+< ics>
+</p>
+
+<p>
+< time> Current time logged < /time>
+</p>
+
+<p>
+< var>
+</p>
+
+<p>
+< name> Variable name < /name>
+</p>
+
+<p>
+< val> Variable value < /val>
+</p>
+
+<p>
+< state> Variable state < /state>
+</p>
+
+<p>
+< /var>
+</p>
+
+<p>
+More variables go here. Variable state is used by the timer
+variables. It is optional with a default value of 0.
+</p>
+
+<p>
+< note>
+</p>
+
+<p>
+< name> Note name < /name>
+</p>
+
+<p>
+< text> Note text < /test>
+</p>
+
+<p>
+< /note>
+</p>
+
+<p>
+More notes go here.
+</p>
+
+<p>
+< /ics>
+</p>
+
+<p>
+A fragment of a typical ICS data set is shown below.
+</p>
+
+<p>
+< ics>
+</p>
+
+<p>
+…
+</p>
+
+<p>
+< var>
+</p>
+
+<p>
+< name> 
+RightVentricle-Systole.A < /
+name>
+</p>
+
+<p>
+< val> 3.52322260854839 < /val>
+</p>
+
+<p>
+< /var>
+</p>
+
+<p>
+< var>
+</p>
+
+<p>
+< name> 
+</p>
+
+<p>
+RightVentricle-Systole.A-Basic
+</p>
+
+<p>
+ < /name>
+</p>
+
+<p>
+< val> 3.53 < /val>
+</p>
+
+<p>
+< /var>
+</p>
+
+<p>
+…
+</p>
+
+<p>
+< /ics>
+   </p>
+   </section>
+      </div> 
+  
+  <footer class="main"> 
+    &copy;2010 &ndash; University of Mississippi Medical Center
+  </footer> 
+</body> 
+</html>
