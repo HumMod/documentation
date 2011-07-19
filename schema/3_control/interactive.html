@@ -1,0 +1,532 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+  <title>HumMod | Documentation</title> 
+  <link href="http://help.hummod.com/css/application.css" media="screen" rel="stylesheet" type="text/css" /> 
+</head> 
+<body id="help"> 
+  <p>
+    <!-- Fork Me Badge -->
+    <a href="http://github.com/hummod"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://d3nwyuy0nl342s.cloudfront.net/img/30f550e0d38ceb6ef5b81500c64d970b7fb0f028/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6f72616e67655f6666373630302e706e67" alt="Fork me on GitHub"></a></p>
+  <!-- End of Badge -->
+  <header id="main"> 
+    <h1><a href="http://hummod.org">HumMod</a></h1> 
+      <h2>Help</h2> 
+      <nav class="main"> 
+        <a href="http://hummod.org/about">About</a> / 
+        <a href="http://hummod.org/projects">Projects</a> / 
+      <a href="http://help.hummod.com">Help</a> / 
+        <a href="http://hummod.org/contact">Contact</a> 
+      </nav> 
+  </header> 
+    <hr /> 
+    <div id="content">
+        <nav id="block">
+  <section>
+    <header>
+<h1 align="left">Interactive
+</h1>
+</header>
+<u1>
+	<li><a href="#overview">Overview</a></li> 
+
+	<li><a href="#gobar">< gobar ></a></li>
+
+	<li><a href="#goto">< goto ></a></li>
+    
+    <li><a href="#gofor">< gofor ></a></li>
+
+<li><a href="#interactive">< interactive ></a></li>
+
+</u1>
+</section>
+</nav>
+
+  <section id = "overview">
+<header>
+<h1>Overview</h1>
+</header>
+<a href="#block">Back to the top.</a>
+<p>
+This section defines elements that are used to control the solution through
+the user's interactive choices.
+</p>
+
+<p>
+These elements help to populate a popdown menu (the Go menu) that
+gives the user a choice of solution intervals.
+</p>
+
+<p>
+The highest-level interactive control element is named interactive. It is a
+container element for the interactive control children.
+</p>
+
+<p>
+interactive
+</p>
+	
+    <p>
+      |
+</p>
+
+<p>
+	  |-gobar
+</p>
+
+<p>
+	  |-gofor
+</p>
+
+<p>
+	  |-goto
+</p>
+
+<p>
+The processing instructions include, prefixpath, and strict may also be
+used in interactive where appropriate. See Volume 1. Model, Processing
+Instructions.
+
+   </p>
+   </section>
+     <section id = "gobar">
+<header>
+<h1>< gobar ></h1>
+</header>
+<a href="#block">Back to the top.</a>
+<p>
+Use this element to add a separator bar to the
+Go popdown menu, shown below.
+</p>
+
+<p>
+   < gobar/>
+</p>
+
+<p>
+<img src="https://github.com/HumMod/documentation/raw/gh-pages/images/schema/go_bar_p100.jpg" width="102" height="303" alt="Go Bar"> 
+</p>
+
+<p>
+Valid in < interactive >
+</p>
+
+<p>
+See also:
+</p>
+
+<p>
+    * < gofor >
+</p>
+
+<p>
+    * < goto >
+</p>
+
+<p>
+DTD
+</p>
+
+<p>
+    < !ELEMENT gobar EMPTY>
+   </p>
+   </section>
+     
+     <section id = "goto">
+<header>
+<h1>< goto ></h1>
+</header>
+<a href="#block">Back to the top.</a>
+<p>
+See this volume's Overview for a description of
+intervals.
+</p>
+
+<p>
+Use this element to create a Go menu item that can
+be used to advance the solution. A Go menu is
+shown below. Note the bottom four menu items.
+</p>
+
+<p>
+Specify the solution, display and storage intervals and
+define a menu item for the Go popdown menu.
+</p>
+
+<p>
+This is a little tricky, but it works great in tidying up the
+progress of a solution. A solution interval is specified,
+but the solution doesn't go the full interval. Instead, it
+goes until the independent variable (System.X) has increased to the next
+multiple of the specified solution interval.
+</p>
+
+<p>
+Thus, this is a modified gofor element.
+</p>
+
+<p>
+    < goto>
+</p>
+
+<p>
+        < solutionint>
+</p>
+
+<p>
+            Solution interval goes here.
+</p>
+
+<p>
+        < /solutionint>
+</p>
+
+<p>
+        < displayint>
+</p>
+
+<p>
+            Display interval goes here.
+</p>
+
+<p>
+        < /displayint>
+</p>
+
+<p>
+        < storageint>
+</p>
+
+<p>
+            Storaage interval goes here.
+</p>
+
+<p>
+        < /storageint>
+</p>
+
+<p>
+        < menuitem>
+</p>
+
+<p>
+            Go menu item goes here.
+</p>
+
+<p>
+        < /menuitem>
+</p>
+
+<p>
+    < /gofor>
+</p>
+
+<p>
+As an example, suppose the independent variable has a current value of
+2000. The Go menu has a goto menu item with a solution interval of 1440
+(and maybe a label of To Next Day). When user clicks this choice, the
+solution will be advanced to the next multiple of 1440, which is 2880, for a
+net advance of 880.
+</p>
+
+<p>
+    Valid in < interactive >
+</p>
+
+<p>
+See also:
+</p>
+
+<p>
+    * < gofor >
+</p>
+
+<p>
+    * < gobar >
+</p>
+
+<p>
+DTD
+</p>
+
+<p>
+    < !ELEMENT gofor
+</p>
+
+<p>
+    ( solutionint,
+</p>
+
+<p>
+    displayint?,
+</p>
+
+<p>
+    storageint?,
+</p>
+
+<p>
+    menuitem?
+</p>
+
+<p>
+    )
+</p>
+
+<p>
+    >
+</p>
+
+<p>
+    < !ELEMENT solutionint (#PCDATA)>
+</p>
+
+<p>
+    < !ELEMENT displayint (#PCDATA)>
+</p>
+
+<p>
+    < !ELEMENT storageint (#PCDATA)>
+</p>
+
+<p>
+    < !ELEMENT menuitem (#PCDATA)>
+</p>
+
+<p>
+The default displayint is solutionint / 10. The default storageint is
+displayint. The default menuitem is an image of the solutionint.
+   </p>
+   </section>
+     
+     <section id = "gofor">
+<header>
+<h1>< gofor ></h1>
+</header>
+<a href="#block">Back to the top.</a>
+<p>
+See this volume's Overview for a description of
+intervals.
+</p>
+
+<p>
+Use this element to create a Go menu item that can be
+used to advance the solution. A Go menu is shown at
+right.
+</p>
+
+<p>
+Specify the solution, display and storage intervals and
+define a menu item for the Go popdown menu.
+</p>
+
+<p>
+    < gofor>
+</p>
+
+<p>
+        < solutionint>
+</p>
+
+<p>
+             Solution interval goes here.
+</p>
+
+<p>
+        < /solutionint>
+</p>
+
+<p>
+        < displayint>
+</p>
+
+<p>
+             Display interval goes here.
+</p>
+
+<p>
+        < /displayint>
+</p>
+
+<p>
+        < storageint>
+</p>
+
+<p>
+            Storage interval goes here.
+</p>
+
+<p>
+        < /storageint>
+</p>
+
+<p>
+        < menuitem>
+</p>
+
+<p>
+            Go menu item goes here.
+</p>
+
+<p>
+        < /menuitem>
+</p>
+
+<p>
+    < /gofor>
+</p>
+
+<p>
+    Valid in < interactive >
+</p>
+
+<p>
+See also:
+</p>
+
+<p>
+    * < goto >
+</p>
+
+<p>
+    * < gobar >
+</p>
+
+<p>
+DTD
+</p>
+
+<p>
+    < !ELEMENT gofor
+</p>
+
+<p>
+    ( solutionint,
+</p>
+
+<p>
+    displayint?,
+</p>
+
+<p>
+    storageint?,
+</p>
+
+<p>
+    menuitem?
+</p>
+
+<p>
+    )
+</p>
+
+<p>
+    >
+</p>
+
+<p>
+    < !ELEMENT solutionint (#PCDATA)>
+</p>
+
+<p>
+    < !ELEMENT displayint (#PCDATA)>
+</p>
+
+<p>
+    < !ELEMENT storageint (#PCDATA)>
+</p>
+
+<p>
+    < !ELEMENT menuitem (#PCDATA)>
+</p>
+
+<p>
+The default displayint is solutionint / 10. The default storageint is
+displayint. The default menuitem is an image of the solutionint.
+   </p>
+   </section>
+     
+     <section id = "interactive">
+<header>
+<h1>< interactive ></h1>
+</header>
+<a href="#block">Back to the top.</a>
+<p>
+Use this element as a container element for the interactive control
+elements.
+</p>
+
+<p>
+    < interactive>
+</p>
+
+<p>
+        Interactive control elements go here.
+</p>
+
+<p>
+    < /interactive>
+</p>
+
+<p>
+    Valid in < control >
+</p>
+
+<p>
+See also: 
+</p>
+
+<p>
+    * < scripted >
+</p>
+
+<p>
+    * < remote >
+</p>
+
+<p>
+    * < misc >
+</p>
+
+<p>
+DTD
+</p>
+
+<p>
+ The elements in interactive may be defined in any amount but order
+is significant. Order determines the order of menu items in the Go
+popdown menu.
+</p>
+
+<p>
+    < !ELEMENT interactive
+</p>
+
+<p>
+        ( gobar
+</p>
+
+<p>
+        | gofor
+</p>
+
+<p>
+        | goto
+</p>
+
+<p>
+    )*
+</p>
+
+<p>
+    >
+   </p>
+   </section>
+  
+</div> 
+  
+  <footer class="main"> 
+    &copy;2010 &ndash; University of Mississippi Medical Center
+  </footer> 
+</body> 
+</html>
