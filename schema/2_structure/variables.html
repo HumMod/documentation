@@ -1,0 +1,438 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+  <title>HumMod | Documentation</title> 
+  <link href="http://help.hummod.com/css/application.css" media="screen" rel="stylesheet" type="text/css" /> 
+</head> 
+<body id="help"> 
+  <p>
+    <!-- Fork Me Badge -->
+    <a href="http://github.com/hummod"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://d3nwyuy0nl342s.cloudfront.net/img/30f550e0d38ceb6ef5b81500c64d970b7fb0f028/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6f72616e67655f6666373630302e706e67" alt="Fork me on GitHub"></a></p>
+  <!-- End of Badge -->
+  <header id="main"> 
+    <h1><a href="http://hummod.org">HumMod</a></h1> 
+      <h2>Help</h2> 
+      <nav class="main"> 
+        <a href="http://hummod.org/about">About</a> / 
+        <a href="http://hummod.org/projects">Projects</a> / 
+      <a href="http://help.hummod.com">Help</a> / 
+        <a href="http://hummod.org/contact">Contact</a> 
+      </nav> 
+  </header> 
+    <hr /> 
+    <div id="content">
+        <nav id="block">
+  <section>
+    <header>
+<h1 align="left">Variables
+</h1>
+</header>
+<u1>
+	<li><a href="#overview">Overview</a></li> 
+
+	<li><a href="#variables">< variables ></a></li>
+
+	<li><a href="#var">< var ></a></li>
+    <li><a href="#parm">< parm ></a></li>
+    <li><a href="#constant">< constant ></a></li>
+<li><a href="#fixedparm">< fixedparm ></a></li>
+<li><a href="#fixedvar">< fixedvar ></a></li>
+<li><a href="#timevar">< timevar ></a></li>
+<li><a href="#normaldist">< normaldist ></a></li>
+<li><a href="#whitenoise">< whitenoise ></a></li>
+
+</u1>
+</section>
+</nav>
+
+  <section id = "overview">
+<header>
+<h1>Overview</h1>
+</header>
+<a href="#block">Back to the top.</a>
+<p>
+The variables element is used to declare and sometimes define the
+model's variables.
+</p>
+
+<p>
+There are currently eight variable types: var, parm, constant, fixedparm, fixedvar, timervar, normaldist, whitenoise.
+</p>
+
+<p>
+A variable is declared when it is given a name. It is defined when it is given a value or instructions for calculating a value. Instructions usually come in the form of a mathematical expression.
+</p>
+
+<p>
+All but two of the variable types are declared and defined in a single
+element. The exceptions are the var and fixedvar variable types. These
+variables can be declared and defined in a single element, but the var
+variable type is usually declared but not initially defined. Defining takes place in a math block as part of the calculation of a derivative value or an intermediate value.
+</p>
+
+<p>
+Variable Attributes:
+</p>
+
+<p>
+The table below shows the attributes of each variable type.
+</p>
+
+<p>
+  <img src="https://github.com/HumMod/documentation/raw/gh-pages/images/schema/variable_table.jpg" alt="Variable Types" width="471" height="255"> </p>
+
+<p>
+System variables are defined, read-only, and restarted.
+   </p>
+   </section>
+    <section id = "variables">
+<header>
+<h1>< variables ></h1>
+</header>
+<a href="#block">Back to the top.</a>
+<p>
+Use this element to declare and sometimes define the model's variables.
+</p>
+
+<p>
+There are a variety of variable types, but the two most common are an
+ordinary variable var and a parameter parm:
+</p>
+
+<p>
+    < variables> Variable declarations. < /variables>
+</p>
+
+<p>
+These variable types are detailed next:
+</p>
+
+<p>
+* var
+</p>
+
+<p>
+* parm
+</p>
+
+<p>
+* constant
+</p>
+
+<p>
+* fixedparm
+</p>
+
+<p>
+* fixedvar
+</p>
+
+<p>
+* timervar
+</p>
+
+<p>
+* normaldist
+</p>
+
+<p>
+* whitenoise
+
+   </p>
+   </section> <section id = "var">
+<header>
+<h1>< var ></h1>
+</header>
+<a href="#block">Back to the top.</a>
+<p>
+Use this element to declare an ordinary variable. The variable can also be defined here (by assigning it an initial value), but defining is typically deferred to a math block.
+</p>
+
+<p>
+    < var>
+</p>
+
+<p>
+        < name> Unique variable name here. < /name>
+</p>
+
+<p>
+        < val> Initial value (optional) here. < /val>
+</p>
+
+<p>
+    < /var>
+</p>
+
+<p>
+Initial value is floating point.
+</p>
+   </section> <section id = "parm">
+<header>
+<h1>< parm ></h1>
+</header>
+<a href="#block">Back to the top.</a>
+<p>
+Use this element to declare and define a parameter, giving it a unique
+variable name and an initial value.
+</p>
+
+<p>
+    < parm>
+</p>
+
+<p>
+        < name> Unique variable name here. < /name>
+</p>
+
+<p>
+        < val> Initial value goes here. < /val>
+</p>
+
+<p>
+    < /parm>
+</p>
+
+<p>
+Initial value is floating point.
+</p>
+
+<p>
+A parameter is a defined variable having the additional privilege of being able to receive a new value in an interactive panel via a slide bar, radio button, check box, edit box, and maybe some other visual device.
+
+   </p>
+   </section> <section id = "constant">
+<header>
+<h1>< constant ></h1>
+</header>
+<a href="#block">Back to the top.</a>
+<p>
+Use this element to declare and define a constant, giving it a unique
+variable name and a value.
+</p>
+
+<p>
+    < constant>
+</p>
+
+<p>
+        < name> Unique variable name here. < /name>
+</p>
+
+<p>
+        < val> Value goes here. < /val>
+</p>
+
+<p>
+    < /constant>
+</p>
+
+<p>
+Value is floating point.
+</p>
+
+<p>
+A constant is a defined variable having the restriction that if can't be assigned a new value. This restriction applies to '< def>' and '< conditional>' elements.
+</p>
+
+<p>
+Internally, a constant has the ReadOnly variable attribute.
+   </p>
+   </section> <section id = "fixedparm">
+<header>
+<h1>< fixedpar ></h1>
+</header>
+<a href="#block">Back to the top.</a>
+<p>
+Use this element to declare and define a fixed parameter, giving it a
+unique variable name and an initial value.
+</p>
+
+<p>
+    < fixedparm>
+</p>
+
+<p>
+        < name> Unique variable name here. < /name>
+</p>
+
+<p>
+        < val> Initial value goes here. < /val>
+</p>
+
+<p>
+    < /fixedparm>
+</p>
+
+<p>
+Initial value is floating point.
+</p>
+
+<p>
+A fixed parameter is a parameter having the additional attribute of not
+being reset to its initial conditions at solution restart. Thus, a particular value will remain in place over multiple solutions.
+   </p>
+   </section> <section id = "fixedvar">
+<header>
+<h1>< fixedvar ></h1>
+</header>
+<a href="#block">Back to the top.</a>
+<p>
+Use this element to declare and define a fixed variable, giving it a unique variable name and an (optional) initial value.
+</p>
+
+<p>
+    < fixedvar>
+</p>
+
+<p>
+        < name> Unique variable name here. < /name>
+</p>
+
+<p>
+        < val> Initial value (optional) goes here. < /val>
+</p>
+
+<p>
+    < /fixedvar>
+</p>
+
+<p>
+Initial value is floating point.
+</p>
+
+<p>
+A fixed variable is a variable having the additional attribute of not being
+reset to its initial conditions at solution restart. Thus, a particular value will
+remain in place over multiple solutions.
+</p>
+
+<p>
+The primary use of this variable type is to implement scaling in context
+math.
+   </p>
+   </section> <section id = "timevar">
+<header>
+<h1>< timevar ></h1>
+</header>
+<a href="#block">Back to the top.</a>
+<p>
+A timer variable is synchronized with the independent variable. It can
+count up from an initial value, count down from an initial value, or be in an OFF state. One use is to track elapsed time.
+</p>
+
+<p>
+Use this element to declare and define a timer variable, giving it a unique variable name, an (optional) initial value and an (optional) initial state.
+</p>
+
+<p>
+    < timervar>
+</p>
+
+<p>
+        < name> Unique variable name here. < /name>
+</p>
+
+<p>
+        < val> Initial value (optional) goes here. < /val>
+</p>
+
+<p>
+        < state> State (optional) goes here. < /state>
+</p>
+
+<p>
+    < /timervar>
+</p>
+
+<p>
+Initial value is floating point. The default value is 0.
+</p>
+
+<p>
+Valid states are UP, DOWN and OFF. The default state is OFF.
+</p>
+
+<p>
+There is a timer element in defininitions that can be used to change
+(usually conditionally) the value and state of a timer variable.
+   </p>
+   </section> <section id = "normaldist">
+<header>
+<h1>< normaldist ></h1>
+</header>
+<a href="#block">Back to the top.</a>
+<p>
+Use this element to declare and define a variable that gets its value from a normal distribution. The mean and standard deviation of the distribution are specified here.
+</p>
+
+<p>
+    < normaldist>
+</p>
+
+<p>
+        < name> Unique variable name here. < /name>
+</p>
+
+<p>
+        < mean> Distribution mean here. < /mean>
+</p>
+
+<p>
+        < stddev> Standard deviation here. < /stddev>
+</p>
+
+<p>
+    < /normaldist>
+</p>
+
+<p>
+Default values for mean and standard deviation are floating point 0 and 1. There is a scramble element in control that controls randomness for this variable and the whitenoise variable.
+
+   </p>
+   </section> <section id = "whitenoise">
+<header>
+<h1>< whitenoise ></h1>
+</header>
+<a href="#block">Back to the top.</a>
+<p>
+Use this element to declare and define a variable that gets its value from a
+white noise distribution. The lower and upper limits of the distribution are
+specified here.
+</p>
+
+<p>
+    < whitenoise>
+</p>
+
+<p>
+        < name> Unique variable name here. < /name>
+</p>
+
+<p>
+        < lowerlim> Lower limit. < /lowerlim>
+</p>
+
+<p>
+        < upperlim> Upper limit. < /upperlim>
+</p>
+
+<p>
+    < /whitenoise>
+</p>
+
+<p>
+Default values for the lower and upper limits of the distribution are floating point 0 and 1.
+</p>
+
+<p>
+There is a scramble element in control that controls randomness for this variable and the normaldist variable.
+   </p>
+   </section>
+      </div> 
+  
+  <footer class="main"> 
+    &copy;2010 &ndash; University of Mississippi Medical Center
+  </footer> 
+</body> 
+</html>

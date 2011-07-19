@@ -1,0 +1,271 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+  <title>HumMod | Documentation</title> 
+  <link href="http://help.hummod.com/css/application.css" media="screen" rel="stylesheet" type="text/css" /> 
+</head> 
+<body id="help"> 
+  <p>
+    <!-- Fork Me Badge -->
+    <a href="http://github.com/hummod"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://d3nwyuy0nl342s.cloudfront.net/img/30f550e0d38ceb6ef5b81500c64d970b7fb0f028/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6f72616e67655f6666373630302e706e67" alt="Fork me on GitHub"></a></p>
+  <!-- End of Badge -->
+  <header id="main"> 
+    <h1><a href="http://hummod.org">HumMod</a></h1> 
+      <h2>Help</h2> 
+      <nav class="main"> 
+        <a href="http://hummod.org/about">About</a> / 
+        <a href="http://hummod.org/projects">Projects</a> / 
+      <a href="http://help.hummod.com">Help</a> / 
+        <a href="http://hummod.org/contact">Contact</a> 
+      </nav> 
+  </header> 
+    <hr /> 
+    <div id="content">
+        <nav id="block">
+  <section>
+    <header>
+<h1 align="left">Miscellaneous
+</h1>
+</header>
+<u1>
+	<li><a href="#overview">Overview</a></li> 
+
+	<li><a href="#misc">< misc ></a></li>
+
+	<li><a href="#initialx">< initialx ></a></li>
+
+    <li><a href="#scramble">< scramble ></a></li>
+
+
+</u1>
+</section>
+</nav>
+
+  <section id = "overview">
+<header>
+<h1>Overview</h1>
+</header>
+<a href="#block">Back to the top.</a>
+<p>
+This section describes elements that are not part of interactive control or scripted control. Thus, they are miscellaneous.
+</p>
+
+<p>
+misc
+   </p>
+   
+   <p>
+    |
+</p>
+
+<p>
+    |-initialx
+</p>
+
+<p>
+    |-scramble
+</p>
+
+<p>
+Elements include, prefixpath, datecreated and datelastaltered may also be
+used in structure when appropriate. See Volume 1. Model, Top-Level
+Elements.
+   </p>
+   </section>
+     <section id = "misc">
+<header>
+<h1>< misc ></h1>
+</header>
+<a href="#block">Back to the top.</a>
+<p>
+Use this element as a container element for miscellaneous control
+elements.
+</p>
+
+<p>
+    < misc>
+</p>
+
+<p>
+        Miscellaneous control elements go here.
+</p>
+
+<p>
+    < /misc>
+</p>
+
+<p>
+    Valid in < control >
+</p>
+
+<p>
+See also: 
+</p>
+
+<p>
+    * < interactive>
+</p>
+
+<p>
+    * < scripted >
+</p>
+
+<p>
+DTD 
+</p>
+
+<p>
+Some elements in misc may be defined only once.
+</p>
+
+<p>
+    < !ELEMENT misc
+</p>
+
+<p>
+    (( #PCDATA,
+</p>
+
+<p>
+    initialx?,
+</p>
+
+<p>
+    #PCDATA,
+</p>
+
+<p>
+    scramble?,
+</p>
+
+<p>
+    #PCDATA
+</p>
+
+<p>
+    )
+</p>
+
+<p>
+    |
+</p>
+
+<p>
+    ( #PCDATA,
+</p>
+
+<p>
+    scramble?,
+</p>
+
+<p>
+    #PCDATA,
+</p>
+
+<p>
+    initialx?,
+</p>
+
+<p>
+    #PCDATA
+</p>
+
+<p>
+    ))
+</p>
+
+<p>
+    >
+
+   </p>
+   </section>
+   
+     <section id = "initialx">
+<header>
+<h1>< initialx ></h1>
+</header>
+<a href="#block">Back to the top.</a>
+<p>
+Use this element to define the initial value of the equation solver's
+independent variable, called System.X, usually representing time. The
+default, and most common, value is 0.
+</p>
+
+<p>
+    < initialx>
+</p>
+
+<p>
+        Initial value of X goes here.
+</p>
+
+<p>
+    < /initialx>
+</p>
+
+<p>
+    Valid in < misc >
+</p>
+
+<p>
+DTD
+</p>
+
+<p>
+    < !ELEMENT initialx (#PCDATA)>
+   </p>
+   </section>
+     <section id = "scramble">
+<header>
+<h1>< scramble ></h1>
+</header>
+<a href="#block">Back to the top.</a>
+<p>
+The random number generator is always seeded the same way. Thus, it
+generates a random, but predictable, sequence during repeat solutions.
+</p>
+
+<p>
+Use this element to switch to a random seed. The random number
+generator will generate a truly random sequence during each solution.
+</p>
+
+<p>
+    < scramble/>
+</p>
+
+<p>
+    Valid in < misc >
+</p>
+
+<p>
+See also:
+</p>
+
+<p>
+    * < whitenoise >
+</p>
+
+<p>
+    * < normaldist >
+</p>
+
+<p>
+in Volume 2. Structure...Variables
+</p>
+
+<p>
+DTD
+</p>
+
+<p>
+    < !ELEMENT scramble EMPTY>
+   </p>
+   </section>
+      </div> 
+  
+  <footer class="main"> 
+    &copy;2010 &ndash; University of Mississippi Medical Center
+  </footer> 
+</body> 
+</html>
