@@ -1,0 +1,267 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+  <title>HumMod | Documentation</title> 
+  <link href="http://help.hummod.com/css/application.css" media="screen" rel="stylesheet" type="text/css" /> 
+</head> 
+<body id="help"> 
+  <!-- Fork Me Badge -->
+  <a href="http://github.com/hummod"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://d3nwyuy0nl342s.cloudfront.net/img/30f550e0d38ceb6ef5b81500c64d970b7fb0f028/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6f72616e67655f6666373630302e706e67" alt="Fork me on GitHub"></a>
+  <!-- End of Badge -->
+  <header id="main"> 
+    <h1><a href="http://hummod.org">HumMod</a></h1> 
+      <h2>Help</h2> 
+      <nav class="main"> 
+        <a href="http://hummod.org/about">About</a> / 
+        <a href="http://hummod.org/projects">Projects</a> / 
+        Help / 
+        <a href="http://hummod.org/contact">Contact</a> 
+      </nav> 
+  </header> 
+    <hr /> 
+  <div id="content">
+
+  <section>
+  <header>
+  <h1> Overview </h1>
+  </header>
+
+	<p>
+	The common element is a container element for display objects 	that are designed to be used generally or by more than one panel.
+	</p>
+
+	<p>
+	Main common items are:
+	</p>
+
+
+	<ul>
+	<li>The name of the panel to be displayed first.</li>
+
+	<li>The font to be used in the panels.</li>
+
+	<li>The panel tree. This is the structure used to organize the 	pop menus that list all of the model's panels.</li>
+	</ul>
+
+	<p>
+	There are also some visual objects that might be defined here for 	sharing or might be defined in a panel. These are the elements 	maplist, repeatlist and symbol. They are described in Panel since 	they are usually used more extensively in that element.
+	</p>
+
+ </section>
+
+  <section>
+  <header>
+  <h1> < branch > </h1>
+  </header>
+
+	<p>
+	Use this element to create a new pop-down menu or sub-menu.
+	</p>
+
+	<p>
+	The tree will be used to define one or more pop menus (with sub-	menus) or a tree view of available panels.
+	</p>
+
+	<p>
+	<br>
+	< branch > <br><br>
+
+
+	< name > Name of new menu. < /name > <br><br>
+
+
+	< label > Display this label. < /label > <br><br>
+
+
+	< parent > Name of parent menu. < /parent > <br><br>
+
+
+	< /branch >
+	</p>
+
+	<p>
+	The solver's main menu can be a parent. Its name is MAINMENU.
+	</p>
+
+  </section>
+
+  <section>
+  <header>
+  <h1> < common > </h1>
+  </header>
+
+	<p>
+	Use this element as a container element for common display 	elements.
+	</p>
+
+	<p>
+	<br>
+	< common > Common display elements. < /common >
+	</p>
+
+	<p>
+	Some common display elements are displayfirst, font and tree.
+	</p>
+
+  </section>
+
+  <section>
+  <header>
+  <h1> < display > </h1>
+  </header>
+
+	<p>
+	Use this element as a container element for display elements. The 	main display elements are common and multiple panels.
+	</p>
+
+	<p>
+	<br>
+	< display > Common & panel elements. < /display >
+	</p>
+
+	<p>
+	Put all the common elements before the panel elements to allow 	panels to refer to common display objects.
+	</p>
+
+  </section>
+
+  <section>
+  <header>
+  <h1> < displayfirst > </h1>
+  </header>
+
+	<p>
+	Use this element to identify the panel that should be displayed 	first.
+	</p>
+
+	<p>
+	<br>
+	< displayfirst > Display this panel 1st. < /displayfirst >
+	</p>
+
+	<p>
+	If this element is not used, the first panel created will be the 	first panel displayed.
+	</p>
+
+  </section>
+
+  <section>
+  <header>
+  <h1> < font > </h1>
+  </header>
+
+	<p>
+	NOTE – This element has not yet been implemented. The font just 	now comes from the default values.
+	</p>
+
+	<p>
+	Use this element to define the font to be used in panels.
+	</p>
+
+
+	<p>
+	<br>
+	< font > <br><br>
+
+	< name > Font name. < /name > <br><br>
+
+	< style > Font style. < /style > <br><br>
+
+	< size > Font size (pts.). < /size > <br><br>
+
+	< color > Font color. < /color > <br><br>
+
+	< /font >
+	</p>
+
+	<p>
+	Default values for name, style, size and color are Tahoma, 	regular, 9 and black.
+	</p>
+
+  </section>
+
+  <section>
+  <header>
+  <h1> < leaf > </h1>
+  </header>
+
+	<p>
+	Use this element to place a panel on a pop-down menu or sub-menu.
+	</p>
+
+	<p>
+	<br>
+	< leaf > <br><br>
+
+	< name > Name of panel. < /name > <br><br>
+
+	< label > Display this label. < /label > <br><br>
+
+	< parent > Name of parent menu. < /parent > <br><br>
+
+	< /leaf >
+	</p>
+
+  </section>
+
+  <section>
+  <header>
+  <h1> < separatorbar > </h1>
+  </header>
+
+	<p>
+	Use this element place a spacer in one of the pop-down panel 	menus.
+	</p>
+
+	<p>
+	<br>
+	< separatorbar > <br><br>
+
+	< parent > Name of menu. < /parent > <br><br>
+
+	< /separatorbar >
+	</p>
+
+  <section>
+  <header>
+  <h1> < tree > </h1>
+  </header>
+
+	<p>
+	Use this element organize the display's panels in a tree 	structure.
+	</p>
+
+	<p>
+	The tree will be used to define one or more pop menus (with sub-	menus) or a tree view of available panels.
+	</p>
+
+	<p>
+	<br>
+	< tree > Tree elements go here. < /tree >
+	</br>
+
+	<p>
+	Tree elements are:
+	</p>
+
+	<ul>
+	<li>A panel with name, label and menu name (a leaf).</li>
+
+	<li>A pop menu with name, label and parent menu name (a branch).	</li>
+
+	<li>A menu separator bar.</li>
+	</ul>
+
+	<p>
+	Pop menus can be hooked into the right end of the solver's main 	menu.
+	</p>
+
+  </section>
+
+  </div> 
+
+  <footer class="main"> 
+    &copy;2010 &ndash; University of Mississippi Medical Center
+  </footer> 
+</body> 
+</html>
