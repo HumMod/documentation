@@ -1,0 +1,1086 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+  <title>HumMod | Documentation</title> 
+  <link href="http://help.hummod.com/css/application.css" media="screen" rel="stylesheet" type="text/css" /> 
+</head> 
+<body id="help"> 
+  <!-- Fork Me Badge -->
+  <a href="http://github.com/hummod"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://d3nwyuy0nl342s.cloudfront.net/img/30f550e0d38ceb6ef5b81500c64d970b7fb0f028/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6f72616e67655f6666373630302e706e67" alt="Fork me on GitHub"></a>
+  <!-- End of Badge -->
+  <header id="main"> 
+    <h1><a href="http://hummod.org">HumMod</a></h1> 
+      <h2>Help</h2> 
+      <nav class="main"> 
+        <a href="http://hummod.org/about">About</a> / 
+        <a href="http://hummod.org/projects">Projects</a> / 
+        Help / 
+        <a href="http://hummod.org/contact">Contact</a> 
+      </nav> 
+  </header> 
+    <hr /> 
+  <div id="content">
+
+  <section>
+  <header>
+  <h1>Overview</h1>
+  </header>
+
+	<p>
+	This section defines elements that can be part of a script that 	controls the solution.
+	</p>
+
+	<p>
+	Multiple solutions may be calculated and selected data can be 	saved to data files. User interaction is not necessarily 	required.
+	</p>
+
+	<p>
+	The highest-level scripted control element is named scripted. It 	is a container element for the scripted control children.
+	</p>
+
+	<p>
+	<br>
+	scripted<br>
+	     |---fixedparm<br>
+	     |---%tasks<br>
+
+	</p>
+
+	<p>
+	<br>
+	%tasks<br>
+	    |---accept<br>
+	    |---advancefor<br>
+	    |---advanceto<br>
+	    |---call<br>
+	    |---def<br>
+	    |---eval<br>
+	    |---exitscript<br>
+	    |---fileaccept<br>
+	    |---fileannotate<br>
+	    |---fileclose<br>
+	    |---filenewline<br>
+	    |---fileopenappend<br>
+	    |---fileopencreate<br>
+	    |---fileroster<br>
+	    |---filestarttracking<br>
+	    |---filestoptracking<br>
+	    |---filetimestamp<br>
+	    |---fileupdate<br>
+	    |---fileverify<br>
+	    |---filewriteheader<br>
+	    |---loadics<br>
+	    |---message<br>
+	    |---pause<br>
+	    |---repeatfor<br>
+	    |---repeatwhile<br>
+	    |---replacenote<br>
+	    |---reset<br>
+	    |---restart<br>
+	    |---saveics<br>
+	    |---selectpanel<br>
+	    |---setdisplayspeed<br>
+	    |---setfileattribute<br>
+	    |---setpagerstatus<br>
+	    |---setworkdir
+	</p>
+
+  </section>
+
+  <section>
+  <header>
+  <h1> < fixedparm > </h1>
+  </header>
+
+	<p>
+	Use this element to declare and define a variable to be used in a 	script.
+	</p>
+
+	<p>
+	This variable type was chosen because it does not lose its value 	on a solution restart. Thus, it can be used in the control of 	multiple solutions. See also Volume 2. Structure, Variables where 	fixedparm is also an element.
+	</p>
+
+	<p>
+	<br>
+	< fixedparm > <br><br>
+
+	< name > <br><br>
+
+	Unique variable name goes here.<br><br>
+
+	< /name > <br><br>
+
+	< val > <br><br>
+
+	Parameter's initial value goes here.<br><br>
+
+	< /val > <br><br>
+
+	< /fixedparm ><br><br>
+	</p>
+
+	<p>
+	<br>
+	Valid in < scripted > <br><br>
+	DTD<br><br>
+
+	< !ELEMENT fixedparm (name, val) ><br><br>
+
+	< !ELEMENT name (#PCDATA) ><br>
+	< !ELEMENT val (#PCDATA) >
+	</p>
+
+  </section>
+
+  <section>
+  <header>
+  <h1> %tasks </h1>
+  </header>
+
+	<p>
+	Most of the scripted elements appear as children in several different
+scripted elements. These have been grouped in the %tasks entity.
+	</p>
+
+	<p>
+See Volume 5. Docs, Document Type Description for a description of
+entities.
+	</p>
+	
+	<p>
+DTD This entity is designed to be content in an element declaration. It
+states that a variety of child scripted elements may appear in an element
+in any order and amount.
+	</p>
+	
+	<p>
+	<br>
+	< !ENTITY % tasks<br><br>
+	“( accept<br><br>
+	| advancefor<br>
+	| advanceto<br>
+	| call<br>
+	| def<br>
+	| eval<br>
+	| exitscript<br>
+	| fileaccept<br>
+	| fileannotate<br>
+	| fileclose<br>
+	| filenewline<br>
+	| fileopenappend<br>
+	| fileopencreate<br>
+	| fileroster<br>
+	| filestarttracking<br>
+	| filestopstracking<br>
+	| filetimestamp<br>
+	| fileupdate<br>
+	| fileverify<br>
+	| filewriteheader<br>
+	| loadics<br>
+	| message<br>
+	| pause<br>
+	| repeatfor<br>
+	| repeatwhile<br>
+	| replacenote<br>
+	| reset<br>
+	| restart<br>
+	| saveics<br>
+	| selectpanel<br>
+	| setdisplayspeed<br>
+	| setfileattribute<br>
+	| setpagerstatus<br>
+	| setworkdir<br><br>
+	)”<br><br>
+	>
+	</p>
+
+  </section>
+
+  <section>
+  <header>
+  <h1> < accept > </h1>
+  </header>
+
+	<p>
+Use this element to check the value of the named variable. If the value is
+less than the minimum specified or greater that the maximum specified, a
+not accepted message is displayed.
+	</p>
+
+	<p>
+	<br>
+	< accept ><br><br>
+	< name ><br><br>
+	Name of variable to be evaluated goes here.<br><br>
+	< /name ><br><br>
+	< min ><br><br>
+	Minimum acceptable value goes here.<br><br>
+	< /min ><br><br>
+	< max ><br><br>
+	Maximum acceptable value goes here.<br><br>
+	< /max ><br><br>
+	By default, the script continues after announcing an unacceptable
+	value. But, you can use the empty element below to stop the 	script after an unacceptable value has been announced.<br><br>
+	< stoponnotaccepted/ ><br><br>
+	< /accept >
+	</p>
+
+	<p>
+	Valid in %tasks.
+	</p>
+
+	<p>
+	DTD
+	</p>
+
+	<p>
+	<br>
+	< !ELEMENT accept<br><br>
+	( name,<br><br>
+	min?,<br><br>
+	max?,<br><br>
+	stoponnotaccepted?<br><br>
+	)<br><br>
+	>
+	</p>
+
+	<p>
+	<br>
+	< !ELEMENT name (#PCDATA) ><br><br>
+	< !ELEMENT min (#PCDATA) ><br><br>
+	< !ELEMENT max (#PCDATA) ><br><br>
+	< !ELEMENT stoponnotaccepted EMPTY >
+	</p>
+
+	<p>
+	If min is not specified, the lower bounds are not checked. If max 	is not specified, the upper bounds are not checked. If 	stoponnotaccepted is not specified, the script continues.
+	</p>
+
+  </section>
+
+  <section>
+  <header>
+  <h1> < advancefor > </h1>
+  </header>
+
+	<p>
+	See this volume's Overview for a description of intervals.
+	This is the scripted version of the gofor element in interactive 	control.
+	</p>
+
+	<p>
+	Use this element to advance the solution. Specify the solution, 	display and storage intervals.
+	</p>
+
+	<p>
+	<br>
+	< advancefor ><br><br>
+	< solutionint ><br><br>
+	Solution interval goes here.<br><br>
+	< /solutionint ><br><br>
+	< displayint ><br><br>
+	Display interval goes here.<br><br>
+	< /displayint ><br><br>
+	< storageint ><br><br>
+	Storaage interval goes here.<br><br>
+	< /storageint ><br><br>
+	< /advancefor >
+	</p>
+
+	<p>
+	Valid in %tasks
+	</p>
+	
+	<p>
+	See also:<br>
+	< advanceto >
+	</p>
+
+	<p>
+	DTD
+	</p>
+
+	<p>
+	<br>
+	< !ELEMENT advancefor<br><br><br>
+	( solutionint,<br><br>
+	displayint?,<br><br>
+	storageint?<br><br>
+	)<br><br>
+	>
+	</p>
+
+	<p>
+	<br>
+	< !ELEMENT solutionint (#PCDATA) ><br><br>
+	< !ELEMENT displayint (#PCDATA) ><br><br>
+	< !ELEMENT storageint (#PCDATA) >
+	</p>
+
+	<p>
+	The default displayint is solutionint / 10. The default 	storageint is displayint.
+	</p>
+
+  </section>
+
+  <section>
+  <header>
+  <h1> < advanceto > </h1>
+  </header>
+
+	<p>
+	See this volume's Overview for a description of intervals.
+	This is the scripted version of the goto element in interactive 	control.
+	</p>
+
+	<p>
+	Use this element to advance the solution. Specify the solution, 	display and storage intervals.
+	</p>
+
+	<p>
+	This is a little tricky, but it works great in tidying up the 	progress of a solution. A solution interval is specified, but the 	solution doesn?t go the full interval. Instead, it goes until the 	independent variable (System.X) has increased to the next 	multiple of the specified solution interval.
+	</p>
+
+	<p>
+	Thus, this is a modified advancefor element.
+	</p>
+
+	<p>
+	<br>
+	< advanceto ><br><br>
+	< solutionint ><br><br>
+	Solution interval goes here.<br><br>
+	< /solutionint ><br><br>
+	< displayint ><br><br>
+	Display interval goes here.<br><br>
+	< /displayint ><br><br>
+	< storageint ><br><br>
+	Storaage interval goes here.<br><br>
+	< /storageint ><br><br>
+	< /advanceto >
+	</p>
+
+	<p>
+	As an example, suppose the independent variable has a current 	value of 2000. The Go menu has a goto menu item with a solution 	interval of 1440 (and maybe a label of To Next Day). When user 	clicks this choice, the solution will be advanced to the next 	multiple of 1440, which is 2880, for a net advance of 880.
+	</p>
+
+	<p>
+	<br>
+	Valid in %tasks
+	</p>
+
+	<p>
+	<br>
+	See also:<br>
+	< advancefor >
+	</p>
+
+	<p>
+	<br>
+	DTD:<br><br>
+
+	<!ELEMENT advanceto<br><br>
+	( solutionint,<br><br>
+	displayint?,<br><br>
+	storageint?<br><br>
+	)<br><br>
+	><br><br><br>
+
+	< !ELEMENT solutionint (#PCDATA) ><br><br>
+	< !ELEMENT displayint (#PCDATA) ><br><br>
+	< !ELEMENT storageint (#PCDATA) >
+	</p>
+
+	<p>
+	The default displayint is solutionint / 10. The default 	storageint is displayint.
+	</p>
+
+  </section>
+
+  <section>
+  <header>
+  <h1> < call > </h1>
+  </header>
+
+	<p>
+	Use this element to call or invoke a block of math in 	definitions. The element is also used in definitions (see Volume 	2. Structure, Definitions).
+	</p>
+
+	<p>
+	<br>
+	< call ><br><br>
+	Block name goes here.<br><br>
+	< /call >
+	</p>
+
+	<p>
+	<br>
+	Valid in %tasks.
+	</p>
+
+	<p>
+	DTD:<br><br>
+
+	< !ELEMENT call (#PCDATA) >
+	</p>
+
+  </section>
+
+  <section>
+  <header>
+  <h1> < def > </h1>
+  </header>
+
+	<p>
+	Use this element to change the value of a variable.
+	</p>
+
+	<p>
+	This element is also used in definitions (see Volume 2. 	Structure, Definitions).
+	</p>
+
+	<p>
+	<br>
+	< def ><br><br>
+	< name ><br><br>
+	Variable name goes here.<br><br>
+	< /name ><br><br>
+	< val ><br><br>
+	Mathematical expression goes here.<br><br>
+	< /val ><br><br>
+	< /def ><br><br>
+	</p>
+	
+	<p>
+	<br>
+	Valid in %tasks.
+	</p>
+
+	<p>
+	<br>
+	DTD:<br><br>
+	< !ELEMENT def (name, val) ><br><br>
+	< !ELEMENT name (#PCDATA) ><br><br>
+	< !ELEMENT val (#PCDATA) >
+	</p>
+
+  </section>
+
+  <section>
+  <header>
+  <h1> < def > </h1>
+  </header>
+
+Use this element to change the value of a variable.
+This element is also used in definitions (see Volume 2. Structure,
+Definitions).
+<def>
+<name>
+Variable name goes here.
+</name>
+<val>
+Mathematical expression goes here.
+</val>
+</def>
+Valid in %tasks.
+DTD
+<!ELEMENT def (name, val)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT val (#PCDATA)>
+
+  </section>
+
+  <section>
+  <header>
+  <h1> < eval > </h1>
+  </header>
+
+Use this element to implement conditional scrip execution.
+The mathematical expression in test is evaluated. If it evaluates to TRUE,
+the tasks in the truetasks element are executed. If it evaluates to FALSE,
+the tasks in the falsetasks element are executed.
+<eval>
+<test>
+Expression to be evaluated goes here.
+</test>
+<truetasks>
+Tasks for TRUE outcome go here.
+</truetasks>
+<falsetasks>
+Tasks for FALSE outcome go here.
+</falsetasks>
+</eval>
+This element is similar to the if element in %math (see Volume 2.
+Structure, Definitions).
+Valid in %tasks.
+DTD
+<!ELEMENT eval
+( test,
+truetasks?,
+falsetasks?
+)
+>
+<!ELEMENT test (#PCDATA)>
+<!ELEMENT truetasks %tasks; >
+<!ELEMENT falsetasks %tasks; >
+
+  </section>
+
+  <section>
+  <header>
+  <h1> < exitscript > </h1>
+  </header>
+
+When this element is encountered, the script is terminated.
+I don't see how this can be used, but there may be an occasional and
+unanticipated use.
+<exitscript/>
+Valid in %tasks.
+DTD
+<!ELEMENT exitscript EMPTY>
+
+  </section>
+
+  <section>
+  <header>
+  <h1> < fileaccept > </h1>
+  </header>
+
+Use this element to check the value of the named variable. The
+evaluation is recorded in the open file.
+If the value of the variable is less than the minimum specified or greater
+that the maximum specified, a not accepted message is recorded.
+This element is identical to accept except that the output device is a file
+rather than the screen.
+<fileaccept>
+<name>
+Name of variable to be evaluated goes here.
+</name>
+<min>
+Minimum acceptable value goes here.
+</min>
+<max>
+Maximum acceptable value goes here.
+</max>
+By default, the script continues after logging an unacceptable value.
+But, you can use the empty element below to stop the script after
+an unacceptable value has been recorded.
+<stoponnotaccepted/>
+</fileaccept>
+Valid in %tasks.
+DTD
+<!ELEMENT fileaccept
+( name,
+min?,
+max?,
+stoponnotaccepted?
+)
+>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT min (#PCDATA)>
+<!ELEMENT max (#PCDATA)>
+<!ELEMENT stoponnotaccepted EMPTY>
+If min is not specified, the lower bounds are not checked. If max is not
+specified, the upper bounds are not checked. If stoponnotaccepted is not
+specified, the script continues.
+
+  </section>
+
+  <section>
+  <header>
+  <h1> < fileannotate > </h1>
+  </header>
+
+Use this element to add text to the open file.
+<fileannotate>
+Annotation text goes here.
+</fileannotate>
+Valid in %tasks.
+DTD
+<!ELEMENT fileannotate (#PCDATA)>
+
+  </section>
+
+  <section>
+  <header>
+  <h1> < fileclose > </h1>
+  </header>
+
+Use this element to close the open file.
+<fileclose/>
+Valid in %tasks.
+DTD
+<!ELEMENT fileclose EMPTY>
+
+  </section>
+
+  <section>
+
+  <header>
+  <h1> < filenewline > </h1>
+  </header>
+
+Use this element to write an empty line to the open file.
+<filenewline/>
+Valid in %tasks.
+DTD
+<!ELEMENT filenewline EMPTY>
+
+  </section>
+
+  <section>
+  <header>
+  <h1> < fileopenappend > </h1>
+  </header>
+
+Use this element to open an existing file with the specified filename.
+Writes to the file will be appended to the end of the file.
+<fileopenappend>
+Filename goes here.
+</fileopenappend>
+Valid in %tasks.
+DTD
+<!ELEMENT fileopenappend (#PCDATA)>
+
+  </section>
+
+  <section>
+  <header>
+  <h1> < fileopencreate > </h1>
+  </header> 
+
+Use this element to create and open a new file with the specified filename.
+<fileopencreate>
+Filename goes here.
+</fileopencreate>
+Valid in %tasks.
+DTD
+<!ELEMENT fileopencreate (#PCDATA)>
+
+  </section>
+
+  <section>
+  <header>
+  <h1> fileroster </h1>
+  </header>
+
+Use this element to identify the variables whose values will be written into
+the open file by solution tracking and fileupdate.
+See Volume 5. Misc, File Formats for the file format.
+<fileroster>
+<variable>
+<name>
+Variable's name goes here.
+</name>
+<format>
+Format details go here >.
+</format>
+</variable>
+More variable's go here.
+</fileroster>
+Valid in %tasks.
+DTD
+<!ELEMENT fileroster (variable*)>
+<!ELEMENT variable (name, format?)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT format %format; >
+
+  </section>
+
+  <section>
+  <header>
+  <h1> < filestarttracking > </h1>
+  </header>
+
+Tracking is the process of writing the values of selected variables into the
+open file at each display interval for all or part of a solution.
+Variables, formats and file layout are specified by the filelayout element.
+Tracking is started by the this element and stopped by filestoptracking
+element.
+<filestarttracking/>
+Valid in %tasks.
+DTD
+<!ELEMENT filestarttracking EMPTY>
+
+  </section>
+
+  <section>
+  <header>
+  <h1> < filestoptracking > </h1>
+  </header>
+
+Tracking is the process of writing the values of selected variables into the
+open file at each display interval for all or part of a solution.
+Variables, formats and file layout are specified by the filelayout element.
+Tracking is started by the filestarttracking element and stopped by this
+element.
+<filestoptracking/>
+Valid in %tasks.
+DTD
+<!ELEMENT filestoptracking EMPTY)>
+
+  </section>
+
+  <section>
+  <header>
+  <h1> < filetimestamp > </h1>
+  </header>
+
+Use this element to write the current time and date into the open file.
+<filetimestamp/>
+Valid in %tasks.
+DTD
+<!ELEMENT filetimestamp EMPTY>
+
+  </section>
+
+  <section>
+  <header>
+  <h1> < fileupdate > </h1>
+  </header>
+
+Use this element to write the current values of selected variables into the
+open file. Variables, formats and file layout are specified by the filelayout
+element.
+<fileupdate/>
+Valid in %tasks.
+DTD
+<!ELEMENT fileupdate EMPTY>
+
+  </section>
+
+  <section>
+  <header>
+  <h1> < fileverify > </h1>
+  </header>
+
+Use this element to verify that the specified file exists. The script is
+terminated if the file does not exist.
+<fileverify>
+Filename goes here.
+</fileverify>
+Valid in %tasks.
+DTD
+<!ELEMENT fileverify (#PCDATA)>
+
+  </section>
+
+  <section>
+  <header>
+  <h1> < filewriteheader > </h1>
+  </header>
+
+Use this element to write a header in the open file. Header is composed
+using the label specifications in the filelayout element.
+<filewriteheader/>
+Valid in %tasks.
+DTD
+<!ELEMENT filewriteheader EMPTY>
+
+  </section>
+
+  <section>
+  <header>
+  <h1> < loadics > </h1>
+  </header>
+
+Load initial conditions from the specified initial conditions file.
+<loadics>
+Existing IC's filename goes here.
+</loadics>
+Valid in %tasks.
+DTD
+<!ELEMENT loadics (#PCDATA)>
+
+  </section>
+
+  <section>
+  <header>
+  <h1> < message > </h1>
+  </header>
+
+Text is display in a message box when this element is encountered.
+Usually used in conditional code, but it might also be used to announce
+progress in a big script.
+<message>
+Text for display goes here.
+</message>
+Valid in %tasks.
+DTD
+<!ELEMENT message (#PCDATA)>
+
+  </section>
+
+  <section>
+  <header>
+  <h1> < pause > </h1>
+  </header>
+
+When this element is encountered, the execution of the script pauses.
+User response is required. The user can then choose to continue the
+script or to exit the script.
+<pause/>
+Valid in %tasks.
+DTD
+<!ELEMENT pause EMPTY>
+
+  </section>
+
+  <section>
+  <header>
+  <h1> < repeatfor > </h1>
+  </header>
+
+Execute the tasks in this element the number of times specified by count
+(base 1).
+<repeatfor>
+<count>
+Number of repetitions goes here.
+</count>
+Tasks to be executed go here.
+</repeatfor>
+Valid in %tasks
+DTD
+<!ELEMENT repeatfor (count, %tasks; )>
+<!ELEMENT count (#PCDATA)>
+
+  </section>
+
+  <section>
+  <header>
+  <h1> < repeatwhile > </h1>
+  </header>
+
+Evaluate the mathematical expression in test. If the result is TRUE,
+execute the tasks in this element. Repeat the evaluation and execution
+sequence until the result is FALSE.
+<repeatwhile>
+<test>
+Expression to be evaluated goes here.
+</test>
+Tasks to be executed go here.
+</repeatwhile>
+Valid in %tasks
+DTD
+<!ELEMENT repeatwhile (test, %tasks; )>
+<!ELEMENT test (#PCDATA)>
+
+  </section>
+
+  <section>
+  <header>
+  <h1> < replacenote > </h1>
+  </header>
+
+A note is text that is displayed on a panel and stored in an initial conditions
+file. It can be edited or replaced (as is done here) to individualize the
+initial conditions data set.
+<replacenote>
+<name>
+Note?s name goes here.
+</name>
+<line>
+Line of text goes here.
+</line>
+More lines go here.
+</replacenote>
+Valid in %tasks
+DTD
+
+  </section>
+
+  <section>
+  <header>
+  <h1> < reset > </h1>
+  </header>
+
+Variables have three different values.
+The current value is the value that is seen as a solution advances. It can
+change continuously.
+The initial value is the value at the start of a solution. Restart sets the
+variables to their initial values. But initial values are not totally invariant.
+Initial values are assigned new values when an initial conditions file is
+loaded. In addition fixed parameter values and locked parameter values
+are not changed during a restart.
+The original value is the value when the model is first loaded. Reset sets
+the variables to their original values. This means that values from initial
+conditions files are discarded. Locked parameter values are unlocked. All
+variables, including fixed parameters, are set to their original values.
+Use this element to reset the model.
+<reset/>
+Valid in %tasks.
+DTD
+<!ELEMENT reset EMPTY>
+
+  </section>
+
+  <section>
+  <header>
+  <h1> < restart > </h1>
+  </header>
+
+Variables have three different values.
+The current value is the value that is seen as a solution advances. It can
+change continuously.
+The initial value is the value at the start of a solution. Restart sets the
+variables to their initial values. But initial values are not totally invariant.
+Initial values are assigned new values when an initial conditions file is
+loaded. In addition fixed parameter values and locked parameter values
+are not changed during a restart.
+The original value is the value when the model is first loaded. Reset sets
+the variables to their original values. This means that values from initial
+conditions files are discarded. Locked parameter values are unlocked. All
+variables, including fixed parameters, are set to their original values.
+Use this element to restart the solution.
+<restart/>
+Valid in %tasks.
+DTD
+<!ELEMENT restart EMPTY>
+
+  </section>
+
+  <section>
+  <header>
+  <h1> < saveics > </h1>
+  </header>
+
+Use this element to save the initial condition values to the specified file.
+<saveics>
+IC's filename goes here.
+</saveics>
+Valid in %tasks.
+DTD
+<!ELEMENT saveics (#PCDATA)>
+
+  </section>
+
+  <section>
+  <header>
+  <h1> < selectpanel > </h1>
+  </header>
+
+Use this element to change the panel being displayed. May be useful in a
+complex script when you want to watch what is going on.
+<selectpanel>
+Panel name goes here.
+</selectpanel>
+Valid in %tasks.
+DTD
+<!ELEMENT selectpanel (#PCDATA)>
+
+  </section>
+
+  <section>
+  <header>
+  <h1> < setdisplayspeed > </h1>
+  </header>
+
+The display speed (or screen refresh rate) is timed to provide a smooth
+solution. A slow display speed is sometimes useful when giving a
+demonstration. A fast display speed is sometimes uses in a script when
+no one is watching.
+Use this element to set the display speed.
+<setdisplayspeed>
+Display speed goes here.
+</setdisplayspeed>
+Possible display speeds are
+0 - Slowest
+1 - Slow
+2 - Normal
+3 - Fast
+4 - Fastest
+Valid in %tasks.
+DTD
+<!ELEMENT setdisplayspeed (#PCDATA)>
+
+  </section>
+
+  <section>
+  <header>
+  <h1> < setfileattribute > </h1>
+  </header>
+
+While this element may find more than one use, it was originally created to
+set initial condition files to read-only to prevent loss by overwriting.
+<setfileattribute>
+<filename>
+Filename goes here.
+</filename>
+<attribute>
+Attribute goes here.
+</attribute>
+</setfileattribute>
+Possible attributes are NORMAL and READONLY.
+Valid in %tasks
+DTD
+<!ELEMENT setfileattribute (filename, attribute)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT attribute (#PCDATA)>
+
+  </section>
+
+  <section>
+  <header>
+  <h1> < setpagerstatus > </h1>
+  </header>
+
+Use this element to set the pager status. A page requires user response
+and this might not be desirable in some scripts.
+<setpagerstatus>
+Pager status is ON or OFF.
+</setpagerstatus>
+Valid in %tasks.
+DTD
+<!ELEMENT setpagerstatus (#PCDATA)>
+
+  </section>
+
+  <section>
+  <header>
+  <h1> < setworkdir > </h1>
+  </header>
+
+Use this element to set the working directory.
+<setworkdir>
+Path to working directory goes here.
+</setworkdir>
+Working directory specification must contain a drive
+letter. An example: C:\Scripts
+Valid in %tasks.
+DTD
+<!ELEMENT setworkdir (#PCDATA)>
+
+  </section>
+
+  <section>
+  <header>
+  <h1> < scripted > </h1>
+  </header>
+
+Use this element as a container element for all of the scripted control
+elements.
+<scripted>
+Scripted control elements go here.
+</scripted>
+Valid in < control >
+See also < interactive >
+< remote >
+< misc >
+DTD The elements in scripted may be defined in any order and amount.
+<!ELEMENT scripted
+( fixedparm
+| %tasks
+)*
+>
+
+  </section>
+
+
+
+  </div> 
+
+  <footer class="main"> 
+    &copy;2010 &ndash; University of Mississippi Medical Center
+  </footer> 
+</body> 
+</html>
