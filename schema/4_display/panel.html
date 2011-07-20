@@ -177,8 +177,54 @@ The default label is none. The default layout is LABELRIGHT.
 </header>
 <a href="#block">Back to the top.</a>
 <p>
+Several commands allow the user to change the value of one of the
+model?s parameters.
+</p>
 
+<p>
+The checkbox element draws a box and shows a check if the parameter
+has a non-zero value. The box is empty when the parameter is zero.
    </p>
+   
+   <p>
+     <img src="https://github.com/HumMod/documentation/raw/gh-pages/images/schema/checkbox.png" alt="checkbox" width="173" height="54"> 
+     </p>
+
+<p>
+    User clicks on box to toggle between checked (1) and not checked (0)
+values.
+</p>
+
+<p>
+Use this element to create a checkbox.
+</p>
+
+<p>
+< checkbox>
+</p>
+
+<p>
+< row> Row. < /row>
+</p>
+
+<p>
+< col> Column (Left side). < /col>
+</p>
+
+<p>
+< name> Parameter name. < /name>
+</p>
+<p>
+< label> Label (Optional). < /label>
+</p>
+
+<p>
+< /checkbox>
+</p>
+
+<p>
+The default label is the parameter name. 
+</p>
    </section>  
    
    <section id = "checkmark">
@@ -187,6 +233,54 @@ The default label is none. The default layout is LABELRIGHT.
 </header>
 <a href="#block">Back to the top.</a>
 <p>
+Use this element to display a checkmark as a function of the numerical
+value of a variable.
+</p>
+
+<p>
+  <img src="https://github.com/HumMod/documentation/raw/gh-pages/images/schema/checkmark.png" alt="checkmark">
+  </p>
+  
+  <p>
+  If the value of the variable is zero, no checkmark is displayed (bottom line
+above). If the value is not zero, a checkmark is displayed (top line above).
+</p>
+
+<p>
+< checkmark>
+</p>
+
+<p>
+< row> Row. < /row>
+</p>
+
+<p>
+< col> Column (Left side). < /col>
+</p>
+
+<p>
+< name> Variable name. < /name>
+</p>
+
+<p>
+< label> Label (Optional). < /label>
+</p>
+
+<p>
+< layout> CHECKLEFT or CHECKRIGHT. < /layout>
+</p>
+
+<p>
+< /checkmark>
+</p>
+
+<p>
+If a label is not specified, the variable name is used as a label. 
+</p>
+
+<p>
+The
+default layout is CHECKLEFT.
    </p>
    </section>  
    
@@ -196,7 +290,57 @@ The default label is none. The default layout is LABELRIGHT.
 </header>
 <a href="#block">Back to the top.</a>
 <p>
-   </p>
+Several elements allow the user to change the value of one of the model's
+parameters.
+</p>
+
+<p>
+  <img src="https://github.com/HumMod/documentation/raw/gh-pages/images/schema/editbox.png" alt="editbox" width="173" height="54"> 
+  </p>
+  
+  <p>
+ The editbox element puts a box, a button, a label and the parameter?s
+current value on the screen. The user can enter a new value in the box
+and then click the button to apply the value to the parameter.
+</p>
+
+<p>
+< editbox>
+</p>
+
+<p>
+< row> Row. < /row>
+</p>
+
+<p>
+< col> Column (Left side). < /col>
+</p>
+
+<p>
+< name> Parameter name. < /name>
+</p>
+
+<p>
+< label> Label (Optional). < /label>
+</p>
+
+<p>
+< min> Minimum value allowed. < /min>
+</p>
+
+<p>
+< max> Maximum value allowed. < /max>
+</p>
+
+<p>
+< /editbox>
+</p>
+
+<p>
+If the label is not specified, the parameter?s name is used as a label.
+If min and/or max are not specified, the new value is not restricted in that
+respective direction. 
+  </p>
    </section>  
    
    <section id = "format">
@@ -205,6 +349,78 @@ The default label is none. The default layout is LABELRIGHT.
 </header>
 <a href="#block">Back to the top.</a>
 <p>
+The format element is not a top-level element in panels and group boxes.
+</p>
+
+<p>
+It is used a bit further down. But it is such a wordy element that I wanted to
+document it just once – right here.
+</p>
+
+<p>
+Use this child element to specify a format to be used when a numerical
+value is displayed.
+Specify just one of the several possible formats.
+</p>
+
+<p>
+< format>
+</p>
+
+<p>
+< none/> or
+</p>
+
+<p>
+< integer/> or
+</p>
+
+<p>
+< decimal> Digits after decimal. < /decimal> or
+</p>
+
+<p>
+< list> List name. < /list> or
+</p>
+
+<p>
+< timer/> or
+</p>
+
+<p>
+< timestamp/> or
+</p>
+
+<p>
+< boolean/>
+</p>
+
+<p>
+< fieldwidth> Field width in columns. < /fieldwidth>
+ </p>
+ 
+ <p>
+ < justify> LEFT, CENTER or RIGHT. < /justify>
+</p>
+
+<p>
+< /format>
+</p>
+
+<p>
+If the format element is not used, the number is not formatted. This
+means that the image will probably have lots of digits to the right of the
+decimal point.
+</p>
+
+<p>
+The default fieldwidth is 12 columns. The default justify is LEFT.
+</p>
+
+<p>
+The list format requires some explanation. A list is an ordered set of
+numerical value and image pairs. The list format takes a variable's numerical value, finds the closest numerical value in the list, and then
+displays the corresponding image. See maplist and repeatlist.
    </p>
    </section>  
    
@@ -214,7 +430,60 @@ The default label is none. The default layout is LABELRIGHT.
 </header>
 <a href="#block">Back to the top.</a>
 <p>
-   </p>
+Use the groupbox element to draw a groupbox with a title. The title can be
+used to identify the theme of the box's contents.
+</p>
+
+<p>
+  <img src="https://github.com/HumMod/documentation/raw/gh-pages/images/schema/groupbox_p206.jpg" alt="groupbox" width="248" height="74"> 
+  </p>
+
+  <p>
+  < groupbox>
+</p>
+
+<p>
+< row> Top. < /row>
+</p>
+
+<p>
+< col> Left side < /col>
+</p>
+
+<p>
+< high> Rows high < /high>
+</p>
+
+<p>
+< wide> Columns wide < /wide>
+</p>
+
+<p>
+< title> Title (Near upper left) < /title>
+</p>
+
+<p>
+The box?s visual objects are defined here.
+</p>
+
+<p>
+< /groupbox>
+</p>
+
+<p>
+The row, col, high and wide elements are floating point.
+</p>
+
+<p>
+When a groupbox is opened, the drawing origin (row = 0.0, col = 0.0) is
+moved to the top left corner of the groupbox. When the groupbox is
+closed, the drawing origin is returned to its previous position.
+</p>
+
+<p>
+If a title is not specified, the box has no title. It appears as a simple
+rectangle rather than the titled rectangle shown above.
+  </p>
    </section>  
    
    <section id = "infobutton">
@@ -223,7 +492,61 @@ The default label is none. The default layout is LABELRIGHT.
 </header>
 <a href="#block">Back to the top.</a>
 <p>
-   </p>
+This element creates a button showing the letter i with an optional label
+located to the left or right of the button.
+</p>
+
+<p>
+  <img src="https://github.com/HumMod/documentation/raw/gh-pages/images/schema/infobutton.png" alt="infobutton" width="23" height="25"> 
+  </p>
+  
+  <p>
+  When the button is clicked, the specified lines of text (info) are displayed
+in a message box.
+</p>
+
+<p>
+< infobutton>
+</p>
+
+<p>
+< row> Row. < /row>
+</p>
+
+<p>
+< col> Column (Left side). < /col>
+</p>
+
+<p>
+< label> Label (Optional). < /label> </p>
+
+<p>
+or
+</p>
+
+<p>
+< nolabel/>
+ </p>
+ 
+ <p>
+ < layout> LABELLEFT or LABELRIGHT. < /layout>
+</p>
+
+<p>
+< line> A line of info. < /line>
+</p>
+
+<p>
+More lines of info go here.
+</p>
+
+<p>
+< /infobutton>
+</p>
+
+<p>
+The default label is no label. The default layout is LABELRIGHT.
+  </p>
    </section>  
    
    <section id = "label">
@@ -232,6 +555,48 @@ The default label is none. The default layout is LABELRIGHT.
 </header>
 <a href="#block">Back to the top.</a>
 <p>
+Use the label element to create a label.
+</p>
+
+<p>
+< label>
+</p>
+
+<p>
+< row> Row. < /row>
+</p>
+
+<p>
+< col> Column (Left side). < /col>
+</p>
+
+<p>
+< text> Label?s text. < /text>
+</p>
+
+<p>
+< fieldwidth> Columns wide. < /fieldwidth>
+</p>
+
+<p>
+< justify> LEFT, CENTER or RIGHT. < /justify>
+</p>
+
+<p>
+< color> Text color. < /color>
+</p>
+
+<p>
+< /label>
+</p>
+
+<p>
+The default fieldwidth is that width is adjusted automatically. Specify field
+width only when doing some fancy center or right justification.
+</p>
+
+<p>
+Default justify is LEFT. Default color is BLACK.
    </p>
    </section>  
    
@@ -241,6 +606,101 @@ The default label is none. The default layout is LABELRIGHT.
 </header>
 <a href="#block">Back to the top.</a>
 <p>
+Lists are ordered pairs of numerical values and text.
+</p>
+
+<p>
+For example, this data might be used to define heart strength:
+</p>
+
+<p>
+Numerical Value Text
+</p>
+
+<p>
+0.0 None
+</p>
+
+<p>
+1.0 Low
+</p>
+
+<p>
+2.0 Normal
+</p>
+
+<p>
+3.0 High
+</p>
+
+<p>
+Lists are used to define qualitative values and to limit choices during a
+parameter change.
+</p>
+
+<p>
+Use this element to create a list that defines qualitative values.
+</p>
+
+<p>
+< maplist>
+</p>
+
+<p>
+< name> Unique list name. < /name>
+</p>
+
+<p>
+< map>
+</p>
+
+<p>
+< val> Value. < /val> < img> Image. < /img>
+</p>
+
+<p>
+< /map>
+</p>
+
+<p>
+More map elements go here.
+HumMod 2010 Schema
+</p>
+
+<p>
+< /maplist>
+</p>
+
+<p>
+As an example, the list created below represents the map shown above.
+</p>
+
+<p>
+< maplist>
+</p>
+
+<p>
+< name> HeartStrength < /name>
+</p>
+
+<p>
+< map>< val> 0.0 < /val>< img> None < /img>< /map>
+</p>
+
+<p>
+< map>< val> 1.0 < /val>< img> Low < /img>< /map>
+</p>
+
+<p>
+< map>< val> 2.0 < /val>< img> Normal < /img>< /map>
+</p>
+
+<p>
+< map>< val> 3.0 < /val>< img> High < /img>< /map>
+</p>
+
+<p>
+< /maplist>
    </p>
    </section>  
    
@@ -250,6 +710,46 @@ The default label is none. The default layout is LABELRIGHT.
 </header>
 <a href="#block">Back to the top.</a>
 <p>
+Use the panel element as a container element for a panel?s visual objects.
+</p>
+
+<p>
+A panel has a name and an optional tab label. The name is unique (and
+hopefully it is quite descriptive). 
+</p>
+
+<p>
+The optional tab label replaces the full
+name (if it is too cumbersome) in the tab above the active panel (this is a
+future development).
+</p>
+
+<p>
+< panel>
+</p>
+
+<p>
+< name> Panel name. < /name>
+</p>
+
+<p>
+< tablabel> Panel?s tab label. < /tablabel>
+</p>
+
+<p>
+Panel's visual objects are defined here.
+</p>
+
+<p>
+< /panel>
+</p>
+
+<p>
+The default tablabel is the panel name.
+</p>
+
+<p>
+There is no limit on the number of panels that can be defined.
    </p>
    </section>  
    
@@ -259,7 +759,72 @@ The default label is none. The default layout is LABELRIGHT.
 </header>
 <a href="#block">Back to the top.</a>
 <p>
+Several elements allow the user to change the value of one of the model?s
+parameters.
+</p>
+
+<p>
+The radiobuttons element creates some radio buttons which can be used
+to select a new value for a parameter.
    </p>
+   
+   <p>
+     <img src="https://github.com/HumMod/documentation/raw/gh-pages/images/schema/radiobuttons.png" alt="radiobuttons" width="249" height="73"> 
+     </p>
+     
+     <p>
+     < radiobuttons>
+</p>
+
+<p>
+< row> Row. < /row>
+</p>
+
+<p>
+< col> Column (Left side). < /col>
+</p>
+
+<p>
+< name> Parameter name. < /name>
+</p>
+
+<p>
+< listname> Button labels. < /listname>
+</p>
+
+<p>
+< label> Label (Optional). < /label> 
+</p>
+
+<p>
+or
+</p>
+
+<p>
+< nolabel/>
+</p>
+
+<p>
+< layout> HORZ or VERT. < /layout>
+</p>
+
+<p>
+< /radiobuttons>
+</p>
+
+<p>
+The named list above is the mapped list that supplies radiobutton labels
+and parameter values, such as Off means 0 and On means 1.
+</p>
+
+<p>
+If the label is not specified, the parameter?s name is used as the label.
+</p>
+
+<p>
+Layout specifies button layout. The two possible layouts are horizontal
+(HORZ) and vertical (VERT). The default value is HORZ.
+     </p>
    </section>  
    
    <section id = "repeatlist">
@@ -268,6 +833,109 @@ The default label is none. The default layout is LABELRIGHT.
 </header>
 <a href="#block">Back to the top.</a>
 <p>
+Lists are ordered pairs of numerical values and text.
+</p>
+
+<p>
+Lists can be used to limit choices during a parameter change.
+</p>
+
+<p>
+The repeatlist element produces a list of evenly spaced numerical values.
+</p>
+
+<p>
+The values and their images are identical.
+</p>
+
+<p>
+< repeatlist>
+</p>
+
+<p>
+< name> Unique list name. < /name>
+</p>
+
+<p>
+< firstval> First value in list. < /firstval>
+</p>
+
+<p>
+< repeat>
+</p>
+
+<p>
+< reps> Repetitions @ step size. < /reps>
+</p>
+
+<p>
+< stepsize> Step size. < /stepsize>
+</p>
+
+<p>
+< /repeat>
+</p>
+
+<p>
+More repeat elements go here.
+</p>
+
+<p>
+< /repeatlist>
+</p>
+
+<p>
+The first value in the list and the step size are floating point. The default
+first value is 0.0.
+</p>
+
+<p>
+Repetitions is an integer.
+</p>
+
+<p>
+As an example, the list created below steps from 1 to 10 in increments of
+1 and then steps from 10 to 100 in increments of 10.
+</p>
+
+<p>
+< repeatlist>
+</p>
+
+<p>
+< name> Example < /name>
+</p>
+
+<p>
+< firstval> 1.0 < /firstval>
+</p>
+
+<p>
+< repeat>
+</p>
+
+<p>
+< reps> 9 < /reps>< stepsize> 1 < /stepsize>
+</p>
+
+<p>
+< /repeat>
+</p>
+
+<p>
+< repeat>
+</p>
+
+<p>
+< reps> 9 < /reps>< stepsize> 10 < /stepsize>
+</p>
+
+<p>
+< /repeat>
+</p>
+
+<p>
+< /repeatlist>
    </p>
    </section>  
    
@@ -277,6 +945,43 @@ The default label is none. The default layout is LABELRIGHT.
 </header>
 <a href="#block">Back to the top.</a>
 <p>
+The scale element is like the format element. It is not a top-level element
+in panels and group boxes. But I?ll document it here just once to avoid
+repetition.
+</p>
+
+<p>
+Scale is a child element that is used to specify the scale used on the axes
+of graphs. It is applied to the x- and y-axes of graphs and to the only axis
+of bargraphs and valuebars.
+</p>
+
+<p>
+< scale>
+</p>
+
+<p>
+< min> Minimum scale initial value. < /min>
+</p>
+
+<p>
+< max> Maximum scale initial value. < /max>
+</p>
+
+<p>
+< inc> Auto-scaling increment. < /inc>
+</p>
+
+<p>
+< /scale>
+</p>
+
+<p>
+Min, max and inc are floating point.
+</p>
+
+<p>
+The default value for inc is max minus min.
    </p>
    </section>  
    
@@ -286,7 +991,116 @@ The default label is none. The default layout is LABELRIGHT.
 </header>
 <a href="#block">Back to the top.</a>
 <p>
-   </p>
+Use the showbargraph element to create a horizontal bar graph for one or
+more variables.
+</p>
+
+<p>
+  <img src="https://github.com/HumMod/documentation/raw/gh-pages/images/schema/showbargraph_p216.jpg" alt="showbargraph" width="231" height="247"> 
+  </p>
+  
+  <p>
+  < showbargraph>
+</p>
+
+<p>
+< row> Row. < /row>
+</p>
+
+<p>
+< col> Column (Left side). < /col>
+</p>
+
+<p>
+< high> Rows high < /high>
+</p>
+
+<p>
+< wide> Columns wide < /wide>
+</p>
+
+<p>
+< leftmargin> Margin columns wide < /leftmargin>
+</p>
+
+<p>
+< title> Label alone bottom. < /title>
+</p>
+
+<p>
+< showinitialvalues/>
+</p>
+
+<p>
+< bar>
+</p>
+
+<p>
+< name> Variable name. < /name>
+</p>
+
+<p>
+< label> Label (Optional). < /label> 
+</p>
+
+<p>
+or
+</p>
+
+<p>
+< nolabel/>
+</p>
+
+<p>
+< color> Bar and label color. < /color>
+</p>
+
+<p>
+< label> Label (Optional). < /label>
+</p>
+
+<p>
+< /bar>
+</p>
+
+<p>
+Additional bars go here. Adjust high accordingly.
+</p>
+
+<p>
+< scale> See < scale>. < /scale>
+</p>
+
+<p>
+< /showbargraph>
+</p>
+
+<p>
+There are some default values for high and wide. Don?t use the defaults –
+the results will be ugly.
+</p>
+
+<p>
+The leftmargin element reserves some room for the bar labels.
+</p>
+
+<p>
+The default title is no title.
+</p>
+
+<p>
+The showinitialvalues empty element instructs the bar graph to draw a thin
+line at the level of the initial values. This marking is visible in the figure
+above. The default value is to not show initial values.
+</p>
+
+<p>
+If a bar label is not specified, the variable?s name is used as a label.
+</p>
+
+<p>
+Default bar and label color is BLACK. I like BLUE.
+  </p>
    </section>  
    
    <section id = "showbitmap">
@@ -295,6 +1109,38 @@ The default label is none. The default layout is LABELRIGHT.
 </header>
 <a href="#block">Back to the top.</a>
 <p>
+Use the showbitmap element to load a bitmap from the application?s
+resource and display it in a panel at the specified location.
+</p>
+
+<p>
+< showbitmap>
+</p>
+
+<p>
+< row> Row. < /row>
+</p>
+
+<p>
+< col> Column (Left side). < /col>
+</p>
+
+<p>
+< name> Bitmap name. < /name>
+</p>
+
+<p>
+< /showbitmap>
+</p>
+
+<p>
+Bitmaps are given a name when they are stored in the application?s
+resource. The trick is to know what these names are.
+</p>
+
+<p>
+One work around is to look at HUMMOD?s panels. When you see a bitmap
+that you like, look in the appropriate DES file for the name of the bitmap.
    </p>
    </section>  
    
@@ -304,6 +1150,28 @@ The default label is none. The default layout is LABELRIGHT.
 </header>
 <a href="#block">Back to the top.</a>
 <p>
+Use the showbitmapfile element to load a bitmap from a file and display it
+in a panel at the specified location.
+</p>
+
+<p>
+< showbitmapfile>
+</p>
+
+<p>
+< row> Row. < /row>
+</p>
+
+<p>
+< col> Column (Left side). < /col>
+</p>
+
+<p>
+< name> Bitmap file name. < /name>
+</p>
+
+<p>
+< /showbitmapfile>
    </p>
    </section>  
    
@@ -313,6 +1181,68 @@ The default label is none. The default layout is LABELRIGHT.
 </header>
 <a href="#block">Back to the top.</a>
 <p>
+Use this element to display the value of a variable using a digital clock
+format.
+</p>
+
+<p>
+12:31 PM Day 7 Sec 0 Mon Day 8
+</p>
+
+<p>
+< showclock>
+</p>
+
+<p>
+< row> Row. < /row>
+</p>
+
+<p>
+< col> Column (Left side). < /col>
+</p>
+
+<p>
+< name> Variable name. < /name>
+</p>
+
+<p>
+< timebase> Variable?s time base. < /timebase>
+</p>
+
+<p>
+< ampm/>
+</p>
+
+<p>
+< secs/>
+</p>
+
+<p>
+< days/>
+</p>
+
+<p>
+< /showclock>
+</p>
+
+<p>
+The available time bases are MILLISEC, SEC, MIN, HOUR, DAY, WEEK
+and MONTH
+</p>
+
+<p>
+Use ampm empty element below to request AM|PM display. The default
+is 24 hour (international) time.
+</p>
+
+<p>
+Use secs empty element below to request a display of seconds. The
+default is HH:MM only.
+</p>
+
+<p>
+Use days empty element below to request a display of days. The default
+is no days.
    </p>
    </section>  
    
@@ -322,6 +1252,161 @@ The default label is none. The default layout is LABELRIGHT.
 </header>
 <a href="#block">Back to the top.</a>
 <p>
+Use the showcurve element to create a graph of the output of a curve
+function (y-axis) as a function of the input (x-axis) over the full range of the
+curve?s input. Put the graph at the current drawing point.
+</p>
+
+<p>
+  <img src="https://github.com/HumMod/documentation/raw/gh-pages/images/schema/showcurve_p221.jpg" alt="showcurve" width="244" height="147">
+   </p>
+   
+   <p>
+   Curves can misbehave quite badly between points, so it is a good idea to
+view the total curve to see if it looks OK.
+</p>
+
+<p>
+< showcurve>
+</p>
+
+<p>
+< row> Row. < /row>
+</p>
+
+<p>
+< col> Column (Left side). < /col>
+</p>
+
+<p>
+< high> Rows high < /high>
+</p>
+
+<p>
+< wide> Columns wide < /wide>
+</p>
+
+<p>
+< leftmargin> Margin columns wide < /
+leftmargin>
+</p>
+
+<p>
+< xaxis>
+</p>
+
+<p>
+< name> Variable name. < /name>
+</p>
+
+<p>
+< label> Label (Optional). < /label> 
+</p>
+
+<p>
+or
+</p>
+
+<p>
+< nolabel/>
+</p>
+
+<p>
+< scale> See < scale>. < /scale>
+</p>
+
+<p>
+< /xaxis>
+</p>
+
+<p>
+< yaxis>
+</p>
+
+<p>
+< label> Label (Optional). < /label> 
+</p>
+
+<p>
+or
+</p>
+
+<p>
+< nolabel/>
+</p>
+
+<p>
+< linetype> Line type. < /linetype>
+</p>
+
+<p>
+< linecolor> Line color. < /linecolor>
+</p>
+
+<p>
+< symbolname> Symbol. < /symbolname>
+</p>
+
+<p>
+< scale> See < scale>. < /scale>
+</p>
+
+<p>
+< /yaxis>
+</p>
+
+<p>
+< curvename> Curve name. < /curvename
+>
+</p>
+
+<p>
+< noghost> or
+</p>
+
+<p>
+< ghost>
+</p>
+
+<p>
+< linetype> Line type. < /linetype>
+</p>
+
+<p>
+< linecolor> Line color. < /linecolor>
+</p>
+
+<p>
+< symbolname> Symbol. < /symbolname>
+</p>
+
+<p>
+< /ghost>
+</p>
+
+<p>
+< /showcurve>
+</p>
+
+<p>
+The default value for high is 7 rows. The default value for wide is 30
+columns.
+</p>
+
+<p>
+The leftmargin element reserves some room for the bar labels. The default
+value for left margin is 6 columns.
+</p>
+
+<p>
+Default line type is solid. Default line color is BLACK for graphs and GREY
+for ghosts.
+</p>
+
+<p>
+A ghost will show the original curve shape and symbol location. This is
+probably of no value when the curve is not changing (for right now –
+always).
    </p>
    </section>  
    
@@ -331,6 +1416,46 @@ The default label is none. The default layout is LABELRIGHT.
 </header>
 <a href="#block">Back to the top.</a>
 <p>
+Use the showfile element to display the contents of a text file in a scrolling
+window.
+</p>
+
+<p>
+< showfile>
+</p>
+
+<p>
+< row> Row (Top). < /row>
+</p>
+
+<p>
+< col> Column (Left side). < /col>
+</p>
+
+<p>
+< high> Rows high < /high>
+</p>
+
+<p>
+< wide> Columns wide < /wide>
+</p>
+
+<p>
+< name> File name. < /name>
+</p>
+
+<p>
+< /showfile>
+</p>
+
+<p>
+If filename is not specified, this element will display the file holding the
+model?s root element.
+</p>
+
+<p>
+The default window height is 20 rows. The default window width is 50
+columns.
    </p>
    </section>  
    
@@ -340,6 +1465,141 @@ The default label is none. The default layout is LABELRIGHT.
 </header>
 <a href="#block">Back to the top.</a>
 <p>
+Use the showgraph element to create a graph. One or more variables may
+be shown on the y-axis, sharing a common x-axis.
+</p>
+
+<p>
+  <img src="https://github.com/HumMod/documentation/raw/gh-pages/images/schema/showgraph_p225.jpg" alt="showgraph" width="251" height="126">
+  </p>
+  
+  <p>
+  This is the graphing workhorse.
+</p>
+
+<p>
+< showgraph>
+</p>
+
+<p>
+< row> Row (Top). < /row>
+</p>
+
+<p>
+< col> Column (Left side). < /col>
+</p>
+
+<p>
+< high> Rows high < /high>
+</p>
+
+<p>
+< wide> Columns wide < /wide>
+</p>
+
+<p>
+< leftmargin> Margin columns wide < /leftmargin>
+</p>
+
+<p>
+< xaxis>
+</p>
+
+<p>
+< name> Variable name. < /name>
+</p>
+
+<p>
+< label> Label (Optional). < /label> 
+</p>
+
+<p>
+or
+</p>
+
+<p>
+< nolabel/>
+</p>
+
+<p>
+< scale> See < scale>. < /scale>
+</p>
+
+<p>
+< /xaxis>
+</p>
+
+<p>
+< yaxis>
+</p>
+
+<p>
+< yvar>
+</p>
+
+<p>
+< label> Label (Optional). < /label> 
+</p>
+
+<p>
+or
+</p>
+
+<p>
+< nolabel/>
+</p>
+
+<p>
+< linetype> Line type. < /linetype>
+</p>
+
+<p>
+< linecolor> Line color. < /linecolor>
+</p>
+
+<p>
+< symbolname> Symbol. < /symbolname>
+</p>
+
+<p>
+< /yvar>
+</p>
+
+<p>
+Additional Y variables go here.
+</p>
+
+<p>
+< scale> See < scale>. < /scale>
+</p>
+
+<p>
+< /yaxis>
+</p>
+
+<p>
+< /showgraph>
+</p>
+
+<p>
+The default graph height is 7 rows.
+</p>
+
+<p>
+ The default graph width is 30
+columns. The default left margin is 6 columns.
+</p>
+
+<p>
+If a label is not specified, the variable?s name is used as a label.
+</p>
+
+<p>
+The default linetype is SOLID. The default linecolor is BLACK.
+</p>
+
+<p>
+If a symbol is not specified, no symbol is shown.
    </p>
    </section>  
    
@@ -349,6 +1609,158 @@ The default label is none. The default layout is LABELRIGHT.
 </header>
 <a href="#block">Back to the top.</a>
 <p>
+A map is used as a multiple-input, multiple-output function. We use the
+copy element to pass values to a block, we execute the block, and we use
+the copy element again to get the return values.
+</p>
+
+<p>
+We can show a map roughly like we can show a curve (limiting the map to
+a single input variable and single output variable).
+</p>
+
+<p>
+< showmap> 
+</p>
+
+<p>
+< row> Row (Top). < /row>
+</p>
+
+<p>
+< col> Column (Left side). < /col>
+</p>
+
+<p>
+< high> Rows high < /high>
+</p>
+
+<p>
+< wide> Columns wide < /wide>
+</p>
+
+<p>
+< leftmargin> Margin columns wide < /leftmargin>
+</p>
+
+<p>
+< xaxis>
+</p>
+
+<p>
+< name> Variable name. < /name>
+</p>
+
+<p>
+< label> Label (Optional). < /label> 
+</p>
+
+<p>
+or
+</p>
+
+<p>
+< nolabel/>
+</p>
+
+<p>
+< scale> See < scale>. < /scale>
+</p>
+
+<p>
+< /xaxis>
+</p>
+
+<p>
+< yaxis>
+</p>
+
+<p>
+< name> Variable name. < /name>
+</p>
+
+<p>
+< label> Label (Optional). < /label> 
+</p>
+
+<p>
+or
+</p>
+
+<p>
+< nolabel/>
+</p>
+
+<p>
+< linetype> Line type. < /linetype>
+</p>
+
+<p>
+< linecolor> Line color. < /linecolor>
+</p>
+
+<p>
+< symbolname> Symbol. < /symbolname>
+</p>
+
+<p>
+< scale> See < scale>. < /scale>
+</p>
+
+<p>
+< /yaxis>
+</p>
+
+<p>
+< blockname> Map block name. < /blockname>
+</p>
+
+<p>
+< noghost> or
+</p>
+
+<p>
+< ghost>
+</p>
+
+<p>
+< linetype> Line type. < /linetype>
+</p>
+
+<p>
+< linecolor> Line color. < /linecolor>
+</p>
+
+<p>
+< symbolname> Symbol. < /symbolname>
+</p>
+
+<p>
+< /ghost>
+</p>
+
+<p>
+< /showmap>
+</p>
+
+<p>
+The default value for high is 7 rows. The default value for wide is 30
+columns.
+</p>
+
+<p>
+The leftmargin element reserves some room for the bar labels. The default
+value for left margin is 6 columns.
+</p>
+
+<p>
+Default line type is solid. Default line color is BLACK for graphs and GREY
+for ghosts.
+</p>
+
+<p>
+A ghost will show the original map result and symbol location. This is
+probably of no value when the map is not changing, but maps can change.
    </p>
    </section>  
    
@@ -358,6 +1770,27 @@ The default label is none. The default layout is LABELRIGHT.
 </header>
 <a href="#block">Back to the top.</a>
 <p>
+Use this element to display a panel?s name in the panel.
+</p>
+
+<p>
+A typical location is the upper, left-hand corner of the panel.
+</p>
+
+<p>
+< showpanelname>
+</p>
+
+<p>
+< row> Row. < /row>
+</p>
+
+<p>
+< col> Column (Left side). < /col>
+</p>
+
+<p>
+< /showpanelname>
    </p>
    </section>  
    
@@ -367,6 +1800,109 @@ The default label is none. The default layout is LABELRIGHT.
 </header>
 <a href="#block">Back to the top.</a>
 <p>
+The values of related variables can be displayed in a tabular format with
+labels located where needed.
+</p>
+
+<p>
+  <img src="https://github.com/HumMod/documentation/raw/gh-pages/images/schema/showtable_p232.jpg" alt="showtable" width="256" height="137">
+  </p>
+  
+  <p>
+  Use the showtable element to create a table.
+</p>
+
+<p>
+A table is one or more side-by-side columns. Each column contains a
+stack of cells. Each cell displays
+</p>
+
+<p>
+A numerical value, or
+</p>
+
+<p>
+Text, or
+</p>
+
+<p>
+Nothing.
+</p>
+
+<p>
+< showtable>
+</p>
+
+<p>
+< row> Row (Top). < /row>
+</p>
+
+<p>
+< col> Column (Left side). < /col>
+</p>
+
+<p>
+< column>
+</p>
+
+<p>
+< indent> Indent columns. < /indent>
+</p>
+
+<p>
+< fieldwidth> Field width columns. < /fieldwidth>
+</p>
+
+<p>
+< justify> LEFT, CENTER or RIGHT. < /justify>
+</p>
+
+<p>
+< valuecell>
+</p>
+
+<p>
+< name> Variable name. < /name>
+</p>
+
+<p>
+< format> See < format>. < /format>
+</p>
+
+<p>
+< /valuecell>
+</p>
+
+<p>
+or
+</p>
+
+<p>
+< textcell> Text. < /textcell>
+</p>
+
+<p>
+or
+</p>
+
+<p>
+< emptycell/>
+</p>
+
+<p>
+More cells go here.
+</p>
+
+<p>
+< /column>
+</p>
+
+<p>
+More columns go here.
+</p>
+
+<p>
+< /showtable>
    </p>
    </section>  
    
@@ -376,6 +1912,69 @@ The default label is none. The default layout is LABELRIGHT.
 </header>
 <a href="#block">Back to the top.</a>
 <p>
+Use the showvalue element to display a variable?s formatted numerical
+value.
+</p>
+
+<p>
+  <img src="https://github.com/HumMod/documentation/raw/gh-pages/images/schema/showvalue.png" alt="showvalue" width="137" height="22">
+  </p>
+  
+  <p>
+  This is a display workhorse.
+</p>
+
+<p>
+< showvalue>
+</p>
+
+<p>
+< row> Row. < /row>
+</p>
+
+<p>
+< col> Column (Left side). < /col>
+</p>
+
+<p>
+< name> Variable name. < /name>
+</p>
+
+<p>
+< format> See < format>. < /format>
+</p>
+
+<p>
+< label> Label (Optional). < /label> 
+</p>
+
+<p>
+or
+</p>
+
+<p>
+< nolabel/>
+</p>
+
+<p>
+< noequals/>
+</p>
+
+<p>
+< color> Text color. < /color>
+</p>
+
+<p>
+< /showvalue>
+</p>
+
+<p>
+If the label is not specified, the variable name is used as a label. 
+</p>
+
+<p>
+The
+default color is BLACK.
    </p>
    </section>  
    
@@ -385,6 +1984,85 @@ The default label is none. The default layout is LABELRIGHT.
 </header>
 <a href="#block">Back to the top.</a>
 <p>
+Several elements allow the user to change the value of one of the model?s
+parameters.
+</p>
+
+<p>
+The slidebar element creates a slider that can be used to select a new
+value for the specified parameter.
+   </p>
+   
+   <p>
+     <img src="https://github.com/HumMod/documentation/raw/gh-pages/images/schema/slidebar_p236.jpg" alt="slide bar">
+     </p>
+     
+     <p>
+     A list is used to map the position of the slide to the parameter?s values.
+     </p>
+     
+     <p>
+< slidebar>
+</p>
+
+<p>
+< row> Row. < /row>
+</p>
+
+<p>
+< col> Column (Left side). < /col>
+</p>
+
+<p>
+< high> Rows high < /high>
+</p>
+
+<p>
+< wide> Columns wide < /wide>
+</p>
+
+<p>
+< name> Variable name. < /name>
+</p>
+
+<p>
+< listname> List name. < /listname>
+</p>
+
+<p>
+< label> Label (Optional). < /label>
+</p>
+
+<p>
+ or
+</p>
+
+<p>
+< nolabel/>
+</p>
+
+<p>
+< fieldwidth> Field width. < /fieldwidth>
+</p>
+
+<p>
+< /slidebar>
+</p>
+
+<p>
+If a label is not specified, the name of the parameter is used as a label.
+</p>
+
+<p>
+The default height is 1.0 row. The default width is 12 columns.
+   </p>
+   
+   <p>
+   Sometimes the slidebar width plus the label plus the field width for the
+value is too wide for the containing group box. This visual draw right
+through the right side of the group box. You can correct this situation by
+decreasing the width of the slidebar, using a less verbose label or
+decreasing the numerical field width (my preference).
    </p>
    </section>
       
@@ -394,6 +2072,49 @@ The default label is none. The default layout is LABELRIGHT.
 </header>
 <a href="#block">Back to the top.</a>
 <p>
+A symbol is a little box or circle or X that is used to represent a point on a
+graph.
+</p>
+
+<p>
+https://github.com/HumMod/documentation/raw/gh-pages/images/schema/symbol_p238.jpg
+</p>
+
+<p>
+Use the symbol element to create a symbol.
+</p>
+
+<p>
+< symbol>
+</p>
+
+<p>
+< name> Unique symbol name. < /name>
+</p>
+
+<p>
+< style> BOX, CIRCLE or X. </style>
+</p>
+
+<p>
+< color> Line color. < /color>
+</p>
+
+<p>
+< size> Symbol size. < /size>
+</p>
+
+<p>
+< linewidth> Line width. < /linewidth>
+</p>
+
+<p>
+< /symbol>
+</p>
+
+<p>
+The default color is BLACK. The default size is 3. The default linewidth is
+2.
    </p>
    </section>
       
@@ -403,6 +2124,86 @@ The default label is none. The default layout is LABELRIGHT.
 </header>
 <a href="#block">Back to the top.</a>
 <p>
+A value bar is a horizontal bar with minimum and maximum scales at the
+ends and a symbol somewhere along the bar showing the current value of
+the variable.
+</p>
+
+<p>
+  <img src="https://github.com/HumMod/documentation/raw/gh-pages/images/schema/valuebar_p239.jpg" alt="valuebar" width="130" height="30">
+  </p>
+  
+  <p>
+  Use the valuebar element to create a value bar.
+</p>
+
+<p>
+< valuebar>
+</p>
+
+<p>
+< row> Row. < /row>
+</p>
+
+<p>
+< col> Column (Left side). < /col>
+</p>
+
+<p>
+< wide> Columns wide < /wide>
+</p>
+
+<p>
+< name> Variable name. < /name>
+</p>
+
+<p>
+< label> Label (Optional). < /label> 
+</p>
+
+<p>
+or
+</p>
+
+<p>
+< nolabel/>
+</p>
+
+<p>
+< margins> Margins (Both sides). < /margins>
+</p>
+
+<p>
+< symbolname> Symbol. < /symbolname>
+</p>
+
+<p>
+< ghostname> Ghost. < /ghostname>
+</p>
+
+<p>
+< scale> See < scale>. < /scale>
+</p>
+
+<p>
+< /valuebar>
+</p>
+
+<p>
+Margins reserve some room on either end for the scale values.
+</p>
+
+<p>
+Default value for wide is 30. 
+</p>
+
+<p>
+Default value for margins is 6. 
+</p>
+
+<p>
+Default value
+for label is no label. Default name for ghostname is no ghost.
    </p>
    </section>
       </div> 
