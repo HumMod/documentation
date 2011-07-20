@@ -1,0 +1,471 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+  <title>HumMod | Documentation</title> 
+  <link href="http://help.hummod.com/css/application.css" media="screen" rel="stylesheet" type="text/css" /> 
+</head> 
+<body id="help"> 
+  <p>
+    <!-- Fork Me Badge -->
+    <a href="http://github.com/hummod"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://d3nwyuy0nl342s.cloudfront.net/img/30f550e0d38ceb6ef5b81500c64d970b7fb0f028/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6f72616e67655f6666373630302e706e67" alt="Fork me on GitHub"></a></p>
+  <!-- End of Badge -->
+  <header id="main"> 
+    <h1><a href="http://hummod.org">HumMod</a></h1> 
+      <h2>Help</h2> 
+      <nav class="main"> 
+        <a href="http://hummod.org/about">About</a> / 
+        <a href="http://hummod.org/projects">Projects</a> / 
+      <a href="http://help.hummod.com">Help</a> / 
+        <a href="http://hummod.org/contact">Contact</a> 
+      </nav> 
+  </header> 
+    <hr /> 
+    <div id="content">
+        <nav id="block">
+  <section>
+    <header>
+<h1 align="left">Remote
+</h1>
+</header>
+<u1>
+	<li><a href="#overview">Overview</a></li> 
+
+	<li><a href="#remote">< remote ></a></li>
+
+	<li><a href="#openlistener">< openlistener ></a></li>
+    
+    <li><a href="#closelistener">< closelistener ></a></li>
+    
+    <li><a href="#logfile">< logfile ></a></li>
+
+<li><a href="#closesolver">< closesolver ></a></li>
+
+<li><a href="#changewindow">< changewindow ></a></li>
+
+</u1>
+</section>
+</nav>
+
+  <section id = "overview">
+<header>
+<h1>Overview</h1>
+</header>
+<a href="#block">Back to the top.</a>
+<p>
+This section defines the elements that implement remote requests for
+processing submitted scripts.
+</p>
+
+<p>
+The highest-level remote control element is named remote. It is a
+container element for the remote control children.
+</p>
+
+<p>
+remote
+</p>
+
+<p>
+    |
+</p>
+
+<p>
+    |-openlistener
+</p>
+
+<p>
+    |-closelistener
+</p>
+
+<p>
+    |-changewindow
+</p>
+
+<p>
+    |-logfile
+</p>
+
+<p>
+    |-closesolver
+</p>
+
+<p>
+A listener periodically looks for the existence of a specific file. When the listener finds the file, it processes the file.
+</p>
+
+<p>
+A remote user may establish its own listener, with appropriate filename
+and listening interval.
+</p>
+
+<p>
+To start (bootstrap) the process, we must first open basic listener that listens for a standard filename.
+</p>
+
+<p>
+I arbitrarily recommend a basic listener named BasicListener that listens for a file name BasicListener.DAT at an interval of 5 seconds.
+</p>
+
+<p>
+A listener does not parse the entire model XML schema. Instead, it
+parses three out the four child elements in control.
+</p>
+
+<p>
+A new document element, named remoterequest, is used in this remote
+request schema.
+</p>
+
+<p>
+remoterequest
+</p>
+
+<p>
+		|
+</p>
+
+<p>
+		|-scripted
+</p>
+
+<p>
+		|-remote
+</p>
+
+<p>
+		|-misc
+</p>
+
+<p>
+A remote request, then, is primarily a script.
+</p>
+   </section>
+  
+     <section id = "remote">
+<header>
+<h1>< remote ></h1>
+</header>
+<a href="#block">Back to the top.</a>
+<p>
+Use this element as a container element for all of the remote control
+elements.
+</p>
+
+<p>
+    < remote>
+</p>
+
+<p>
+        Remote control elements go here.
+</p>
+
+<p>
+    < /remote>
+</p>
+
+<p>
+    Valid in < control >
+</p>
+
+<p>
+See also
+</p>
+
+<p>
+    * <  interactive >
+</p>
+
+<p>
+    * < scripted >
+</p>
+
+<p>
+    * < misc >
+</p>
+
+<p>
+DTD The elements in remote may be defined in any order and amount.
+</p>
+
+<p>
+    < !ELEMENT remote
+</p>
+
+<p>
+      ( openlistener
+</p>
+
+<p>
+      | closelistener
+</p>
+
+<p>
+      | changewindow
+</p>
+
+<p>
+      | logfile
+</p>
+
+<p>
+      | closesolver
+</p>
+
+<p>
+      )*
+</p>
+
+<p>
+    >
+   </p>
+   </section>
+     
+     <section id = "openlistener">
+<header>
+<h1>< openlistener ></h1>
+</header>
+<a href="#block">Back to the top.</a>
+<p>
+Use this element to open a listener.
+</p>
+
+<p>
+A listener periodically (once each interval) checks for the existence of a specific (target) file. When the listener finds the file, it processes the file.
+</p>
+
+<p>
+    < openlistener>
+</p>
+
+<p>
+        < name>
+</p>
+
+<p>
+            Listener's name goes here.
+</p>
+
+<p>
+        < /name>
+</p>
+
+<p>
+        < filename>
+</p>
+
+<p>
+            Target filename goes here.
+</p>
+
+<p>
+        < /filename>
+</p>
+
+<p>
+        < interval>
+</p>
+
+<p>
+             Listening interval (seconds) goes here.
+</p>
+
+<p>
+        < /interval>
+</p>
+
+    <p>
+    < /openlistener>
+</p>
+
+<p>
+We refer to the listener's name when closing the listener.
+Valid in remote.
+</p>
+
+<p>
+DTD
+</p>
+
+<p>
+    < !ELEMENT openlistener (name, filename, interval)>
+</p>
+
+<p>
+    < !ELEMENT name (#PCDATA)>
+</p>
+
+<p>
+    < !ELEMENT filename (#PCDATA)>
+</p>
+
+<p>
+    < !ELEMENT interval (#PCDATA)>
+   </p>
+   </section>
+     
+     <section id = "closelistener">
+<header>
+<h1>< closelistener ></h1>
+</header>
+<a href="#block">Back to the top.</a>
+<p>
+Use this element to close down a listener.
+</p>
+
+<p>
+Listeners consume resources. If you are done using a listener, close it
+down.
+</p>
+
+<p>
+    < closelistener>
+</p>
+
+<p>
+        Listener name goes here.
+</p>
+
+<p>
+    < /closelistener>
+</p>
+
+<p>
+Valid in remote.
+</p>
+
+<p>
+DTD
+</p>
+
+<p>
+    < !ELEMENT closelistener (#PCDATA)>
+   </p>
+   </section>
+     
+     <section id = "logfile">
+<header>
+<h1>< logfile ></h1>
+</header>
+<a href="#block">Back to the top.</a>
+<p>
+Use this element request a log file. A log file is used to log the progress
+made when a script is processed.
+</p>
+
+<p>
+The file is created when the processing is completed.
+</p>
+
+<p>
+The presence of this file tells a remote user that the script has been
+processed and the script output file is now ready for parsing.
+</p>
+
+<p>
+The content of this file indicates success or failed and it shows the errors,
+if any, that were logged.
+</p>
+
+<p>
+See Volume 5. Misc, File Formats for the file format.
+</p>
+
+<p>
+    < logfile>
+</p>
+
+<p>
+        Log file name goes here.
+</p>
+
+<p>
+    < /logfile>
+</p>
+
+<p>
+Valid in remote.
+</p>
+
+<p>
+DTD
+</p>
+
+<p>
+    < !ELEMENT logfile (#PCDATA)>
+   </p>
+   </section>
+     
+     <section id = "closesolver">
+<header>
+<h1>< closesolver ></h1>
+</header>
+<a href="#block">Back to the top.</a>
+<p>
+Use this element to close down the equation solver.
+If a remote user launched the equation solver and is
+now done using it, this is the proper way to shut it
+down.
+</p>
+
+<p>
+    < closesolver>
+</p>
+
+<p>
+Valid in remote.
+</p>
+
+<p>
+DTD
+</p>
+
+<p>
+    < !ELEMENT closesolver EMPTY>
+   </p>
+   </section>
+   
+     <section id = "changewindow">
+<header>
+<h1>< changewindow ></h1>
+</header>
+<a href="#block">Back to the top.</a>
+<p>
+Use this element to change the state of the equation solver's main
+window.
+</p>
+
+<p>
+    < changewindow>
+</p>
+
+<p>
+       Window action goes here.
+</p>
+
+<p>
+    < /changewindow>
+</p>
+
+<p>
+Possible actions are HIDE, SHOW, MINIMIZE and RESTORE.
+</p>
+
+<p>
+Valid in remote.
+</p>
+
+<p>
+DTD
+</p>
+
+<p>
+    < !ELEMENT changewindow (#PCDATA)>
+   </p>
+   </section>
+      </div> 
+  
+  <footer class="main"> 
+    &copy;2010 &ndash; University of Mississippi Medical Center
+  </footer> 
+</body> 
+</html>
