@@ -38,7 +38,7 @@ body {
 	line-height: 1;
 }
 ol, ul {
-	list-style: none;
+	list-style: circle;
 }
 blockquote, q {
 	quotes: none;
@@ -176,17 +176,23 @@ nav#block section {
   line-height: 14px; }
   #content p {
     margin-bottom: 10px;
-    text-indent: 25px; }
+    text-indent: 25px;}
   #content section h1 {
     font-size: 1.28571429em;
     line-height: 0.94285714em; }
+
+.paragraph {
+	text-indent: 100px;
+	background-color:#C00
+}
 
 footer {
   color: #8a92ad; }
 
 /* General Pages */
 body #main h1, body #main h2 {
-  padding: 0; }
+  padding: 0;
+  }
 body #main h2 {
   margin-top: 0.43em;
   padding-bottom: 10px; }
@@ -218,6 +224,14 @@ body footer {
   
 body#help {
   overflow: auto;
+}
+
+body #content h1 {
+	font-size:24px;
+}
+
+body #content h2 {
+	font-size:18px;
 }
 
 section, section header {
