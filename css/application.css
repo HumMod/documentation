@@ -227,11 +227,17 @@ body#help {
 }
 
 body #content h1 {
-	font-size:24px;
+	font-size:2em;
 }
 
 body #content h2 {
-	font-size:18px;
+	font-size:1.5em;
+	text-indent: 1.5em;
+}
+
+body #content p {
+	text-indent: 3em;
+	padding-top: 1.4em;
 }
 
 section, section header {
