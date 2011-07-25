@@ -226,18 +226,18 @@ body#help {
   overflow: auto;
 }
 
-body #content h1 {
+body #info h1 {
 	font-size:2em;
 }
 
-body #content h2 {
+body #info h2 {
 	font-size:1.5em;
 	text-indent: 1.5em;
 }
 
-body #content p {
+body #info p {
 	text-indent: 3em;
-	padding-top: 1.4em;
+	padding-top: 1em;
 }
 
 section, section header {
