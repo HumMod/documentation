@@ -25,9 +25,6 @@ We try to keep the look of the HumMod sites uniform.  As such, please do not ove
 
 All pages should use the `default.html` layout.  As we finalize the styles and appropriate tags, the README will be updated.
 
-## Language
-We use [Markdown](http://daringfireball.net/projects/markdown/).
-
 ## Structure
 Each page is divided into sections.  These sections should have header tags with an h1 element inside.
 
