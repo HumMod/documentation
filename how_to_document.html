@@ -1,0 +1,135 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+  <title>HumMod | Documentation</title> 
+  <link href="http://help.hummod.com/css/application.css" media="screen" rel="stylesheet" type="text/css" /> 
+</head> 
+<body id="help"> 
+  <!-- Fork Me Badge -->
+  <a href="http://github.com/hummod"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://d3nwyuy0nl342s.cloudfront.net/img/30f550e0d38ceb6ef5b81500c64d970b7fb0f028/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6f72616e67655f6666373630302e706e67" alt="Fork me on GitHub"></a>
+  <!-- End of Badge -->
+  <header id="main"> 
+    <h1><a href="http://hummod.org">HumMod</a></h1> 
+      <h2>Help</h2> 
+      <nav class="main"> 
+        <a href="http://hummod.org/about">About</a> / 
+        <a href="http://hummod.org/projects">Projects</a> / 
+        <a href="http://help.hummod.com">Help</a>/ 
+        <a href="http://hummod.org/contact">Contact</a> 
+      </nav> 
+  </header> 
+    <hr /> 
+  <div id="content">
+
+  <section>
+  <header>
+  <h1> Documenting for the HumMod Project </h1>
+  </header>
+
+	<p>
+	This document contains how-to information for the HumMod 	documentation.
+	</p>
+
+	<p>
+	<a href = "http://help.hummod.com"> Back to the Main Page.</a>
+	</p>
+
+  </section>
+
+  <section>
+  <hgroup>
+  <header>
+  <h1> Technical Instructions </h1>
+  </header>
+
+  <header>
+  <h2> Step-by-step <h2>
+  </header>
+
+	<ol>
+	<li> Fork the Documentation repository.</li>
+
+	<li> Clone your copy of the repo: <code>> git clone 	git@github.com:your-username/documentation.git</code> </li>
+
+	<li> Add a remote for our repository: <code>> git remote add 	upstream git://github.com/HumMod/documentation.git</code></li>
+
+	<li> Switch to the "gh-pages" branch: <code>> git checkout 	gh-	pages</code></li>
+
+	<li> Create/modify documentation. </li>
+
+	<li> When you are done, fetch and merge from our repository:<br>
+	<code>> git fetch upstream<br> > git merge upstream/gh-pages	</code></li>
+
+	<li> Push changes back to your repo: <code>> git push origin 	gh-pages</code></li>
+
+	<li> Submit a pull request back to us. </li>
+	<ol>
+
+
+  <header>
+  <h2> Style <h2>
+  </header>
+
+	<p>
+	All pages in documentation should be written in clean, well-	structured HTML and follow our CSS.<a href = 	"http://help.hummod.com/projects/navigator/"> This page</a> is 	an example page that has been completed under documentation and 	contains all the most important elements and formatting required 	to do HumMod documentation. 
+	</p>
+
+	<p>
+	To see its raw code, open your browser developer tools. If using 	Google Chrome, the shortcut is F12. If using Mozilla Firefox, the 	shortcut is CTRL+U. If using Internet Explorer 9, the shortcut is 	also F12. Alternatively, in any of these browsers you can right-	click on the web page and choose "View Page Source" or s similar 	option.
+	</p>
+
+	<p>
+	Please note how paragraphs, internal navigation using the < nav > 	element, images, and sections are formatted. Please follow these 	styles in all HumMod documentation in order to facilitate a clean 	and easily modified help section.
+	</p>
+
+	<p>
+	If you have any questions or comments regarding stylistic 	concerns in HumMod documentation, please <a href = 	"http://hummod.org"> contact us</a>.
+	</p>
+
+  <header>
+  <h2> Structure <h2>
+  <header>
+  </hgroup>
+
+	<p>
+	One of the most important elements in our documentation is that 	every page is divided into sections using the HTML < section > 	tag. These tags are enormously important and allow content to be 	properly catagorized and are vital for in-page navigation using 	HTML5's < nav > tag. Please make sure to use them and use them 	properly.
+	</p>
+
+	<p>
+	All sections must have a header tag with an &lth1&gt element 	inside. Content goes inside the &ltsection&gt tag, but outside 	the &ltheader&gt tag.
+	</p>
+
+	<p>
+	For example:
+	</p>
+
+	<p>
+	<br>
+	<pre>
+	<code>
+	&ltsection id="example-section"&gt<br>
+  	&ltheader&gt<br>
+    	&lth1&gtThis is an example of a section&lt/h1&gt<br>
+    	&lta href="#block"&gtBack to the top.&lt/a&gt<br>
+  	&lt/header&gt<br><br>
+  	&ltp&gt<br>
+    	Sections should be structured like this example.  Note the<br> 	section, header, and h1 tags.  Further, the section has an id<br> 	that corresponds to the sections header. This unique id is used<br>	for linking within the page.<br>
+  	&lt/p&gt<br><br>
+  	&ltp&gt<br>
+   	Since we link inside the page, it's necessary to update the main<br>	nav group up top.<br>
+  	&lt/p&gt<br><br>
+	&lt/section&gt
+	</code>
+	</pre>
+	</p>
+
+  </section>
+
+    
+  </div> 
+
+  <footer class="main"> 
+    &copy;2010 &ndash; University of Mississippi Medical Center
+  </footer> 
+</body> 
+</html>
